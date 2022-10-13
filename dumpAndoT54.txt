@@ -2,7 +2,7 @@
 Record: TES3 "()" Flags:0x0000 ()
   HEDR:   Version:1.3  Is_Master:False  Author:""
   Description:""
-  N_Records:1224
+  N_Records:1221
  *MAST: Master:Morrowind.esm
   DATA: Length:79837557
  *MAST: Master:Tribunal.esm
@@ -46,35 +46,6 @@ Record: GLOB "tr_m4_tt_departday" Flags:0x0000 ()
   NAME: ID:TR_m4_TT_DepartDay
   FNAM: Type:(Short)
   FLTV: Float:0.00
-
-Record: SCPT "tr_m4_and_temple_coffer_sc" Flags:0x0000 ()
-  SCHD: ID:TR_m4_And_Temple_Coffer_sc  Num_Shorts:1  Num_Longs:0  Num_Floats:0  Data_Size:171  Local_Var_Size:7
-  SCVR: Script_Variables: doOnce
-  SCDT: Bytecode: (compiled script code)
-  SCTX: Script_Text:
-Begin TR_m4_And_Temple_Coffer_sc
-
-short doOnce
-;global long TR_m4_TT_And_GoldCounter
-
-if ( OnActivate )
-	Activate
-	set doOnce to 1
-endif
-
-if ( MenuMode )
-	Return
-elseif ( doOnce == 1 )
-	set doOnce to 2
-endif
-
-if ( doOnce == 2 )
-	set doOnce to 0
-	set TR_m4_TT_And_GoldCounter to ( getitemcount gold_001 )
-	MessageBox "Gold amount %G" TR_m4_TT_And_GoldCounter
-endif
-
-End
 
 Record: SCPT "tr_m4_andoth_almalexiashrine_sc" Flags:0x0000 ()
   SCHD: ID:TR_m4_Andoth_AlmalexiaShrine_sc  Num_Shorts:3  Num_Longs:0  Num_Floats:0  Data_Size:1079  Local_Var_Size:28
