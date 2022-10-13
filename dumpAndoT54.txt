@@ -3699,7 +3699,7 @@ Record: CONT "tr_m4_tt_omayniscrate" Flags:0x0000 ()
   MODL: Model:o\Contain_crate_01.NIF
   FNAM: Name:Crate
   CNDT: Weight:200.00
-  FLAG: Container_Flags:[0x0008 (Default)]
+  FLAG: Container_Flags:[0x0009 (Default, Organic)]
   SCRI: Script:TR_m4_TT_LastWillDisable_sc
 
 Record: BOOK "tr_m4_tt_nalvsdraft" Flags:0x0000 ()
