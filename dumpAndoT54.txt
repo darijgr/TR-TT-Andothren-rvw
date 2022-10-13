@@ -2,7 +2,7 @@
 Record: TES3 "()" Flags:0x0000 ()
   HEDR:   Version:1.3  Is_Master:False  Author:""
   Description:""
-  N_Records:1221
+  N_Records:1224
  *MAST: Master:Morrowind.esm
   DATA: Length:79837557
  *MAST: Master:Tribunal.esm
@@ -161,11 +161,14 @@ set TR_Map to 4
 End
 
 Record: SCPT "tr_m4_rr_bodrumshrinescript" Flags:0x0000 ()
-  SCHD: ID:TR_m4_RR_BodrumShrineScript  Num_Shorts:3  Num_Longs:0  Num_Floats:0  Data_Size:1037  Local_Var_Size:28
+  SCHD: ID:TR_m4_RR_BodrumShrineScript  Num_Shorts:3  Num_Longs:0  Num_Floats:0  Data_Size:1521  Local_Var_Size:28
   SCVR: Script_Variables: button,questionState,doOnce
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_RR_BodrumShrineScript
+
+; Script on Activator TR_m4_RR_BodrumBattleShrine.
+; This is the Shrine to the Battle of Bodrum, one of the Temple pilgrimage shrines.
 
 short button
 short questionState
@@ -185,10 +188,24 @@ if ( questionState == 1 )
 	if ( Player->GetItemCount "iron spear" > 0 )
 		MessageBox "Would you like to donate an iron spear and ask for a blessing?" "Yes" "No"
 		Set questionState to 2
-	else
-		MessageBox "Here the forces led by Lord Vivec were victorious over the armies of Reman III. The raging waters of Pryai River washed away the taint of Cyrodiil, impaling them on a net of spears."
-		Set questionState to 0
+		Return
 	endif
+
+	if ( Player->GetItemCount "Iron Long Spear" > 0 )
+		MessageBox "Would you like to donate an iron spear and ask for a blessing?" "Yes" "No"
+		Set questionState to 2
+		Return
+	endif
+
+	if ( Player->GetItemCount "TR_m3_iron spear_embedded_keep" > 0 )
+		MessageBox "Would you like to donate an iron spear and ask for a blessing?" "Yes" "No"
+		Set questionState to 2
+		Return
+	endif
+
+	MessageBox "Here the forces led by Lord Vivec were victorious over the armies of Reman III. The raging waters of Pryai River washed away the taint of Cyrodiil, impaling them on a net of spears."
+	Set questionState to 0
+	Return
 
 endif
 
@@ -196,7 +213,17 @@ if ( questionState == 2 )
 	set button to GetButtonPressed
 
 	if ( button == 0 )
-		Player->RemoveItem "iron spear" 1
+		if ( Player->GetItemCount "iron spear" > 0 )
+			Player->RemoveItem "iron spear" 1
+		else
+			if ( Player->GetItemCount "Iron Long Spear" > 0 )
+				Player->RemoveItem "Iron Long Spear" 1
+			else
+				if ( Player->GetItemCount "TR_m3_iron spear_embedded_keep" > 0 )
+					Player->RemoveItem "TR_m3_iron spear_embedded_keep" 1
+				endif
+			endif
+		endif
 		Cast "TR_m4_RR_BattleBodrumBlessing" Player
 		MessageBox "Here the forces led by Lord Vivec were victorious over the armies of Reman III. The raging waters of Pryai River washed away the taint of Cyrodiil, impaling them on a net of spears. You are blessed with the power of those old days of glory."
 		if ( doOnce == 0 )
@@ -3092,7 +3119,7 @@ Record: NPC_ "tr_m4_tt_tevuren_galdar" Flags:0x0000 ()
  *NPCO: Count:1  Object:indoril pauldron right
  *NPCO: Count:1  Object:indoril pauldron left
  *NPCO: Count:2  Object:p_restore_health_q
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:710077  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:042776  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  10  Idle_3:                   0  Idle_4:                  10
 	Idle_5:                  20  Idle_6:                   5  Idle_7:                  10
@@ -3125,7 +3152,7 @@ Record: NPC_ "tr_m4_tt_orcvivec" Flags:0x0000 ()
  *NPCO: Count:1  Object:bonemold_gah-julan_pauldron_r
  *NPCO: Count:1  Object:chitin pauldron - left
  *NPCS: Spell:TR_m4_TT_OrcVivecAbility
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:710077  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:042776  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  30  Idle_3:                  20  Idle_4:                   0
 	Idle_5:                  30  Idle_6:                   0  Idle_7:                   0
@@ -3179,7 +3206,7 @@ Record: NPC_ "tr_m4_tt_ravur_othravel" Flags:0x0000 ()
  *NPCS: Spell:absorb personality
  *NPCS: Spell:absorb speed
  *NPCS: Spell:absorb willpower
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:710077  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:042776  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  40  Idle_3:                   0  Idle_4:                  10
 	Idle_5:                   0  Idle_6:                   5  Idle_7:                   5
@@ -3289,7 +3316,7 @@ Record: CREA "tr_m4_tt_olmsguardgreat" Flags:0x0000 ()
  *NPCS: Spell:resist poison_75
  *NPCS: Spell:dread curse: endurance
  *NPCS: Spell:dread curse: strength
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:710077  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:042776  Services:[0xa00000 ()]
  *AI_W: Distance:        200  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           30  Idle_3:           50  Idle_4:           30  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3319,7 +3346,7 @@ Record: CREA "tr_m4_tt_olmsguard" Flags:0x0000 ()
  *NPCS: Spell:resist poison_75
  *NPCS: Spell:grave curse: strength
  *NPCS: Spell:grave curse: endurance
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:710077  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:042776  Services:[0xa00000 ()]
  *AI_W: Distance:       1000  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           50  Idle_3:           50  Idle_4:            0  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3348,7 +3375,7 @@ Record: CREA "tr_m4_tt_olmsguardghost" Flags:0x0000 ()
  *NPCS: Spell:immune to disease
  *NPCS: Spell:immune to frost
  *NPCS: Spell:immune to poison
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:710077  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:042776  Services:[0xa00000 ()]
  *AI_W: Distance:       1000  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           50  Idle_3:           50  Idle_4:            0  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3739,6 +3766,16 @@ Record: ENCH "tr_m4_tt_ravurdaggerenc" Flags:0x0000 ()
   ENDT: Type:(Cast_on_Strike)  Cost:10  Charge:200  Autocalc:(No)  Unused:0
  *ENAM: Spell_Effect:(Silence)  Range:(Touch)  Area:0  Duration:10  Mag_Min:1  Mag_Max:1
 
+Record: CELL "ascadian bluffs region (3, -15)" Flags:0x0000 ()
+  NAME: Name:
+  DATA: (Exterior) Coordinates: (3, -15)  Flags:0x0002 (Has_Water)
+  RGNN: Region:Ascadian Bluffs Region
+
+Record: CELL "ascadian isles region (2, -14)" Flags:0x0000 ()
+  NAME: Name:
+  DATA: (Exterior) Coordinates: (2, -14)  Flags:0x0002 (Has_Water)
+  RGNN: Region:Ascadian Isles Region
+
 Record: CELL "aanthirin region (2, -16)" Flags:0x0000 ()
   NAME: Name:
   DATA: (Exterior) Coordinates: (2, -16)  Flags:0x0002 (Has_Water)
@@ -3747,6 +3784,11 @@ Record: CELL "aanthirin region (2, -16)" Flags:0x0000 ()
  *FRMR: ObjIdx:1  MastIdx:0
   NAME: Name:TR_m4_TT_ShrineOlmsReflct
   DATA: X:20387.109  Y:-127180.609  Z:2321.703  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:4.4832
+
+Record: CELL "ascadian isles region (0, -15)" Flags:0x0000 ()
+  NAME: Name:
+  DATA: (Exterior) Coordinates: (0, -15)  Flags:0x0002 (Has_Water)
+  RGNN: Region:Ascadian Isles Region
 
 Record: CELL "andothren, docks (0, -16)" Flags:0x0000 ()
   NAME: Name:Andothren, Docks
@@ -3792,7 +3834,6 @@ Record: CELL "olms ancestral tomb" Flags:0x0000 ()
  *FRMR: ObjIdx:8  MastIdx:0
   NAME: Name:TR_m4_TT_OlmsGuard
   DATA: X:-505.189  Y:835.966  Z:-696.385  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:0.0000
-  NAM0: Reference_Count:118
 
 Record: CELL "olms ancestral tomb, sepulcher" Flags:0x0000 ()
   NAME: Name:Olms Ancestral Tomb, Sepulcher
@@ -3802,7 +3843,7 @@ Record: CELL "olms ancestral tomb, sepulcher" Flags:0x0000 ()
  *FRMR: ObjIdx:9  MastIdx:0
   NAME: Name:TR_m4_TT_OlmsGuardGreat
   DATA: X:203.678  Y:1803.549  Z:-1046.323  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:1.1000
-  NAM0: Reference_Count:313
+  NAM0: Reference_Count:9
  *FRMR: ObjIdx:10  MastIdx:0
   NAME: Name:TR_m4_TT_ShrineOlmsRestC
   DATA: X:-500.944  Y:1824.000  Z:-944.225  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:4.7124
@@ -3855,7 +3896,7 @@ Record: CELL "andothren, temple" Flags:0x0000 ()
   FLTV: Lock_Level:90
   KNAM: Key:TR_m4_TT_TempleCofferKey
   DATA: X:3786.271  Y:4048.574  Z:14616.396  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:0.1349
-  NAM0: Reference_Count:900
+  NAM0: Reference_Count:21
  *FRMR: ObjIdx:23  MastIdx:0
   NAME: Name:TR_m4_TT_VathriPipe
   DATA: X:3662.948  Y:4022.980  Z:14598.092  X_Angle:1.5000  Y_Angle:0.0000  Z_Angle:4.3832
@@ -3966,7 +4007,7 @@ Record: CELL "omaynis, ulmon vathri's house" Flags:0x0000 ()
   INTV: Health_Left:0
   NAM9: Owned:1
   DATA: X:4991.687  Y:3887.502  Z:15515.613  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:0.3000
-  NAM0: Reference_Count:132
+  NAM0: Reference_Count:28
  *FRMR: ObjIdx:45  MastIdx:0
   NAME: Name:com_basket_01_chpfood5
   ANAM: Owner_Actor:TR_m4_Ulmon Vathri
@@ -4168,7 +4209,6 @@ Record: CELL "omaynis (-7, -16)" Flags:0x0000 ()
   FLTV: Lock_Level:80
   KNAM: Key:TR_m4_TT_VathriKey
   DATA: X:-55323.820  Y:-123360.766  Z:1458.873  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:1.4294
-  NAM0: Reference_Count:403
 
 Record: CELL "roth roryn region (-13, -18)" Flags:0x0000 ()
   NAME: Name:
@@ -4177,14 +4217,13 @@ Record: CELL "roth roryn region (-13, -18)" Flags:0x0000 ()
  *FRMR: ObjIdx:74  MastIdx:0
   NAME: Name:TR_m4_TT_OrcVivec
   DATA: X:-101822.836  Y:-146763.781  Z:3227.525  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:1.8000
-  NAM0: Reference_Count:330
 
 Record: CELL "omaynis, aro helseri: trader" Flags:0x0000 ()
   NAME: Name:Omaynis, Aro Helseri: Trader
   DATA: (Interior) Fog_Density:1.00  Flags:0x0005 (Illegal_To_Sleep_Here)
   WHGT: Water_Height:0.00
   AMBI: Ambient:RGB=(55,50,45)  Sunlight:RGB=(61,40,20)  Fog:RGB=(88,70,54) Fog_Density:1.00
-  NAM0: Reference_Count:183
+  NAM0: Reference_Count:1
  *FRMR: ObjIdx:75  MastIdx:0
   NAME: Name:p_cure_common_s
   ANAM: Owner_Actor:TR_m4_Aro Helseri
