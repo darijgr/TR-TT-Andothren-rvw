@@ -2,7 +2,7 @@
 Record: TES3 "()" Flags:0x0000 ()
   HEDR:   Version:1.3  Is_Master:False  Author:""
   Description:""
-  N_Records:1224
+  N_Records:1222
  *MAST: Master:Morrowind.esm
   DATA: Length:79837557
  *MAST: Master:Tribunal.esm
@@ -53,6 +53,9 @@ Record: SCPT "tr_m4_andoth_almalexiashrine_sc" Flags:0x0000 ()
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_Andoth_AlmalexiaShrine_sc
+
+; Script on Activator TR_m4_Andoth_AlmalexiaShrine.
+; This is the Shrine of Almalexia's Fury in Andothren, one of the Temple pilgrimage shrines.
 
 short questionState
 short button
@@ -136,12 +139,16 @@ Record: SCPT "tr_m4_gavros_falas_sc" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_Gavros_Falas_sc
 
+; Script on NPC TR_m4_Gavros_Falas for Andothren Temple quest
+; TR_m4_TT_KitchenSupplies.
+
 short TR_Map
 short control
 short controlQ
 short T_Local_NPC
 short NoLore
 
+; Make Gavros put on a hat if the player paid him well.
 if ( GetJournalIndex TR_m4_TT_KitchenSupplies >= 101 )
 	if ( CellChanged )
 		if ( controlQ == 1 )
@@ -250,6 +257,10 @@ Record: SCPT "tr_m4_tt_armunadvc_sc" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_TT_ArmunAdvC_sc
 
+; Script on dead NPCs TR_m4_D_KhirakaiBandit1 and
+; TR_m4_D_KhirakaiBandit2, the dead bandits in Khirakai,
+; for Andothren Temple quest TR_m4_TT_ArmunAdventure.
+
 if ( OnActivate )
 	if ( GetJournalIndex TR_m4_TT_ArmunAdventure > 0 )
 		if ( GetJournalIndex TR_m4_TT_ArmunAdventure_c < 100 )
@@ -268,7 +279,12 @@ Record: SCPT "tr_m4_tt_crateratmeat_sc" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_TT_CrateRatMeat_sc
 
+; Script on container TR_m4_TT_CrateRatMeat for Andothren Temple quest
+; TR_m4_TT_KitchenSupplies.
+
 short doOnce
+
+; This container is enabled only for the quest.
 
 if ( GetJournalIndex TR_m4_TT_KitchenSupplies >= 100 )
 	if ( GetDisabled == 0 )
@@ -304,6 +320,9 @@ Record: SCPT "tr_m4_tt_donationboxscript" Flags:0x0000 ()
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_TT_DonationBoxScript
+
+; Script on container TR_m4_And_Temple_Coffer for the Andothren Temple
+; questline. This script is in charge of moving some Temple NPCs as well.
 
 short doOnce
 short checkGold
@@ -372,6 +391,9 @@ Record: SCPT "tr_m4_tt_felani_vathri_sc" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_TT_Felani_Vathri_sc
 
+; Script on NPC TR_m4_TT_Felani_Vathri (Ulmon's daughter)
+; for Andothren Temple quest TR_m4_TT_LastWillAndTestament.
+
 short TR_Map
 short control
 short controlQ
@@ -381,6 +403,8 @@ short T_Local_NoLore
 long posX
 long posY
 long posZ
+
+; Enable only from the quest onwards.
 
 if ( GetJournalIndex TR_m4_TT_LastWillAndTestament < 20 )
 	if ( GetDisabled == 0 )
@@ -497,6 +521,9 @@ Record: SCPT "tr_m4_tt_felaniletter2_sc" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_TT_FelaniLetter2_sc
 
+; Script on book TR_m4_TT_FelaniLetter2 for Andothren Temple quest
+; TR_m4_TT_LastWillAndTestament.
+
 short PCSkipEquip
 short doOnce
 short actionFlag
@@ -533,6 +560,9 @@ Record: SCPT "tr_m4_tt_fire_sc" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_TT_Fire_sc
 
+; Script on light TR_m4_TT_Fire for Andothren Temple quest
+; TR_m4_TT_LastWillAndTestament.
+
 if ( GetDisabled == 0 )
 	if ( GetJournalIndex TR_m4_TT_LastWillAndTestament < 35 )
 		Disable
@@ -556,6 +586,10 @@ Record: SCPT "tr_m4_tt_goldingot1script" Flags:0x0000 ()
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 begin TR_m4_TT_GoldIngot1Script
+
+; Script on misc item TR_m4_TT_GoldIngot1 for Andothren Temple
+; questline. This is a gold ingot that Nalvs Andolin steals from the
+; Temple coffers.
 
 short doOnce
 
@@ -584,6 +618,10 @@ Record: SCPT "tr_m4_tt_goldingot2script" Flags:0x0000 ()
   SCTX: Script_Text:
 begin TR_m4_TT_GoldIngot2Script
 
+; Script on misc item TR_m4_TT_GoldIngot2 for Andothren Temple
+; questline. This is a gold ingot that Nalvs Andolin steals from the
+; Temple coffers.
+
 short doOnce
 
 if ( doOnce == 0 )
@@ -611,6 +649,10 @@ Record: SCPT "tr_m4_tt_goldscript" Flags:0x0000 ()
   SCTX: Script_Text:
 begin TR_m4_TT_GoldScript
 
+; Script on misc item TR_m4_TT_Gold for Andothren Temple
+; questline. This is a gold piece that Nalvs Andolin steals from the
+; Temple coffers.
+
 short doOnce
 
 if ( doOnce == 0 )
@@ -637,6 +679,9 @@ Record: SCPT "tr_m4_tt_lastwilldisable_sc" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_TT_LastWillDisable_sc
 
+; This is a script on container TR_m4_TT_OmaynisCrate for the Andothren
+; Temple questline. It's just an ornamental crate in Ulmon Vathri's house.
+
 if ( GetDisabled == 0 )
 	if ( TR_m4_TT_AndothrenFinale )
 		Disable
@@ -653,7 +698,11 @@ Record: SCPT "tr_m4_tt_lastwillenable_sc" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_TT_LastWillEnable_sc
 
-; disable/enable items if they're not in an inventory
+; This is a script on various items that are enabled in the last quest of
+; the Andothren Temple questline. Most (all?) of them are in Ulmon
+; Vathri's house.
+
+; disable/enable items if they're not in an inventory.
 
 short doOnce
 
@@ -3771,11 +3820,6 @@ Record: CELL "ascadian bluffs region (3, -15)" Flags:0x0000 ()
   DATA: (Exterior) Coordinates: (3, -15)  Flags:0x0002 (Has_Water)
   RGNN: Region:Ascadian Bluffs Region
 
-Record: CELL "ascadian isles region (2, -14)" Flags:0x0000 ()
-  NAME: Name:
-  DATA: (Exterior) Coordinates: (2, -14)  Flags:0x0002 (Has_Water)
-  RGNN: Region:Ascadian Isles Region
-
 Record: CELL "aanthirin region (2, -16)" Flags:0x0000 ()
   NAME: Name:
   DATA: (Exterior) Coordinates: (2, -16)  Flags:0x0002 (Has_Water)
@@ -3784,11 +3828,6 @@ Record: CELL "aanthirin region (2, -16)" Flags:0x0000 ()
  *FRMR: ObjIdx:1  MastIdx:0
   NAME: Name:TR_m4_TT_ShrineOlmsReflct
   DATA: X:20387.109  Y:-127180.609  Z:2321.703  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:4.4832
-
-Record: CELL "ascadian isles region (0, -15)" Flags:0x0000 ()
-  NAME: Name:
-  DATA: (Exterior) Coordinates: (0, -15)  Flags:0x0002 (Has_Water)
-  RGNN: Region:Ascadian Isles Region
 
 Record: CELL "andothren, docks (0, -16)" Flags:0x0000 ()
   NAME: Name:Andothren, Docks
@@ -3834,6 +3873,7 @@ Record: CELL "olms ancestral tomb" Flags:0x0000 ()
  *FRMR: ObjIdx:8  MastIdx:0
   NAME: Name:TR_m4_TT_OlmsGuard
   DATA: X:-505.189  Y:835.966  Z:-696.385  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:0.0000
+  NAM0: Reference_Count:118
 
 Record: CELL "olms ancestral tomb, sepulcher" Flags:0x0000 ()
   NAME: Name:Olms Ancestral Tomb, Sepulcher
@@ -3843,7 +3883,7 @@ Record: CELL "olms ancestral tomb, sepulcher" Flags:0x0000 ()
  *FRMR: ObjIdx:9  MastIdx:0
   NAME: Name:TR_m4_TT_OlmsGuardGreat
   DATA: X:203.678  Y:1803.549  Z:-1046.323  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:1.1000
-  NAM0: Reference_Count:9
+  NAM0: Reference_Count:313
  *FRMR: ObjIdx:10  MastIdx:0
   NAME: Name:TR_m4_TT_ShrineOlmsRestC
   DATA: X:-500.944  Y:1824.000  Z:-944.225  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:4.7124
@@ -3896,7 +3936,7 @@ Record: CELL "andothren, temple" Flags:0x0000 ()
   FLTV: Lock_Level:90
   KNAM: Key:TR_m4_TT_TempleCofferKey
   DATA: X:3786.271  Y:4048.574  Z:14616.396  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:0.1349
-  NAM0: Reference_Count:21
+  NAM0: Reference_Count:900
  *FRMR: ObjIdx:23  MastIdx:0
   NAME: Name:TR_m4_TT_VathriPipe
   DATA: X:3662.948  Y:4022.980  Z:14598.092  X_Angle:1.5000  Y_Angle:0.0000  Z_Angle:4.3832
@@ -4007,7 +4047,7 @@ Record: CELL "omaynis, ulmon vathri's house" Flags:0x0000 ()
   INTV: Health_Left:0
   NAM9: Owned:1
   DATA: X:4991.687  Y:3887.502  Z:15515.613  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:0.3000
-  NAM0: Reference_Count:28
+  NAM0: Reference_Count:132
  *FRMR: ObjIdx:45  MastIdx:0
   NAME: Name:com_basket_01_chpfood5
   ANAM: Owner_Actor:TR_m4_Ulmon Vathri
@@ -4209,6 +4249,7 @@ Record: CELL "omaynis (-7, -16)" Flags:0x0000 ()
   FLTV: Lock_Level:80
   KNAM: Key:TR_m4_TT_VathriKey
   DATA: X:-55323.820  Y:-123360.766  Z:1458.873  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:1.4294
+  NAM0: Reference_Count:403
 
 Record: CELL "roth roryn region (-13, -18)" Flags:0x0000 ()
   NAME: Name:
@@ -4217,13 +4258,14 @@ Record: CELL "roth roryn region (-13, -18)" Flags:0x0000 ()
  *FRMR: ObjIdx:74  MastIdx:0
   NAME: Name:TR_m4_TT_OrcVivec
   DATA: X:-101822.836  Y:-146763.781  Z:3227.525  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:1.8000
+  NAM0: Reference_Count:330
 
 Record: CELL "omaynis, aro helseri: trader" Flags:0x0000 ()
   NAME: Name:Omaynis, Aro Helseri: Trader
   DATA: (Interior) Fog_Density:1.00  Flags:0x0005 (Illegal_To_Sleep_Here)
   WHGT: Water_Height:0.00
   AMBI: Ambient:RGB=(55,50,45)  Sunlight:RGB=(61,40,20)  Fog:RGB=(88,70,54) Fog_Density:1.00
-  NAM0: Reference_Count:1
+  NAM0: Reference_Count:183
  *FRMR: ObjIdx:75  MastIdx:0
   NAME: Name:p_cure_common_s
   ANAM: Owner_Actor:TR_m4_Aro Helseri
