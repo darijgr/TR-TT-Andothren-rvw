@@ -740,6 +740,9 @@ Record: SCPT "tr_m4_tt_marja_iannus_sc" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_TT_Marja_Iannus_sc
 
+; Script on NPC TR_m4_TT_Marja_Iannus for the Andothren
+; Temple quest TR_m4_TT_LastWillAndTestament.
+
 short TR_Map
 short control
 short controlQ
@@ -797,6 +800,9 @@ Record: SCPT "tr_m4_tt_movefelaniscript" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_TT_MoveFelaniScript
 
+; Global script to move TR_m4_TT_Felani_Vathri and her wife,
+; for Andothren Temple quest TR_m4_TT_LastWillAndTestament.
+
 if ( CellChanged == 0 )
 	Return
 endif
@@ -822,9 +828,9 @@ Record: SCPT "tr_m4_tt_nalvs_andolin_sc" Flags:0x0000 ()
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_TT_Nalvs_Andolin_sc
-; This short script is there to allow dialogue to be filtered on the TR_Map local variable, 
-; allowing for regional topics such as "Morrowind Lore" or "Geographic Regions" to be
-; appropriate to the location the NPC is.
+
+; Script on NPC TR_m4_TT_Nalvs_Andolin, the main questgiver
+; of the Andothren Temple questline. This relates to various quests.
 
 short TR_Map
 short control
@@ -990,6 +996,8 @@ Record: SCPT "tr_m4_tt_olmsdoor_sc" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_TT_OlmsDoor_sc
 
+; Script on door TR_m4_TT_OlmsDoor for a Temple pilgrimage quest.
+
 if ( CellChanged == 0 )
 	Return
 endif
@@ -1003,10 +1011,12 @@ endif
 End
 
 Record: SCPT "tr_m4_tt_olmsguard_sc" Flags:0x0000 ()
-  SCHD: ID:TR_m4_TT_OlmsGuard_sc  Num_Shorts:0  Num_Longs:0  Num_Floats:0  Data_Size:85  Local_Var_Size:0
+  SCHD: ID:TR_m4_TT_OlmsGuard_sc  Num_Shorts:0  Num_Longs:0  Num_Floats:0  Data_Size:84  Local_Var_Size:0
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_TT_OlmsGuard_sc
+
+; Script on critter TR_m4_TT_OlmsGuardGhost for a Temple pilgrimage quest.
 
 DontSaveObject
 
@@ -1014,7 +1024,7 @@ if ( CellChanged == 0 )
 	return
 endif
 
-if ( GetFight >= 30 )
+if ( GetFight > 30 )
 	if ( GetJournalIndex TR_m4_TT_ShrineOlmsRest >= 10 )
 		SetFight 30
 	endif
@@ -1023,10 +1033,12 @@ endif
 End
 
 Record: SCPT "tr_m4_tt_olmsguarddis_sc" Flags:0x0000 ()
-  SCHD: ID:TR_m4_TT_OlmsGuardDis_sc  Num_Shorts:0  Num_Longs:0  Num_Floats:0  Data_Size:112  Local_Var_Size:0
+  SCHD: ID:TR_m4_TT_OlmsGuardDis_sc  Num_Shorts:0  Num_Longs:0  Num_Floats:0  Data_Size:111  Local_Var_Size:0
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_TT_OlmsGuardDis_sc
+
+; Script on some bonewalkers for a Temple pilgrimage.
 
 DontSaveObject
 
@@ -1034,7 +1046,7 @@ if ( CellChanged == 0 )
 	return
 endif
 
-if ( GetFight >= 30 )
+if ( GetFight > 30 )
 	if ( GetJournalIndex TR_m4_TT_ShrineOlmsRest >= 10 )
 		SetFight 30
 	endif
@@ -1052,9 +1064,9 @@ Record: SCPT "tr_m4_tt_orccultist_sc" Flags:0x0000 ()
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_TT_OrcCultist_sc
-; This short script is there to allow dialogue to be filtered on the TR_Map local variable, 
-; allowing for regional topics such as "Morrowind Lore" or "Geographic Regions" to be
-; appropriate to the location the NPC is.
+
+; Script on some Orc cultists for Andothren Temple quest
+; TR_m4_TT_ArmunAdventure.
 
 short TR_Map
 short control
@@ -1108,6 +1120,9 @@ Record: SCPT "tr_m4_tt_orcvivecbooksc" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_TT_OrcVivecBookSc
 
+; Global script for Andothren Temple quest TR_m4_TT_TroublesomeOrc_c.
+; This script gets started when the player delivers two books to the orc.
+
 short currentDay
 
 if ( currentDay == 0 )
@@ -1126,6 +1141,9 @@ Record: SCPT "tr_m4_tt_orcvivecscript" Flags:0x0000 ()
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_TT_OrcVivecScript
+
+; Script on the "troublesome orc" (NPC TR_m4_TT_OrcVivec, aka Garash gro-Vivec)
+; for the Andothren Temple questline.
 
 short TR_Map
 short NoLore
@@ -1512,9 +1530,8 @@ Record: SCPT "tr_m4_tt_ravur_othravel_sc" Flags:0x0000 ()
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_TT_Ravur_Othravel_sc
-; This short script is there to allow dialogue to be filtered on the TR_Map local variable, 
-; allowing for regional topics such as "Morrowind Lore" or "Geographic Regions" to be
-; appropriate to the location the NPC is. This version is for "NoLore" NPCs.
+
+; Script on NPC TR_m4_TT_Ravur_Othravel for Andothren Temple questline.
 
 short TR_Map
 short control
@@ -1909,6 +1926,9 @@ Record: SCPT "tr_m4_tt_ravurnote_sc" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_TT_RavurNote_sc
 
+; Script on book TR_m4_TT_RavurNote for Andothren Temple quest
+; TR_m4_TT_LastWillAndTestament.
+
 short PCSkipEquip
 short doOnce
 short actionFlag
@@ -1945,6 +1965,9 @@ Record: SCPT "tr_m4_tt_shrineolmsreflct_sc" Flags:0x0000 ()
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_TT_ShrineOlmsReflct_sc
+
+; Script on activator TR_m4_TT_ShrineOlmsReflct, the Shrine of St. Olms' Reflection
+; (an Andothren Temple pilgrimage site).
 
 short state
 short localDaysPassed
@@ -1995,6 +2018,9 @@ Record: SCPT "tr_m4_tt_shrineolmsrest_sc" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_TT_ShrineOlmsRest_sc
 
+; Script on activator TR_m4_TT_ShrineOlmsRestC (part of the Shrine of St. Olms' Reflection,
+; an Andothren Temple pilgrimage site).
+
 short localDaysPassed
 
 if ( OnActivate == 1 )
@@ -2015,6 +2041,9 @@ Record: SCPT "tr_m4_tt_spawnbittergreen_sc" Flags:0x0000 ()
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_TT_SpawnBittergreen_sc
+
+; Script on ingredient TR_m4_TT_SpawnBittergreen for quest
+; TR_m4_TT_AndothrenFinale.
 
 short doOnce
 
@@ -2038,6 +2067,9 @@ Record: SCPT "tr_m4_tt_spawnhacklelo_sc" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_TT_SpawnHackleLo_sc
 
+; Script on ingredient TR_m4_TT_SpawnHackleLo for quest
+; TR_m4_TT_AndothrenFinale.
+
 short doOnce
 
 if ( doOnce == 0 )
@@ -2060,6 +2092,8 @@ Record: SCPT "tr_m4_tt_templecoffers_sc" Flags:0x0000 ()
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_TT_TempleCoffers_sc
+
+; Script on container TR_m4_TT_TempleCoffersB for Andothren Temple questline.
 
 short doOnce
 
@@ -2096,6 +2130,10 @@ Record: SCPT "tr_m4_tt_tribunalshrine" Flags:0x0000 ()
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_TT_TribunalShrine
+
+; Script on activator TR_m4_And_Temple_Shrine, a shrine in the Andothren Temple.
+; Besides the usual functions of a shrine, this handles some NPC moving for the
+; Andothren Temple questline.
 
 
 
@@ -2271,6 +2309,9 @@ Record: SCPT "tr_m4_tt_triolithshrine" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_TT_TriolithShrine
 
+; Script on activator TR_m4_And_Temple_Triolith for Andothren Temple quest
+; TR_m4_TT_LastWillAndTestament_b.
+
 if ( CellChanged )
 	if ( GetDisabled == 0 )
 		if ( GetJournalIndex TR_m4_TT_LastWillAndTestament_b > 80 )
@@ -2287,6 +2328,9 @@ Record: SCPT "tr_m4_tt_ulmon_dead_sc" Flags:0x0000 ()
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_TT_Ulmon_Dead_sc
+
+; Script on NPC TR_m4_TT_Ulmon_Dead (in Andothren, Temple)
+; for Andothren Temple quest TR_m4_TT_LastWillAndTestament.
 
 short doOnce
 
@@ -2318,9 +2362,7 @@ Record: SCPT "tr_m4_tt_uls_edralo_sc" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_TT_Uls_Edralo_sc
 
-; This short script is there to allow dialogue to be filtered on the TR_Map local variable, 
-; allowing for regional topics such as "Morrowind Lore" or "Geographic Regions" to be
-; appropriate to the location the NPC is.
+; Script on NPC TR_m4_Uls Edralo for Andothren Temple.
 
 short TR_Map
 short control
@@ -2357,6 +2399,9 @@ Record: SCPT "tr_m4_tt_vathridoorlocked" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_TT_VathriDoorLocked
 
+; Script on door TR_m4_Omaynis_Door_Vathri_2 for Andothren Temple questline.
+; This is the locked door that leads to Omaynis, Ulmon Vathri's House.
+
 short doOnce
 
 if ( CellChanged == 0 )
@@ -2382,6 +2427,9 @@ Record: SCPT "tr_m4_tt_vathridoororig" Flags:0x0000 ()
   SCTX: Script_Text:
 Begin TR_m4_TT_VathriDoorOrig
 
+; Script on door TR_m4_Omaynis_Door_Vathri for Andothren Temple questline.
+; This is the original (unlocked) door that leads to Omaynis, Ulmon Vathri's House.
+
 short doOnce
 
 if ( CellChanged == 0 )
@@ -2403,9 +2451,9 @@ Record: SCPT "tr_m4_vabalajunta_sc" Flags:0x0000 ()
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_VabalAjunta_sc
-; This short script is there to allow dialogue to be filtered on the TR_Map local variable, 
-; allowing for regional topics such as "Morrowind Lore" or "Geographic Regions" to be
-; appropriate to the location the NPC is.
+
+; Script on NPC TR_m4_Vabal-Ajunta. Makes a bunch of ashlanders fight as a team
+; during quest TR_m4_TT_ArmunAdventure.
 
 short TR_Map
 short control
@@ -2443,6 +2491,10 @@ Record: SCPT "tr_m4_velms_braven_sc" Flags:0x0000 ()
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_Velms_Braven_sc
+
+; Script on NPC TR_m4_Velms_Braven for Andothren Temple quest
+; TR_m4_TT_AndothrenCharityMels. This is the drunkard whom Mels wants to
+; apologize.
 
 short TR_Map
 short control
@@ -15161,7 +15213,7 @@ Record: INFO "81042736430225190" (Greeting:greeting 1) Flags:0x0000 ()
   NNAM: Next_ID:1570710384619519252
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_OrcVivec
-  NAME: Response: %PCName! Lend me a hand to defeat these foul cultist!
+  NAME: Response: %PCName! Lend me a hand to defeat these foul cultists!
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_TroublesomeOrc
   INTV: Compare_Value:120
  *SCVR: Index:1  Type:(Local)  Function:(Variable_Compare)  Comparison:(=)  Name:controlQ
