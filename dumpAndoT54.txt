@@ -2601,7 +2601,7 @@ end TR_RothRoryn_Monastery_AlmSc
 
 
 Record: SCPT "tr_rothroryn_monastery_script" Flags:0x0000 ()
-  SCHD: ID:TR_RothRoryn_Monastery_Script  Num_Shorts:3  Num_Longs:0  Num_Floats:0  Data_Size:306  Local_Var_Size:33
+  SCHD: ID:TR_RothRoryn_Monastery_Script  Num_Shorts:3  Num_Longs:0  Num_Floats:0  Data_Size:397  Local_Var_Size:33
   SCVR: Script_Variables: lastHealth,openDoor,finishedMove
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
@@ -2618,6 +2618,22 @@ if ( MenuMode == 1 )
 endif
 
 if ( finishedMove == 1 )
+	if ( cellChanged )
+		; Make sure the secret passage remains open, even if the
+		; cell gets recycled.
+		TR_RothRoryn_Monastery_Wall01->SetPos, Z, 0
+		TR_RothRoryn_Monastery_Wall02->SetPos, Z, 0
+	endif
+	return
+endif
+
+if ( openDoor == 1 )
+	TR_RothRoryn_Monastery_Wall01->MoveWorld, Y, 5
+	TR_RothRoryn_Monastery_Wall02->MoveWorld, Y, 5
+	if ( ( TR_RothRoryn_Monastery_Wall01->GetPos, Y ) >= 3360 )
+		set openDoor to 0
+		set finishedMove to 1
+	endif
 	return
 endif
 
@@ -2629,15 +2645,6 @@ if ( GetDistance, player <= 200 )
 	set lastHealth to ( player->GetHealth )
 else
 	set lastHealth to 0
-endif
-
-if (openDoor == 1)
-	TR_RothRoryn_Monastery_Wall01->MoveWorld, Y, 5
-	TR_RothRoryn_Monastery_Wall02->MoveWorld, Y, 5
-	if ( ( TR_RothRoryn_Monastery_Wall01->GetPos, Y ) >= 3360 )
-		set openDoor to 0
-		set finishedMove to 1
-	endif
 endif
 
 end TR_RothRoryn_Monastery_Script
