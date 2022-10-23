@@ -11481,7 +11481,7 @@ Record: INFO "32113220891235723751" (Topic:troublesome orc) Flags:0x0000 ()
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
-I overheard Nalvs Andolin and serjo Galdar disussing the matter earlier. Apparently, this Orc claims to be emulating Lord Vivec. Serjo Galdar said that stranger things have happened, and that the possibility of this Orc being a genuine believer should not be dismissed out of hand, but Nalvs would have none of it. Serjo Galdar wouldn't contradict Nalvs when I asked him about it, but he did give me this book to read. Maybe it will be of some use to you, muthsera.
+I overheard Nalvs Andolin and serjo Galdar discussing the matter earlier. Apparently, this Orc claims to be emulating Lord Vivec. Serjo Galdar said that stranger things have happened, and that the possibility of this Orc being a genuine believer should not be dismissed out of hand, but Nalvs would have none of it. Serjo Galdar wouldn't contradict Nalvs when I asked him about it, but he did give me this book to read. Maybe it will be of some use to you, muthsera.
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_TroublesomeOrc
   INTV: Compare_Value:10
  *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_TroublesomeOrc
