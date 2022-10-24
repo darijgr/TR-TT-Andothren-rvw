@@ -385,7 +385,7 @@ endif
 End
 
 Record: SCPT "tr_m4_tt_felani_vathri_sc" Flags:0x0000 ()
-  SCHD: ID:TR_m4_TT_Felani_Vathri_sc  Num_Shorts:6  Num_Longs:3  Num_Floats:0  Data_Size:1659  Local_Var_Size:73
+  SCHD: ID:TR_m4_TT_Felani_Vathri_sc  Num_Shorts:6  Num_Longs:3  Num_Floats:0  Data_Size:1664  Local_Var_Size:73
   SCVR: Script_Variables: TR_Map,control,controlQ,NoLore,T_Local_NPC,T_Local_NoLore,posX,posY,posZ
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
@@ -420,13 +420,16 @@ endif
 if ( control == 0 )
 	if ( GetDistance player < 400 )
 		set control to 1
-		Say "TR\Vo\TR_DeF_Cry.mp" "[Soft weeping.]"
+		Say "TR\Vo\TR_DeF_Cry.mp3" "[Soft weeping.]"
 	endif
 endif
 
 if ( controlQ == 1 )
-	; following
-	if ( CellChanged )
+	; Felani is following the player to the Temple, yet outside the Temple.
+	; if ( CellChanged )
+	; Commented this out, since it seems to sometimes fail to fire
+	; (maybe because Felani appears in the Temple later than the
+	; player?). -- arvisrend
 		if ( GetPCCell "Andothren, Temple" )
 			PositionCell 3592 4184 14784 14034 "Andothren, Temple"
 			AIFollow player 0 0 0 0
@@ -436,18 +439,21 @@ if ( controlQ == 1 )
 			endif
 			set controlQ to 2
 		endif
-	endif
+	; endif
 elseif ( controlQ == 2 )
-	if ( CellChanged )
-;		if ( GetPCCell "Andothren, Temple" != 1 )
+	; Felani is following the player inside the Andothren Temple.
+	; Don't follow the player out of the Temple!
+	; if ( CellChanged )
+		if ( GetPCCell "Andothren, Temple" != 1 )
 			PositionCell 3592 4184 14784 14034 "Andothren, Temple"
 			AIFollow player 0 0 0 0
 			if ( GetDeadCount TR_m4_TT_Marja_Iannus == 0 )
 				TR_m4_TT_Marja_Iannus->PositionCell 3592 4320 14784 17820 "Andothren, Temple"
 				TR_m4_TT_Marja_Iannus->AIFollow TR_m4_TT_Felani_Vathri 0 0 0 0
 			endif
-;		endif
-	endif
+			return
+		endif
+	; endif
 	if ( GetPos Z < 14352 )
 		if ( GetDistance TR_m4_TT_Ulmon_Dead < 800 )
 			Journal TR_m4_TT_LastWillAndTestament 30
@@ -466,24 +472,22 @@ elseif ( controlQ == 3 )
 		Face 4148 3980
 	endif
 elseif ( controlQ == 5 )
-	if ( CellChanged )
+	if ( GetInterior == 0 )
 		if ( GetDistance player > 500 )
 			;do nothing
 		elseif ( GetPCCell "Andothren" )
-			if ( GetInterior == 0 )
-				; move marja
-				if ( GetDeadCount TR_m4_TT_Marja_Iannus == 0 )
-					TR_m4_TT_Marja_Iannus->PositionCell 2498 -132190 500 0 "Andothren"
-					TR_m4_TT_Marja_Iannus->AITravel 5370 -132967 74
-					set TR_m4_TT_Marja_Iannus.controlQ to 5
-				endif
-				PositionCell 2630 -132160 500 0 "Andothren"
-				Say "Vo\D\F\Flw_DF003.mp3" "Thank you."
-				Journal TR_m4_TT_LastWillAndTestament 45
-				AITravel 5267 -132962 72
-				set controlQ to 9
-				Return
-				endif
+			; move marja
+			if ( GetDeadCount TR_m4_TT_Marja_Iannus == 0 )
+				TR_m4_TT_Marja_Iannus->PositionCell 2498 -132190 500 0 "Andothren"
+				TR_m4_TT_Marja_Iannus->AITravel 5370 -132967 74
+				set TR_m4_TT_Marja_Iannus.controlQ to 5
+			endif
+			PositionCell 2630 -132160 500 0 "Andothren"
+			Say "Vo\D\F\Flw_DF003.mp3" "Thank you."
+			Journal TR_m4_TT_LastWillAndTestament 45
+			AITravel 5267 -132962 72
+			set controlQ to 9
+			Return
 			endif
 		endif
 	endif
@@ -2087,7 +2091,7 @@ End
 
 
 Record: SCPT "tr_m4_tt_templecoffers_sc" Flags:0x0000 ()
-  SCHD: ID:TR_m4_TT_TempleCoffers_sc  Num_Shorts:1  Num_Longs:0  Num_Floats:0  Data_Size:207  Local_Var_Size:7
+  SCHD: ID:TR_m4_TT_TempleCoffers_sc  Num_Shorts:1  Num_Longs:0  Num_Floats:0  Data_Size:215  Local_Var_Size:7
   SCVR: Script_Variables: doOnce
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
@@ -2097,7 +2101,7 @@ Begin TR_m4_TT_TempleCoffers_sc
 
 short doOnce
 
-if ( doOnce == 1 )
+if ( doOnce >= 1 )
 	; do things?
 elseif ( doOnce == 0 )
 	if ( TR_m4_TT_AndothrenFinale )
@@ -2117,7 +2121,8 @@ if ( OnActivate )
 	Activate
 	if ( doOnce == 1 )
 		if ( GetLocked == 0 )
-			Journal TR_m4_TT_LastWillAndTestament_b 50
+			Journal TR_m4_TT_LastWillAndTestament_e 50
+			set doOnce to 2
 		endif
 	endif
 endif
@@ -4349,7 +4354,7 @@ Record: INFO "24729193471142422838" (Journal:tr_m4_tt_andothrencharitytholer) Fl
   NNAM: Next_ID:64134512697912275
   DATA: JournalIndex:10
   NAME: Response:
-Ulvys Ules, the steward of Tholer Andas, said the councilor already makes regular donations to the Temple, and that I should meet with Tholer Andas directly if I wanted to sollicit an additional contribution from the councilor.
+Ulvys Ules, the steward of Tholer Andas, said the councilor already makes regular donations to the Temple, and that I should meet with Tholer Andas directly if I wanted to solicit an additional contribution from the councilor.
 
 Record: INFO "64134512697912275" (Journal:tr_m4_tt_andothrencharitytholer) Flags:0x0000 ()
   INAM: ID:64134512697912275
@@ -4577,21 +4582,14 @@ I am to find Felani and her partner at the Dancing Cup while Ravur works on a wa
 Record: INFO "20654240151284317587" (Journal:tr_m4_tt_lastwillandtestament_b) Flags:0x0000 ()
   INAM: ID:20654240151284317587
   PNAM: Prev_ID:1507935391317715182
-  NNAM: Next_ID:27943136201989830717
+  NNAM: Next_ID:304561436672338452
   DATA: JournalIndex:35
   NAME: Response:
 Ravur gave me a Scroll of Ekash's Lock Splitter, but suggested I try to find a key to Nalvs' quarters in case there are any other locks that would require magic to bypass. The doors all use the same mechanism, so anyone with access to the storage area would have a key that unlocks Nalvs' office.
 
-Record: INFO "27943136201989830717" (Journal:tr_m4_tt_lastwillandtestament_b) Flags:0x0000 ()
-  INAM: ID:27943136201989830717
-  PNAM: Prev_ID:20654240151284317587
-  NNAM: Next_ID:304561436672338452
-  DATA: JournalIndex:50
-  NAME: Response: The Temple coffers in Nalvs' office are empty.
-
 Record: INFO "304561436672338452" (Journal:tr_m4_tt_lastwillandtestament_b) Flags:0x0000 ()
   INAM: ID:304561436672338452
-  PNAM: Prev_ID:27943136201989830717
+  PNAM: Prev_ID:20654240151284317587
   NNAM: Next_ID:2221010866123725391
   DATA: JournalIndex:55
   NAME: Response:
@@ -4712,10 +4710,17 @@ Record: INFO "12755183262285512797" (Journal:tr_m4_tt_lastwillandtestament_e) Fl
 Record: INFO "23166238341362428302" (Journal:tr_m4_tt_lastwillandtestament_e) Flags:0x0000 ()
   INAM: ID:23166238341362428302
   PNAM: Prev_ID:12755183262285512797
-  NNAM: Next_ID:
+  NNAM: Next_ID:446174031491111796
   DATA: JournalIndex:10
   NAME: Response:
 I found an unsent letter written by Ulmon Vathri, addressed to his daughter. She will be interested to see its contents.
+
+Record: INFO "446174031491111796" (Journal:tr_m4_tt_lastwillandtestament_e) Flags:0x0000 ()
+  INAM: ID:446174031491111796
+  PNAM: Prev_ID:23166238341362428302
+  NNAM: Next_ID:
+  DATA: JournalIndex:50
+  NAME: Response: The Temple coffers in Nalvs' office are empty.
 
 Record: DIAL "tr_m4_tt_andothrencharityzalan" Flags:0x0000 ()
   NAME: ID:TR_m4_TT_AndothrenCharityZalan
@@ -4915,14 +4920,15 @@ Record: INFO "662215045300037577" (Journal:tr_m4_tt_lastwillandtestament) Flags:
   PNAM: Prev_ID:28894292181745612754
   NNAM: Next_ID:18437287102254628246
   DATA: JournalIndex:10
-  NAME: Response: Ulmon Vathri has passed away
+  NAME: Response: Ulmon Vathri has passed away.
 
 Record: INFO "18437287102254628246" (Journal:tr_m4_tt_lastwillandtestament) Flags:0x0000 ()
   INAM: ID:18437287102254628246
   PNAM: Prev_ID:662215045300037577
   NNAM: Next_ID:20677216513053716457
   DATA: JournalIndex:15
-  NAME: Response: his estranged daughter is in Andothren
+  NAME: Response:
+Ulmon's estranged daughter has come to Andothren. Nalvs Andolin is worried that she might be harboring suspicions about her father's will.
 
 Record: INFO "20677216513053716457" (Journal:tr_m4_tt_lastwillandtestament) Flags:0x0000 ()
   INAM: ID:20677216513053716457
@@ -4930,7 +4936,7 @@ Record: INFO "20677216513053716457" (Journal:tr_m4_tt_lastwillandtestament) Flag
   NNAM: Next_ID:2473217601248866317
   DATA: JournalIndex:20
   NAME: Response:
-Before I go to the Dancing Cup to escort Ulmon Vathri's estranged daughter and her partner to the cremation ceremony, I should check with Ravur Othravel to see if she needs anything to prepare for their arrival.
+I am to go to the Dancing Cup to escort Ulmon Vathri's estranged daughter and her partner to the cremation ceremony. First, however, I should check with Ravur Othravel to see if she needs anything to prepare for their arrival.
 
 Record: INFO "2473217601248866317" (Journal:tr_m4_tt_lastwillandtestament) Flags:0x0000 ()
   INAM: ID:2473217601248866317
@@ -17619,6 +17625,8 @@ Record: INFO "17261128262703116356" (Topic:duties) Flags:0x0000 ()
   INTV: Compare_Value:10
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_LastWillAndTestament_b
   INTV: Compare_Value:60
+ *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_LastWillAndTestament
+  INTV: Compare_Value:35
 
 Record: INFO "14283289941790627484" (Topic:duties) Flags:0x0000 ()
   INAM: ID:14283289941790627484
@@ -18137,14 +18145,15 @@ Record: INFO "32329274332054312562" (Topic:proof) Flags:0x0000 ()
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
 The Temple coffers are empty? Completely empty? Are you sure? That must mean... Nalvs is even more brazen than I feared. He must have hidden all the Temple's funds some place else already. B'vek, that's bad news. But we can't confront him, not while there's a cremation ceremony going on, and not in front of our guests. Let's see what Nalvs' next move is. The cremation ceremony should have concluded by now. Go see whether they need us.
- *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_LastWillAndTestament_b
+ *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_LastWillAndTestament_e
   INTV: Compare_Value:50
+ *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_LastWillAndTestament_b
+  INTV: Compare_Value:35
   BNAM: Result:	Journal TR_m4_TT_LastWillAndTestament_b 55
 		Journal TR_m4_TT_LastWillAndTestament 35
 		AITravel 4278 4888 13970
 		SetHello 0
-		set controlQ to 29
-		;WORK IN PROGRESS
+		set controlQ to 29
 
 Record: INFO "1650232591285128515" (Topic:proof) Flags:0x0000 ()
   INAM: ID:1650232591285128515
