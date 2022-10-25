@@ -40,7 +40,7 @@ JOURNAL TR_m4_TT_TroublesomeOrc
 120: (fin) Nalvs Andolin was not thrilled with the idea of Garash gro-Vivec renouncing Malacath, though he seems to hope that we will not see the Orc again.
 130: (fin) Nalvs Andolin thanked me for sending the troublesome Orc of Bodrum away.
 140: (fin) Nalvs Andolin seemed to appreciate me sending the Orc to die at Red Mountain.
-150: (fin) I met Garash gro-Vivec in a shrine of Malacath, having renounced him. He says he has found his path, and thanked me for guiding him. I wonder if I will ever see him again.
+150: (fin) I met Garash gro-Vivec in a shrine of Malacath. He says he has found his path, and thanked me for guiding him.
 200: (fin) Garash gro-Vivec is dead.
 210: (fin) Nalvs Andolin thanked me for killing Garash.
 

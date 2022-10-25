@@ -1,6 +1,15 @@
 QUEST: Temple: Andothren Charity
 REVIEWED: no
 
+JOURNAL ID:TR_m4_TT_AndothrenCharity
+10: Nalvs Andolin told me of the moral decay.
+20: Nalvs wants me to bully nobles.
+30: I should offer a "cure for greed" to Tholas Horaren, Milns Lloran, Zalan, Mels Mathyn, and Tholer Andas. I can pick up the potions from Gadani Pathavel.
+40: I received five potions.
+50: Mels' donation is now with the Temple.
+100: (fin) I am done collecting donations.
+110: Gadani Pathavel was glad I didn't use the potion scam.
+
 JOURNAL TR_m4_TT_AndothrenCharityTholer
 10: Ulvys says I should meet Tholer Andos directly.
 20: Tholer kicked me out.
@@ -43,13 +52,4 @@ JOURNAL TR_m4_TT_AndothrenCharityMels
 50: Mels was satisfied and donated.
 60: Ravur has convinced Mels to donate.
 110: Mels Mathyn cannot support the charitable mission.
-
-JOURNAL ID:TR_m4_TT_AndothrenCharity
-10: Nalvs Andolin told me of the moral decay.
-20: Nalvs wants me to bully nobles.
-30: I should offer a "cure for greed" to Tholas Horaren, Milns Lloran, Zalan, Mels Mathyn, and Tholer Andas. I can pick up the potions from Gadani Pathavel.
-40: I received five potions.
-50: Mels' donation is now with the Temple.
-100: (fin) I am done collecting donations.
-110: Gadani Pathavel was glad I didn't use the potion scam.
 

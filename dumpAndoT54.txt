@@ -5935,7 +5935,7 @@ Record: INFO "24298122892342518667" (Topic:order of doctrine and ordination) Fla
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
-Tevuren Galdar and I were sent here by our order speficially to investigate Nalvs Andolin.
+Tevuren Galdar and I were sent here by our order specifically to investigate Nalvs Andolin.
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_LastWillAndTestament_b
   INTV: Compare_Value:15
 
@@ -5946,7 +5946,7 @@ Record: INFO "15200139592975415759" (Topic:order of doctrine and ordination) Fla
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Tevuren_Galdar
   NAME: Response:
-The Order of Doctrine and Ordination ensures that Temple dogma is uniform throughout the land, and that the strict separation between the Heirographa and the Apographa is observed. We routinely inspect local Temples and monasteries to ensure that their teachings are in line with Temple canon. Simply put, we are the arbiters of theological disputes within the Tribunal Temple. Each misinterpretation we correct means one less task for the Order of Inquisition.
+The Order of Doctrine and Ordination ensures that Temple dogma is uniform throughout the land, and that the strict separation between the Hierographa and the Apographa is observed. We routinely inspect local Temples and monasteries to ensure that their teachings are in line with Temple canon. Simply put, we are the arbiters of theological disputes within the Tribunal Temple. Each misinterpretation we correct means one less task for the Order of Inquisition.
 
 Record: DIAL "supplies for the temple kitchen" Flags:0x0000 ()
   NAME: ID:supplies for the Temple kitchen
@@ -6421,6 +6421,7 @@ I am not unsympathetic to the plight of Andothren's poor. I've hit rock bottom m
   INTV: Compare_Value:30
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_KitchenSupplies
   INTV: Compare_Value:100
+  BNAM: Result:	addtopic "lump sum"
 
 Record: DIAL "shrine to the battle of bodrum" Flags:0x0000 ()
   NAME: ID:Shrine to the Battle of Bodrum
@@ -6554,8 +6555,6 @@ Record: INFO "338355901368532628" (Topic:support the charitable mission) Flags:0
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
   NAME: Response:
 The nobility of House Hlaalu may yet be persuaded to lend us their support. My appeals to their good nature have fallen on deaf ears, and it is clear that greed is as rampant as a plague in this town. But perhaps we can use that to our advantage. We shall call out their miserly ways, and offer them a cure for greed in exchange for renewed donations to our Temple. A symbolic gesture, inspired by our friend Ulmon Vathri, but I think it will be highly effective.
- *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_AndothrenCharity
-  INTV: Compare_Value:0
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_AndothrenCharity
   INTV: Compare_Value:20
  *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_Forgiveness
@@ -6655,7 +6654,7 @@ Record: INFO "2913530623121884802" (Topic:support the charitable mission) Flags:
   DATA: Disposition:60  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_Manse_Horaren
   NAME: Response:
-Forgive my husband, pilgrim. You seem like the reliable type. Here, let me provide you with our contribution to the Temple' s coffers.
+Forgive my husband, pilgrim. You seem like the reliable type. Here, let me provide you with our contribution to the Temple's coffers.
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_AndothrenCharity
   INTV: Compare_Value:30
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_AndothrenCharity
@@ -15312,8 +15311,10 @@ Record: INFO "7289203102120626730" (Greeting:greeting 1) Flags:0x0000 ()
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
   NAME: Response:
 I'd rather die here, than to be tortured or stuck in a fire by you Ordinators!
- *SCVR: Index:0  Type:(Local)  Function:(Variable_Compare)  Comparison:(=)  Name:controlQ
+ *SCVR: Index:0  Type:(Local)  Function:(Variable_Compare)  Comparison:(>=)  Name:controlQ
   INTV: Compare_Value:21
+ *SCVR: Index:1  Type:(Local)  Function:(Variable_Compare)  Comparison:(<=)  Name:controlQ
+  INTV: Compare_Value:22
   BNAM: Result:	set controlQ to 22
 		Goodbye
 		StartCombat TR_m4_TT_Ravur_Othravel
