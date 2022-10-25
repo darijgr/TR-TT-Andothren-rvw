@@ -1,0 +1,51 @@
+QUEST: Temple: The Last Will and Testament of Ulmon Vathri
+REVIEWED: no
+
+JOURNAL TR_m4_TT_LastWillAndTestament_c
+10: I showed Nalvs the note Ravur gave me, and he told me to keep an eye on her.
+20: Nalvs Andolin denies defrauding the Temple and forbade me from speaking to Ravur Othravel again.
+75: Nalvs Andolin attacked Ravur Othravel, and killed her.
+80: Nalvs Andolin thanked me for not helping Ravur Othravel apprehend him.
+100: Nalvs decided to return Ulmon Vathri's inheritance to Felani, and asked that he and I never speak again.
+
+JOURNAL TR_m4_TT_LastWillAndTestament_b
+10: Ravur covertly slipped me a note and ran upstairs.
+15: I should meet Ravur upstairs and not talk to Nalvs.
+20: Ravur told me she is spying on Nalvs.
+25: Ravur thinks Nalvs manipulted Ulmon.
+30: Find Felani at the Dancing Cup.
+35: Investigate Nalvs' office.
+55: Ravur was distressed that all the contents of the Temple coffers had been removed before we searched Nalvs' office. She suggests we wait to see what Nalvs' next move is.
+60: Nalvs Andolin has fled. Confront him at Ulmon Vathri's house.
+65: Found Nalvs Andolin in Ulmon Vathri's house.
+66: I arrived late to Ulmon Vathri's house in Omaynis.
+70: Nalvs Andolin attempted to convince me not to hand him over to the Ordinators.
+71: Ravur Othravel joined me in Omaynis, and attempted to arrest Nalvs Andolin.
+75: Nalvs Andolin attacked Ravur Othravel, and died in the ensuing fight.
+80: Ravur told me to collect the fortune Nalvs Andolin absconded from the Temple with, and return it to her.
+85: Meet Ravur back in Andothren.
+86: Settle Ulmon Vathri's will.
+100: (fin) Reward given by Ravur, questline complete.
+
+JOURNAL TR_m4_TT_LastWillAndTestament_d
+10: found key to Nalvs' office.
+
+JOURNAL TR_m4_TT_LastWillAndTestament_e
+10: Found letter by Ulmon to his daughter. She will be interested to see its contents.
+50: The Temple coffers in Nalvs' office are empty.
+
+JOURNAL TR_m4_TT_LastWillAndTestament
+5: Nalvs Andolin told me to follow him into the Temple tombs.
+10: Ulmon Vathri has passed away.
+15: His estranged daughter is in Andothren and might be getting suspicious.
+20: I should check with Ravur Othravel.
+25: I found Felani outside the Dancing Cup. I should escort her.
+30: I have escorted Felani to the Temple tomb.
+35: The cremation ceremony should have concluded by now. I should see if Nalvs Andolin or Felani need anything of me.
+40: I should escort Felani and her partner back to the Dancing Cup.
+45: I should see Ravur again.
+50: It has been decided that Ulmon Vathri's house and possessions should pass to his daughter Felani. I should bring her the good news at the Dancing Cup.
+55: Felani was grateful.
+60: (fin) Felani thanked for Ulmon Vathri's unsent letter and rewarded me.
+200: Both Ravur and Nalvs are dead.
+

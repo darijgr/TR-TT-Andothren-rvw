@@ -4347,6 +4347,7 @@ Record: INFO "193461322026499295" (Journal:tr_m4_tt_andothrencharitytholer) Flag
   NNAM: Next_ID:24729193471142422838
   DATA: JournalIndex:0
   NAME: Response: Temple: Andothren Charity
+  QSTN: Quest_Name:1
 
 Record: INFO "24729193471142422838" (Journal:tr_m4_tt_andothrencharitytholer) Flags:0x0000 ()
   INAM: ID:24729193471142422838
@@ -4839,7 +4840,7 @@ Record: INFO "2661060532192327623" (Journal:tr_m4_tt_andothrencharitymels) Flags
   NNAM: Next_ID:31126114603265013713
   DATA: JournalIndex:0
   NAME: Response: Temple: Andothren Charity
-  QSTF: Quest_Finished:1
+  QSTN: Quest_Name:1
 
 Record: INFO "31126114603265013713" (Journal:tr_m4_tt_andothrencharitymels) Flags:0x0000 ()
   INAM: ID:31126114603265013713
@@ -5090,7 +5091,7 @@ Record: INFO "3136243512631921191" (Journal:tr_m4_tt_andothrencharity) Flags:0x0
   NNAM: Next_ID:993488891853326437
   DATA: JournalIndex:30
   NAME: Response:
-I should offer a cure for greed to Tholas Horaren, Milns Lloran, Zalan, Mels Mathyn, and Tholer Andas. I can pick up the potions from Gadani Pathavel in the Andothren Temple. Or alternatively I could try to convince them to support the charitable mission without supporting to trickery.
+I should offer a cure for greed to Tholas Horaren, Milns Lloran, Zalan, Mels Mathyn, and Tholer Andas. I can pick up the potions from Gadani Pathavel in the Andothren Temple. Or alternatively I could try to convince them to support the charitable mission without resorting to trickery.
 
 Record: INFO "993488891853326437" (Journal:tr_m4_tt_andothrencharity) Flags:0x0000 ()
   INAM: ID:993488891853326437
@@ -5113,7 +5114,7 @@ Record: INFO "147451975285256436" (Journal:tr_m4_tt_andothrencharity) Flags:0x00
   NNAM: Next_ID:12132294502236025385
   DATA: JournalIndex:100
   NAME: Response:
-I am done collection donations for the Andothren Temple from the town's Hlaalu nobility. I should ask Nalvs Andolin about further duties to perform.
+I am done collecting donations for the Andothren Temple from the town's Hlaalu nobility. I should ask Nalvs Andolin about further duties to perform.
   QSTF: Quest_Finished:1
 
 Record: INFO "12132294502236025385" (Journal:tr_m4_tt_andothrencharity) Flags:0x0000 ()
@@ -5501,7 +5502,7 @@ Record: INFO "9754127103198017185" (Journal:tr_m4_tt_troublesomeorc) Flags:0x000
   NNAM: Next_ID:2766714297219421506
   DATA: JournalIndex:15
   NAME: Response:
-Apparently there has been a misunderstanding. The troublesome Orc is, in fact, not a brigard, but an eccentric follower of Vivec.
+Apparently there has been a misunderstanding. The troublesome Orc is, in fact, not a brigand, but an eccentric follower of Vivec.
 
 Record: INFO "2766714297219421506" (Journal:tr_m4_tt_troublesomeorc) Flags:0x0000 ()
   INAM: ID:2766714297219421506
@@ -5647,7 +5648,7 @@ Record: INFO "473203511309725369" (Journal:tr_m4_tt_troublesomeorc) Flags:0x0000
   NNAM: Next_ID:10015990889116431
   DATA: JournalIndex:150
   NAME: Response:
-I met Garash gro-Vivec in a shrine of Malacath, having renounced him. He says he has found his path, and thanked me for guiding him. I wonder if I will ever see him again.
+I met Garash gro-Vivec in a shrine of Malacath, whom he has renounced. He says he has found his path, and thanked me for guiding him. I wonder if I will ever see him again.
   QSTF: Quest_Finished:1
 
 Record: INFO "10015990889116431" (Journal:tr_m4_tt_troublesomeorc) Flags:0x0000 ()

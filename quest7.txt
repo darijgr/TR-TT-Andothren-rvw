@@ -1,0 +1,22 @@
+QUEST: Temple: Armun Ashlands Avenger
+REVIEWED: no
+
+JOURNAL TR_m4_TT_ArmunAdventure_b
+100: I have slain the cultists of Malacath in Hummurushtapi. I'm sure Nalvs Andolin would be happy to hear that.
+
+JOURNAL TR_m4_TT_ArmunAdventure_c
+100: I have found two dead bandits northeast of Arvud. Presumably they were the ones that ambushed the pilgrim. I should report back to Nalvs Andolin.
+
+JOURNAL TR_m4_TT_ArmunAdventure_d
+100: I killed the Ashlander chief, Vabal-Ajunta. Surely the Ashlanders had something to do with the death of a pilgrim in the Armun.
+
+JOURNAL TR_m4_TT_ArmunAdventure_e [Temple: Troublesome Orc]
+50: After fighting alongside him to defeat Malacath's cultists, I invited Garash gro-Vivec, the troublesome Orc of Bodrum, to join the Temple in Andothren.
+90: Garash gro-Vivec, the troublesome Orc of Bodrum, died in one of Malacath's shrines.
+100: I fought and killed the troublesome Orc, Garash gro-Vivec, in one of Malacath's shrines.
+
+JOURNAL TR_m4_TT_ArmunAdventure
+10: I am to go to Arvud, find whoever killed a pilgrim north of the town, and bring them to justice.
+20: The people of Arvud suspect Daedric cultists in the shrine north of town, or the ashlanders to the northeast, were responsible for the death of the pilgrim.
+100: (fin) Nalvs Andolin seemed glad that I returned from my expedition to the Armun Ashland, having made the presence of the Temple felt in the area, even if we might never be sure if we caught the pilgrim's killer.
+

@@ -1,0 +1,19 @@
+QUEST: Temple: Kitchen Supplies
+REVIEWED: no
+
+JOURNAL TR_m4_TT_KitchenSupplies_b
+100: I convinced Gavros Falas to sponsor the Temple kitchen for an extended period of time.
+110: Sani Edralo thanked me for getting Gavros' sponsorship.
+
+JOURNAL TR_m4_TT_KitchenSupplies_a
+100: I bought a crate of rat meat from a fisherman.
+
+JOURNAL TR_m4_TT_KitchenSupplies
+10: Nalvs Andolin tasked me with finding Ravur Othravel, who was sent to the western docks to procure supplies for the kitchen, but hasn't returned.
+20: A fisherman in Andothren told me Ravur Othravel went to the east of town to look for better supplies.
+25: I found Ravur in the eastern part of Andothren.
+30: Ravur Othravel wants me to negotiate with Gavros Falas.
+90: I have told Ravur Othravel that I had secured supplies for the Temple kitchen, and she will return to the Temple. I should report back to Nalvs Andolin.
+100: (fin) Nalvs Andolin thanked me for the rat meat.
+101: (fin) Nalvs wasn't happy that I spent money on Gavros's food.
+

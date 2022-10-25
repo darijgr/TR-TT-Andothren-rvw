@@ -1,0 +1,12 @@
+QUEST: Temple: Wellness Check
+REVIEWED: no
+
+JOURNAL TR_m4_TT_WellnessCheck
+10: I am to visit Ulmon Vathri in Omaynis and make sure that he is well.
+20: Ulmon Vathri wants a cure for greed.
+25: Ulmon Vathri is adamant that he needs a potion to cure him of his greed, and suggested I talk to Nalvs Andolin about it if I don't believe him.
+30: I have given Ulmon Vathri a potion of cure common disease, and he seems satisfied. I should report back to Nalvs Andolin in Andothren.
+40: I have convinced Ulmon Vathri that he did not need a potion to face his ancestors.
+100: (fin) Nalvs Andolin thanked me for checking on Ulmon Vathri.
+101: (fin) Nalvs Andolin thanked me for checking on Ulmon Vathri.
+110: (fin) Ulmon Vathri is dead.
