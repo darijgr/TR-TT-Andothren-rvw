@@ -11917,7 +11917,7 @@ Fine, I'll have your potion. Take this gold. And now leave me alone, lest the sp
 		if ( TR_m4_TT_Ravur_Othravel->GetDistance player < 100000 )
 		    set TR_m4_TT_Ravur_Othravel.trackGreedTholas to -1
 		endif
-		Journal TR_m4_TT_AndothrenCharityTholas 50
+		Journal TR_m4_TT_AndothrenCharityTholas 60
 
 Record: INFO "2465813065163799664" (Topic:cure for greed) Flags:0x0000 ()
   INAM: ID:2465813065163799664

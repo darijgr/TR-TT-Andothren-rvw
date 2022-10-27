@@ -23,7 +23,7 @@ JOURNAL TR_m4_TT_AndothrenCharityTholer
 JOURNAL TR_m4_TT_AndothrenCharityTholas
 10: Tholas Horaren seems paranoid.
 50: Tricked Tholas Horaren using potion.
-60: Tholas Horaren donated.
+60: Tholas Horaren donated without heavy trickery.
 70: Tholas' wife (Manse Horaren) donated.
 100: Donation in Temple.
 101: Told Nalvs of Tholas Horaren's refusal.
