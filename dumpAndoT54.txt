@@ -15313,10 +15313,8 @@ Record: INFO "7289203102120626730" (Greeting:greeting 1) Flags:0x0000 ()
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
   NAME: Response:
 I'd rather die here, than to be tortured or stuck in a fire by you Ordinators!
- *SCVR: Index:0  Type:(Local)  Function:(Variable_Compare)  Comparison:(>=)  Name:controlQ
+ *SCVR: Index:0  Type:(Local)  Function:(Variable_Compare)  Comparison:(=)  Name:controlQ
   INTV: Compare_Value:21
- *SCVR: Index:1  Type:(Local)  Function:(Variable_Compare)  Comparison:(<=)  Name:controlQ
-  INTV: Compare_Value:22
   BNAM: Result:	set controlQ to 22
 		Goodbye
 		StartCombat TR_m4_TT_Ravur_Othravel
@@ -16566,6 +16564,8 @@ You never did tell me what happened when you went to check up on Ulmon Vathri, %
   INTV: Compare_Value:0
  *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_TroublesomeOrc
   INTV: Compare_Value:50
+ *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_LastWillAndTestament
+  INTV: Compare_Value:0
 
 Record: INFO "14338108323176422105" (Greeting:greeting 5) Flags:0x0000 ()
   INAM: ID:14338108323176422105
