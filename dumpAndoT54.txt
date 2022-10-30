@@ -16575,8 +16575,8 @@ Record: INFO "14338108323176422105" (Greeting:greeting 5) Flags:0x0000 ()
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
 I hope Nalvs didn't give you too hard a time, muthsera? At least the people of Andothren will be well-fed. I spoke to the kitchen staff and they seemed really grateful. Perhaps you should see them in person. Anyway, how have you been? What happened when you were sent to check up on Ulmon Vathri in Omaynis? And I hear that you're off to deal with a troublesome Orc now?
- *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_KitchenSupplies
-  INTV: Compare_Value:100
+ *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_LastWillAndTestament
+  INTV: Compare_Value:0
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_KitchenSupplies_b
   INTV: Compare_Value:100
  *SCVR: Index:2  Type:(Local)  Function:(Variable_Compare)  Comparison:(=)  Name:trackUlmon
@@ -16596,8 +16596,8 @@ Record: INFO "211924907227008617" (Greeting:greeting 5) Flags:0x0000 ()
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
 I take it Nalvs was happy? I suppose there might be wisdom to frugality. Anyway, how have you been? What happened when you were sent to check up on Ulmon Vathri in Omaynis? And I hear that you're off to deal with a troublesome Orc now?
- *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_KitchenSupplies
-  INTV: Compare_Value:100
+ *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_LastWillAndTestament
+  INTV: Compare_Value:0
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_KitchenSupplies_a
   INTV: Compare_Value:100
  *SCVR: Index:2  Type:(Local)  Function:(Variable_Compare)  Comparison:(=)  Name:trackUlmon
@@ -16623,6 +16623,8 @@ I hope Nalvs didn't give you too hard a time, muthsera? At least the people of A
   INTV: Compare_Value:100
  *SCVR: Index:2  Type:(Local)  Function:(Variable_Compare)  Comparison:(=)  Name:trackUlmon
   INTV: Compare_Value:0
+ *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_LastWillAndTestament
+  INTV: Compare_Value:0
 
 Record: INFO "2105729012118719300" (Greeting:greeting 5) Flags:0x0000 ()
   INAM: ID:2105729012118719300
@@ -16640,6 +16642,8 @@ I take it Nalvs was happy? I suppose there might be wisdom to frugality. Anyway,
   INTV: Compare_Value:0
  *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_KitchenSupplies_b
   INTV: Compare_Value:100
+ *SCVR: Index:4  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_LastWillAndTestament
+  INTV: Compare_Value:0
 
 Record: INFO "955839001267523050" (Greeting:greeting 5) Flags:0x0000 ()
   INAM: ID:955839001267523050
@@ -16669,6 +16673,8 @@ I think the kitchen staff wanted to talk to you about those supplies you arrange
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_AndothrenCharity
   INTV: Compare_Value:100
  *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_KitchenSupplies_b
+  INTV: Compare_Value:100
+ *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_LastWillAndTestament
   INTV: Compare_Value:100
 
 Record: INFO "17022321071170030123" (Greeting:greeting 5) Flags:0x0000 ()
