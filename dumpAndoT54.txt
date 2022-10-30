@@ -827,8 +827,8 @@ StopScript TR_m4_TT_MoveFelaniScript
 End
 
 Record: SCPT "tr_m4_tt_nalvs_andolin_sc" Flags:0x0000 ()
-  SCHD: ID:TR_m4_TT_Nalvs_Andolin_sc  Num_Shorts:10  Num_Longs:0  Num_Floats:1  Data_Size:2522  Local_Var_Size:108
-  SCVR: Script_Variables: TR_Map,control,controlQ,NoLore,T_Local_NPC,moneyExpected,moneySet,moneySatisfied,T_Local_NoLore,noHit,timer
+  SCHD: ID:TR_m4_TT_Nalvs_Andolin_sc  Num_Shorts:11  Num_Longs:0  Num_Floats:1  Data_Size:2522  Local_Var_Size:121
+  SCVR: Script_Variables: TR_Map,control,controlQ,NoLore,T_Local_NPC,moneyExpected,moneySet,moneySatisfied,T_Local_NoLore,noHit,ThankIbelard,timer
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_TT_Nalvs_Andolin_sc
@@ -847,6 +847,7 @@ short moneySatisfied
 float timer
 short T_Local_NoLore
 short noHit
+short ThankIbelard ; for "Remnants of Resdayn"
 
 if ( moneySet == 1 )
 	set moneySet to ( player->GetItemCount gold_001 )
@@ -1529,8 +1530,8 @@ endif
 End
 
 Record: SCPT "tr_m4_tt_ravur_othravel_sc" Flags:0x0000 ()
-  SCHD: ID:TR_m4_TT_Ravur_Othravel_sc  Num_Shorts:19  Num_Longs:0  Num_Floats:3  Data_Size:4502  Local_Var_Size:252
-  SCVR: Script_Variables: TR_Map,control,controlQ,NoLore,T_Local_NPC,T_Local_NoLore,hiddenWeapon,trackPlayerMorals,trackUlmon,trackOrc,trackOrcBooks,trackAshlands,trackGreedTholas,trackGreedMels,trackGreedZalan,trackGreedMilns,trackDay,noAttack,trackProof,timer,playerX,playerY
+  SCHD: ID:TR_m4_TT_Ravur_Othravel_sc  Num_Shorts:20  Num_Longs:0  Num_Floats:3  Data_Size:4502  Local_Var_Size:265
+  SCVR: Script_Variables: TR_Map,control,controlQ,NoLore,T_Local_NPC,T_Local_NoLore,hiddenWeapon,trackPlayerMorals,trackUlmon,trackOrc,trackOrcBooks,trackAshlands,trackGreedTholas,trackGreedMels,trackGreedZalan,trackGreedMilns,trackDay,noAttack,trackProof,ThankIbelard,timer,playerX,playerY
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_TT_Ravur_Othravel_sc
@@ -1559,6 +1560,7 @@ float playerX
 float playerY
 short noAttack
 short trackProof
+short ThankIbelard ; for "Remnants of Resdayn"
 
 if ( controlQ == 0 )
 	if ( GetDistance player < 300 )
@@ -3232,7 +3234,7 @@ Record: NPC_ "tr_m4_tt_tevuren_galdar" Flags:0x0000 ()
  *NPCO: Count:1  Object:indoril pauldron right
  *NPCO: Count:1  Object:indoril pauldron left
  *NPCO: Count:2  Object:p_restore_health_q
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:042776  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:048276  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  10  Idle_3:                   0  Idle_4:                  10
 	Idle_5:                  20  Idle_6:                   5  Idle_7:                  10
@@ -3265,7 +3267,7 @@ Record: NPC_ "tr_m4_tt_orcvivec" Flags:0x0000 ()
  *NPCO: Count:1  Object:bonemold_gah-julan_pauldron_r
  *NPCO: Count:1  Object:chitin pauldron - left
  *NPCS: Spell:TR_m4_TT_OrcVivecAbility
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:042776  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:048276  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  30  Idle_3:                  20  Idle_4:                   0
 	Idle_5:                  30  Idle_6:                   0  Idle_7:                   0
@@ -3319,7 +3321,7 @@ Record: NPC_ "tr_m4_tt_ravur_othravel" Flags:0x0000 ()
  *NPCS: Spell:absorb personality
  *NPCS: Spell:absorb speed
  *NPCS: Spell:absorb willpower
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:042776  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:048276  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  40  Idle_3:                   0  Idle_4:                  10
 	Idle_5:                   0  Idle_6:                   5  Idle_7:                   5
@@ -3429,7 +3431,7 @@ Record: CREA "tr_m4_tt_olmsguardgreat" Flags:0x0000 ()
  *NPCS: Spell:resist poison_75
  *NPCS: Spell:dread curse: endurance
  *NPCS: Spell:dread curse: strength
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:042776  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:048276  Services:[0xa00000 ()]
  *AI_W: Distance:        200  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           30  Idle_3:           50  Idle_4:           30  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3459,7 +3461,7 @@ Record: CREA "tr_m4_tt_olmsguard" Flags:0x0000 ()
  *NPCS: Spell:resist poison_75
  *NPCS: Spell:grave curse: strength
  *NPCS: Spell:grave curse: endurance
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:042776  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:048276  Services:[0xa00000 ()]
  *AI_W: Distance:       1000  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           50  Idle_3:           50  Idle_4:            0  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3488,7 +3490,7 @@ Record: CREA "tr_m4_tt_olmsguardghost" Flags:0x0000 ()
  *NPCS: Spell:immune to disease
  *NPCS: Spell:immune to frost
  *NPCS: Spell:immune to poison
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:042776  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:048276  Services:[0xa00000 ()]
  *AI_W: Distance:       1000  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           50  Idle_3:           50  Idle_4:            0  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
