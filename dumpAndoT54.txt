@@ -3234,7 +3234,7 @@ Record: NPC_ "tr_m4_tt_tevuren_galdar" Flags:0x0000 ()
  *NPCO: Count:1  Object:indoril pauldron right
  *NPCO: Count:1  Object:indoril pauldron left
  *NPCO: Count:2  Object:p_restore_health_q
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:048276  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:043576  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  10  Idle_3:                   0  Idle_4:                  10
 	Idle_5:                  20  Idle_6:                   5  Idle_7:                  10
@@ -3267,7 +3267,7 @@ Record: NPC_ "tr_m4_tt_orcvivec" Flags:0x0000 ()
  *NPCO: Count:1  Object:bonemold_gah-julan_pauldron_r
  *NPCO: Count:1  Object:chitin pauldron - left
  *NPCS: Spell:TR_m4_TT_OrcVivecAbility
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:048276  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:043576  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  30  Idle_3:                  20  Idle_4:                   0
 	Idle_5:                  30  Idle_6:                   0  Idle_7:                   0
@@ -3321,7 +3321,7 @@ Record: NPC_ "tr_m4_tt_ravur_othravel" Flags:0x0000 ()
  *NPCS: Spell:absorb personality
  *NPCS: Spell:absorb speed
  *NPCS: Spell:absorb willpower
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:048276  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:043576  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  40  Idle_3:                   0  Idle_4:                  10
 	Idle_5:                   0  Idle_6:                   5  Idle_7:                   5
@@ -3431,7 +3431,7 @@ Record: CREA "tr_m4_tt_olmsguardgreat" Flags:0x0000 ()
  *NPCS: Spell:resist poison_75
  *NPCS: Spell:dread curse: endurance
  *NPCS: Spell:dread curse: strength
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:048276  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:043576  Services:[0xa00000 ()]
  *AI_W: Distance:        200  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           30  Idle_3:           50  Idle_4:           30  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3461,7 +3461,7 @@ Record: CREA "tr_m4_tt_olmsguard" Flags:0x0000 ()
  *NPCS: Spell:resist poison_75
  *NPCS: Spell:grave curse: strength
  *NPCS: Spell:grave curse: endurance
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:048276  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:043576  Services:[0xa00000 ()]
  *AI_W: Distance:       1000  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           50  Idle_3:           50  Idle_4:            0  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3490,7 +3490,7 @@ Record: CREA "tr_m4_tt_olmsguardghost" Flags:0x0000 ()
  *NPCS: Spell:immune to disease
  *NPCS: Spell:immune to frost
  *NPCS: Spell:immune to poison
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:048276  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:043576  Services:[0xa00000 ()]
  *AI_W: Distance:       1000  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           50  Idle_3:           50  Idle_4:            0  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -4528,7 +4528,7 @@ Record: INFO "2335619509386821288" (Journal:tr_m4_tt_lastwillandtestament_c) Fla
   NNAM: Next_ID:
   DATA: JournalIndex:100
   NAME: Response:
-Nalvs decided to return Ulmon Vathri's inheritance to Felani, and asked that he and I never speak again.
+Nalvs decided to return Ulmon Vathri's inheritance to Felani, and asked that he and I never speak of the matter again.
   QSTF: Quest_Finished:1
 
 Record: DIAL "tr_m4_tt_lastwillandtestament_b" Flags:0x0000 ()
@@ -7272,7 +7272,7 @@ Record: INFO "9636256725722040" (Topic:shed your worldly possessions) Flags:0x00
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
   DNAM: Pc_Faction:Temple
   NAME: Response:
-This is an astounding sum of money, %PCRank! I cannot possibly carry it all. I'll just take, let's say, thirty thousand drakes. On behalf of Andothren's poor, I thank you. Here, take this book. It is a favorite of mine. And rest asured that your contribution will be put to good use. The Tribunal are sure to return it to you manyfold in blessings.
+This is an astounding sum of money, %PCRank! I cannot possibly carry it all. I'll just take, let's say, thirty thousand drakes. On behalf of Andothren's poor, I thank you. Here, take this book. It is a favorite of mine. And rest assured that your contribution will be put to good use. The Tribunal are sure to return it to you manyfold in blessings.
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_Forgiveness
   INTV: Compare_Value:60
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_Forgiveness
@@ -7298,12 +7298,12 @@ Record: INFO "2482255723251027579" (Topic:shed your worldly possessions) Flags:0
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
   DNAM: Pc_Faction:Temple
   NAME: Response:
-Let's see. One... two... three... %TR_m4_TT_And_GoldCounter drakes! That is a very generous donation for someone of your means, %PCRank. On behalf of Andothren's poor, I thank you. Here, take this book. It is a favorite of mine. And rest asured that your contribution will be put to good use. The Tribunal are sure to return it to you manyfold in blessings.
+Let's see. One... two... three... %TR_m4_TT_And_GoldCounter drakes! That is a very generous donation for someone of your means, %PCRank. On behalf of Andothren's poor, I thank you. Here, take this book. It is a favorite of mine. And rest assured that your contribution will be put to good use. The Tribunal are sure to return it to you manyfold in blessings.
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_Forgiveness
   INTV: Compare_Value:60
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_Forgiveness
   INTV: Compare_Value:100
- *SCVR: Index:2  Type:(Global)  Function:(Variable_Compare)  Comparison:(>)  Name:TR_m4_TT_And_GoldCounter
+ *SCVR: Index:2  Type:(Global)  Function:(PCGold)  Comparison:(>)  Name:TR_m4_TT_And_GoldCounter
   INTV: Compare_Value:0
  *SCVR: Index:3  Type:(Function)  Function:(Choice)  Comparison:(=)  Name:
   INTV: Compare_Value:2
@@ -7325,12 +7325,12 @@ Record: INFO "199964559632215447" (Topic:shed your worldly possessions) Flags:0x
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
   DNAM: Pc_Faction:Temple
   NAME: Response:
-I count %TR_m4_TT_And_GoldCounter drakes, that is quite the adequate donation, %PCRank. On behalf of Andothren's poor, I thank you. Here, take this book. It is a favorite of mine.
+I count %TR_m4_TT_And_GoldCounter drakes; that is quite the adequate donation, %PCRank. On behalf of Andothren's poor, I thank you. Here, take this book. It is a favorite of mine.
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_Forgiveness
   INTV: Compare_Value:60
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_Forgiveness
   INTV: Compare_Value:100
- *SCVR: Index:2  Type:(Global)  Function:(Variable_Compare)  Comparison:(>)  Name:TR_m4_TT_And_GoldCounter
+ *SCVR: Index:2  Type:(Global)  Function:(PCGold)  Comparison:(>)  Name:TR_m4_TT_And_GoldCounter
   INTV: Compare_Value:0
  *SCVR: Index:3  Type:(Function)  Function:(Choice)  Comparison:(=)  Name:
   INTV: Compare_Value:2
