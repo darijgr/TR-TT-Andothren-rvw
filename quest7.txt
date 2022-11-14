@@ -18,5 +18,6 @@ JOURNAL TR_m4_TT_ArmunAdventure_e [Temple: Troublesome Orc]
 JOURNAL TR_m4_TT_ArmunAdventure
 10: I am to go to Arvud, find whoever killed a pilgrim north of the town, and bring them to justice.
 20: The people of Arvud suspect Daedric cultists in the shrine north of town, or the ashlanders to the northeast, were responsible for the death of the pilgrim.
+30: An Orc in the Daedric ruin directed me to the ruins to the east.
 100: (fin) Nalvs Andolin seemed glad that I returned from my expedition to the Armun Ashland, having made the presence of the Temple felt in the area, even if we might never be sure if we caught the pilgrim's killer.
 
