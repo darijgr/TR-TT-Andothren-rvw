@@ -9,7 +9,7 @@
     "file_type": "Esp",
     "author": "",
     "description": "",
-    "num_objects": 1228,
+    "num_objects": 1229,
     "masters": [
       [
         "Morrowind.esm",
@@ -25,7 +25,7 @@
       ],
       [
         "Tamriel_Data.esm",
-        10193005
+        10695288
       ]
     ]
   },
@@ -1721,6 +1721,101 @@
       0,
       1024
     ],
+    "id": "TR_m2_d_D1",
+    "name": "Body",
+    "mesh": "td\\anim_death9.nif",
+    "script": "TR_m2_Necrom_Corpse_sc",
+    "race": "Dark Elf",
+    "class": "Acrobat",
+    "faction": "",
+    "head": "b_n_dark elf_f_head_03",
+    "hair": "b_n_dark elf_f_hair_05",
+    "npc_flags": 9,
+    "data": {
+      "level": 1,
+      "stats": {
+        "attributes": [
+          40,
+          40,
+          30,
+          50,
+          50,
+          50,
+          30,
+          40
+        ],
+        "skills": [
+          5,
+          5,
+          5,
+          5,
+          5,
+          10,
+          5,
+          15,
+          35,
+          5,
+          15,
+          15,
+          5,
+          5,
+          10,
+          5,
+          5,
+          30,
+          10,
+          35,
+          35,
+          25,
+          20,
+          40,
+          10,
+          20,
+          20
+        ],
+        "health": 0,
+        "magicka": 80,
+        "fatigue": 170
+      },
+      "disposition": 50,
+      "reputation": 0,
+      "rank": 0,
+      "gold": 0
+    },
+    "inventory": [],
+    "spells": [],
+    "ai_data": {
+      "hello": 30,
+      "fight": 30,
+      "flee": 30,
+      "alarm": 0,
+      "services": 0
+    },
+    "ai_packages": [
+      {
+        "type": "Wander",
+        "distance": 512,
+        "duration": 5,
+        "game_hour": 0,
+        "idle2": 60,
+        "idle3": 20,
+        "idle4": 10,
+        "idle5": 0,
+        "idle6": 0,
+        "idle7": 0,
+        "idle8": 0,
+        "idle9": 0,
+        "reset": 1
+      }
+    ],
+    "travel_destinations": []
+  },
+  {
+    "type": "Npc",
+    "flags": [
+      0,
+      1024
+    ],
     "id": "TR_m4_D_KhirakaiBandit1",
     "name": "Dead Bandit",
     "script": "TR_m4_TT_ArmunAdvC_sc",
@@ -2085,7 +2180,6 @@
     ],
     "id": "TR_m4_Gadani Pathavel",
     "name": "Gadani Pathavel",
-    "mesh": "base_anim_female.nif",
     "script": "T_ScNpc_Mw_Map4",
     "race": "Dark Elf",
     "class": "Apothecary Service",
@@ -2290,6 +2384,7 @@
     ],
     "id": "TR_m4_Golvyn_Saryon",
     "name": "Golvyn Saryon",
+    "mesh": "base_anim.nif",
     "script": "T_ScNpc_Mw_Map4",
     "race": "Dark Elf",
     "class": "Priest",
@@ -2719,7 +2814,6 @@
     ],
     "id": "TR_m4_Sani Edralo",
     "name": "Sani Edralo",
-    "mesh": "base_anim_female.nif",
     "script": "T_ScNpc_Mw_Map4",
     "race": "Dark Elf",
     "class": "Commoner",
@@ -2952,7 +3046,6 @@
     ],
     "id": "TR_m4_TT_Nalvs_Andolin",
     "name": "Nalvs Andolin",
-    "mesh": "base_anim.nif",
     "script": "TR_m4_TT_Nalvs_Andolin_sc",
     "race": "Dark Elf",
     "class": "Priest",
@@ -3102,6 +3195,7 @@
     ],
     "id": "TR_m4_TT_OrcVivec",
     "name": "Garash gro-Vivec",
+    "mesh": "base_anim.nif",
     "script": "TR_m4_TT_OrcVivecScript",
     "race": "Orc",
     "class": "Barbarian",
@@ -3223,7 +3317,6 @@
     ],
     "id": "TR_m4_TT_Ravur_Othravel",
     "name": "Ravur Othravel",
-    "mesh": "base_anim_female.nif",
     "script": "TR_m4_TT_Ravur_Othravel_sc",
     "race": "Dark Elf",
     "class": "Nightblade",
@@ -3369,7 +3462,6 @@
     ],
     "id": "TR_m4_TT_Tevuren_Galdar",
     "name": "Tevuren Galdar",
-    "mesh": "base_anim.nif",
     "script": "T_ScNpc_Mw_Map4Nolore",
     "race": "Dark Elf",
     "class": "Savant",
@@ -3505,7 +3597,7 @@
     ],
     "id": "TR_m4_TT_Ulmon_Dead",
     "name": "Ulmon Vathri",
-    "mesh": "tr_death_d.nif",
+    "mesh": "td\\anim_death7.nif",
     "script": "TR_m4_TT_Ulmon_Dead_sc",
     "race": "Dark Elf",
     "class": "Acrobat",
@@ -3681,7 +3773,6 @@
     ],
     "id": "TR_m4_Uls Edralo",
     "name": "Uls Edralo",
-    "mesh": "base_anim.nif",
     "script": "TR_m4_TT_Uls_Edralo_sc",
     "race": "Dark Elf",
     "class": "Commoner",
@@ -4558,6 +4649,44 @@
       0,
       0
     ],
+    "id": "Necrom, Charnelworks Mortuary",
+    "data": {
+      "flags": 5,
+      "grid": [
+        3618615,
+        1061158912
+      ]
+    },
+    "water_height": 0.0,
+    "atmosphere_data": {
+      "ambient_color": [
+        65,
+        55,
+        40,
+        0
+      ],
+      "sunlight_color": [
+        80,
+        40,
+        20,
+        0
+      ],
+      "fog_color": [
+        55,
+        55,
+        55,
+        0
+      ],
+      "fog_density": 0.75
+    },
+    "references": []
+  },
+  {
+    "type": "Cell",
+    "flags": [
+      0,
+      0
+    ],
     "id": "Olms Ancestral Tomb",
     "data": {
       "flags": 1,
@@ -4895,22 +5024,6 @@
       {
         "mast_index": 0,
         "refr_index": 20,
-        "id": "TR_m4_TT_Ulmon_Dead",
-        "temporary": false,
-        "translation": [
-          4147.8955,
-          3979.524,
-          14016.0
-        ],
-        "rotation": [
-          0.0,
-          0.0,
-          4.912389
-        ]
-      },
-      {
-        "mast_index": 0,
-        "refr_index": 21,
         "id": "TR_m4_TT_Ravur_Othravel",
         "temporary": false,
         "translation": [
@@ -4922,6 +5035,22 @@
           0.0,
           0.0,
           4.5269904
+        ]
+      },
+      {
+        "mast_index": 0,
+        "refr_index": 21,
+        "id": "TR_m4_TT_Ulmon_Dead",
+        "temporary": false,
+        "translation": [
+          4147.8955,
+          3979.524,
+          14016.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          4.912389
         ]
       },
       {
@@ -5198,8 +5327,8 @@
         "id": "TR_m4_TT_Fire",
         "temporary": true,
         "translation": [
-          4205.9077,
-          3942.5806,
+          4205.908,
+          3942.5803,
           13976.859
         ],
         "rotation": [
@@ -5215,8 +5344,8 @@
         "id": "TR_m4_TT_Fire",
         "temporary": true,
         "translation": [
-          4108.298,
-          3968.5298,
+          4108.3,
+          3968.5293,
           13976.095
         ],
         "rotation": [
@@ -5232,8 +5361,8 @@
         "id": "TR_m4_TT_Fire",
         "temporary": true,
         "translation": [
-          4179.4937,
-          4016.371,
+          4179.493,
+          4016.3708,
           13973.93
         ],
         "rotation": [
@@ -24705,7 +24834,7 @@
     ],
     "info_id": "1807917147159716528",
     "prev_id": "2204727702144618601",
-    "next_id": "214422847139601650",
+    "next_id": "313523791250927435",
     "data": {
       "dialogue_type": "Topic",
       "disposition": 0,
@@ -24735,49 +24864,8 @@
       0,
       0
     ],
-    "info_id": "214422847139601650",
-    "prev_id": "1807917147159716528",
-    "next_id": "313523791250927435",
-    "data": {
-      "dialogue_type": "Topic",
-      "disposition": 0,
-      "speaker_rank": -1,
-      "speaker_sex": "Any",
-      "player_rank": -1
-    },
-    "speaker_id": "TR_m4_Otrys Marano",
-    "text": "Garash? He's right over there, he helped me travel to this shrine.",
-    "filters": [
-      {
-        "slot": "Slot0",
-        "filter_type": "Journal",
-        "filter_function": "JournalType",
-        "filter_comparison": "GreaterEqual",
-        "id": "TR_m4_TT_TroublesomeOrc",
-        "value": {
-          "Integer": 10
-        }
-      },
-      {
-        "slot": "Slot1",
-        "filter_type": "Journal",
-        "filter_function": "JournalType",
-        "filter_comparison": "Less",
-        "id": "TR_m4_TT_TroublesomeOrc",
-        "value": {
-          "Integer": 50
-        }
-      }
-    ]
-  },
-  {
-    "type": "Info",
-    "flags": [
-      0,
-      0
-    ],
     "info_id": "313523791250927435",
-    "prev_id": "214422847139601650",
+    "prev_id": "1807917147159716528",
     "next_id": "2914042582984111107",
     "data": {
       "dialogue_type": "Topic",
@@ -24998,7 +25086,7 @@
         }
       }
     ],
-    "result": "ModDisposition 5\r\nset TR_m4_TT_OrcVivec.controlQ to 40\r\nTR_m4_TT_OrcVivec->PositionCell 21659, 55912, 7750, 69423, \"Red Mountain Region\"\r\nTR_m4_TT_OrcVivec->AIWander 0, 0, 0, 0\r\nJournal TR_m4_TT_TroublesomeOrc 140\r\nModPCFacRep 5 \"Temple\""
+    "result": "ModDisposition 5\r\nset TR_m4_TT_OrcVivec.controlQ to 40\r\nTR_m4_TT_OrcVivec->PositionCell 21659, 55912, 7750, 69423, \"Red Mountain Region\"\r\nTR_m4_TT_OrcVivec->AIWander 0, 0, 0, 0\r\nJournal TR_m4_TT_TroublesomeOrc 140\r\nModPCFacRep 5 \"Temple\"\r\n\"TR_m4_Otrys Marano\"->Enable"
   },
   {
     "type": "Info",
@@ -25030,7 +25118,7 @@
         }
       }
     ],
-    "result": "ModDisposition 10\r\nset TR_m4_TT_OrcVivec.controlQ to 40\r\nTR_m4_TT_OrcVivec->PositionCell 21659, 55912, 7750, 69423, \"Red Mountain Region\"\r\nTR_m4_TT_OrcVivec->AIWander 0, 0, 0, 0\r\nJournal TR_m4_TT_TroublesomeOrc 140\r\nModPCFacRep 5 \"Temple\""
+    "result": "ModDisposition 10\r\nset TR_m4_TT_OrcVivec.controlQ to 40\r\nTR_m4_TT_OrcVivec->PositionCell 21659, 55912, 7750, 69423, \"Red Mountain Region\"\r\nTR_m4_TT_OrcVivec->AIWander 0, 0, 0, 0\r\nJournal TR_m4_TT_TroublesomeOrc 140\r\nModPCFacRep 5 \"Temple\"\r\n\"TR_m4_Otrys Marano\"->Enable"
   },
   {
     "type": "Info",
@@ -25062,7 +25150,7 @@
         }
       }
     ],
-    "result": "ModDisposition 5\r\nset TR_m4_TT_OrcVivec.controlQ to 33\r\nTR_m4_TT_OrcVivec->PositionCell 3277, -2926, -1250, 0, \"Hummurushtapi, Shrine\"\r\nTR_m4_TT_OrcVivec->AIWander 0, 0, 5, 0, 30, 20, 0, 30, 0, 0, 20, 20\r\nJournal TR_m4_TT_TroublesomeOrc 130\r\nModPCFacRep 5 \"Temple\""
+    "result": "ModDisposition 5\r\nset TR_m4_TT_OrcVivec.controlQ to 33\r\nTR_m4_TT_OrcVivec->PositionCell 3277, -2926, -1250, 0, \"Hummurushtapi, Shrine\"\r\nTR_m4_TT_OrcVivec->AIWander 0, 0, 5, 0, 30, 20, 0, 30, 0, 0, 20, 20\r\nJournal TR_m4_TT_TroublesomeOrc 130\r\nModPCFacRep 5 \"Temple\"\r\n\"TR_m4_Otrys Marano\"->Enable"
   },
   {
     "type": "Info",
@@ -25094,7 +25182,7 @@
         }
       }
     ],
-    "result": "ModDisposition -5\r\nset TR_m4_TT_OrcVivec.controlQ to 33\r\nTR_m4_TT_OrcVivec->PositionCell 3277, -2926, -1250, 0, \"Hummurushtapi, Shrine\"\r\nTR_m4_TT_OrcVivec->AIWander 0, 0, 5, 0, 30, 20, 0, 30, 0, 0, 20, 20\r\nJournal TR_m4_TT_TroublesomeOrc 120\r\nModPCFacRep 5 \"Temple\""
+    "result": "ModDisposition -5\r\nset TR_m4_TT_OrcVivec.controlQ to 33\r\nTR_m4_TT_OrcVivec->PositionCell 3277, -2926, -1250, 0, \"Hummurushtapi, Shrine\"\r\nTR_m4_TT_OrcVivec->AIWander 0, 0, 5, 0, 30, 20, 0, 30, 0, 0, 20, 20\r\nJournal TR_m4_TT_TroublesomeOrc 120\r\nModPCFacRep 5 \"Temple\"\r\n\"TR_m4_Otrys Marano\"->Enable"
   },
   {
     "type": "Info",
@@ -25126,7 +25214,7 @@
         }
       }
     ],
-    "result": "ModDisposition -10\r\nset TR_m4_TT_OrcVivec.controlQ to 30\r\nTR_m4_TT_OrcVivec->PositionCell 34961, -100332, 660, 0, \"Vivec, Temple\"\r\nTR_m4_TT_OrcVivec->AIWander 500, 0, 5, 0, 30, 20, 0, 30, 0, 0, 20, 20\r\nJournal TR_m4_TT_TroublesomeOrc 110\r\nModPCFacRep 5 \"Temple\""
+    "result": "ModDisposition -10\r\nset TR_m4_TT_OrcVivec.controlQ to 30\r\nTR_m4_TT_OrcVivec->PositionCell 34961, -100332, 660, 0, \"Vivec, Temple\"\r\nTR_m4_TT_OrcVivec->AIWander 500, 0, 5, 0, 30, 20, 0, 30, 0, 0, 20, 20\r\nJournal TR_m4_TT_TroublesomeOrc 110\r\nModPCFacRep 5 \"Temple\"\r\n\"TR_m4_Otrys Marano\"->Enable"
   },
   {
     "type": "Info",
@@ -25158,7 +25246,7 @@
         }
       }
     ],
-    "result": "ModDisposition -15\r\nJournal TR_m4_TT_TroublesomeOrc 100\r\nModPCFacRep 5 \"Temple\""
+    "result": "ModDisposition -15\r\nJournal TR_m4_TT_TroublesomeOrc 100\r\nModPCFacRep 5 \"Temple\"\r\n\"TR_m4_Otrys Marano\"->Enable"
   },
   {
     "type": "Info",
@@ -25190,7 +25278,7 @@
         }
       }
     ],
-    "result": "ModDisposition 10\r\nJournal TR_m4_TT_TroublesomeOrc 210\r\nModPCFacRep 5 \"Temple\""
+    "result": "ModDisposition 10\r\nJournal TR_m4_TT_TroublesomeOrc 210\r\nModPCFacRep 5 \"Temple\"\r\n\"TR_m4_Otrys Marano\"->Enable"
   },
   {
     "type": "Info",
@@ -25250,16 +25338,6 @@
         "id": "TR_m4_TT_TroublesomeOrc",
         "value": {
           "Integer": 200
-        }
-      },
-      {
-        "slot": "Slot1",
-        "filter_type": "Local",
-        "filter_function": "VariableCompare",
-        "filter_comparison": "Equal",
-        "id": "controlQ",
-        "value": {
-          "Integer": 0
         }
       }
     ],
@@ -25338,7 +25416,7 @@
         }
       }
     ],
-    "result": "Journal TR_m4_TT_TroublesomeOrc 10\r\nAddTopic Bodrum"
+    "result": "Journal TR_m4_TT_TroublesomeOrc 10\r\nAddTopic Bodrum\r\n\"TR_m4_Otrys Marano\"->Disable"
   },
   {
     "type": "Info",
@@ -32704,7 +32782,7 @@
       "player_rank": -1
     },
     "speaker_id": "TR_m4_TT_Marja_Iannus",
-    "text": "He was the cause of a lot of grief for Felani, but I would still have liked to meet him. My wife speaks well of her youth, and it was only after she met me that her father turned bitter. I am sure he had a lot of love for her, despite them groing apart. Perhaps we could have reconciled.",
+    "text": "He was the cause of a lot of grief for Felani, but I would still have liked to meet him. My wife speaks well of her youth, and it was only after she met me that her father turned bitter. I am sure he had a lot of love for her, despite them growing apart. Perhaps we could have reconciled.",
     "filters": []
   },
   {
@@ -37089,7 +37167,7 @@
     ],
     "info_id": "2645204601446526312",
     "prev_id": "24045167582886815384",
-    "next_id": "2031222397819902",
+    "next_id": "169887230202715573",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -38525,6 +38603,16 @@
         "id": "TR_m4_TT_LastWillAndTestament_b",
         "value": {
           "Integer": 71
+        }
+      },
+      {
+        "slot": "Slot1",
+        "filter_type": "Journal",
+        "filter_function": "JournalType",
+        "filter_comparison": "Less",
+        "id": "TR_m4_TT_LastWillAndTestament_c",
+        "value": {
+          "Integer": 75
         }
       }
     ],
@@ -41558,7 +41646,7 @@
     ],
     "info_id": "306111962245653138",
     "prev_id": "287302278638199730",
-    "next_id": "3192728784824217146",
+    "next_id": "2503927070211192669",
     "data": {
       "dialogue_type": "Greeting",
       "disposition": 0,
@@ -43490,7 +43578,7 @@
         "filter_comparison": "Less",
         "id": "TR_m4_TT_LastWillAndTestament",
         "value": {
-          "Integer": 35
+          "Integer": 45
         }
       }
     ]
