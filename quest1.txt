@@ -10,3 +10,4 @@ JOURNAL TR_m4_TT_ShrineOlmsRest
 JOURNAL TR_m4_TT_ShrineBodrum
 10: (fin) I made the pilgrimage to the Shrine to the Battle of Bodrum and read the message inscribed there.
 
+NOTE: REVIEW CHANGES

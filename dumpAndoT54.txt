@@ -2,7 +2,7 @@
 Record: TES3 "()" Flags:0x0000 ()
   HEDR:   Version:1.3  Is_Master:False  Author:""
   Description:""
-  N_Records:1222
+  N_Records:1228
  *MAST: Master:Morrowind.esm
   DATA: Length:79837557
  *MAST: Master:Tribunal.esm
@@ -10,7 +10,7 @@ Record: TES3 "()" Flags:0x0000 ()
  *MAST: Master:Bloodmoon.esm
   DATA: Length:9631798
  *MAST: Master:Tamriel_Data.esm
-  DATA: Length:10193005
+  DATA: Length:10695288
 
 Record: GLOB "tr_m4_tt_andothrenfinale" Flags:0x0000 ()
   NAME: ID:TR_m4_TT_AndothrenFinale
@@ -1141,7 +1141,7 @@ endif
 End
 
 Record: SCPT "tr_m4_tt_orcvivecscript" Flags:0x0000 ()
-  SCHD: ID:TR_m4_TT_OrcVivecScript  Num_Shorts:11  Num_Longs:0  Num_Floats:3  Data_Size:4276  Local_Var_Size:120
+  SCHD: ID:TR_m4_TT_OrcVivecScript  Num_Shorts:11  Num_Longs:0  Num_Floats:3  Data_Size:4282  Local_Var_Size:120
   SCVR: Script_Variables: TR_Map,NoLore,control,controlQ,respect,T_Local_NPC,T_Local_NoLore,companion,OnPCHitMe,bookABCs,noHit,timer,Zpos,ZposOld
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
@@ -1338,6 +1338,7 @@ elseif ( controlQ == 6 )
 elseif ( controlQ == 8 )
 	if ( GetHealthGetRatio < 0.5 )
 		Say "vo\o\m\Fle_OM005.mp3" "I have no more quarrel with you."
+		ModCurrentHealth 100
 		set controlQ to 9
 		set respect to 1
 		StopCombat
@@ -2558,14 +2559,22 @@ set TR_Map to 4
 End
 
 Record: SCPT "tr_rothroryn_monastery_almsc" Flags:0x0000 ()
-  SCHD: ID:TR_RothRoryn_Monastery_AlmSc  Num_Shorts:1  Num_Longs:0  Num_Floats:0  Data_Size:697  Local_Var_Size:11
-  SCVR: Script_Variables: currentDay
+  SCHD: ID:TR_RothRoryn_Monastery_AlmSc  Num_Shorts:2  Num_Longs:0  Num_Floats:0  Data_Size:785  Local_Var_Size:18
+  SCVR: Script_Variables: currentDay,doOnce
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_RothRoryn_Monastery_AlmSc
 
 ; Script on activator TR_RothRoryn_Monastery_AlmaAct.
 short currentDay
+short doOnce
+
+if ( doOnce == 0 )
+	if ( player->GetItemCount T_De_UNI_PenitentRing > 0 )
+		set doOnce to 1
+		AddTopic "Penitent's Ring"
+	endif
+endif
 
 if ( OnActivate == 0 )
 	Return
@@ -2719,6 +2728,33 @@ Record: CONT "tr_rr_monastery_chest" Flags:0x0000 ()
  *NPCO: Count:1  Object:amulet of shades
  *NPCO: Count:1  Object:T_Mw_Random_Gems
  *NPCO: Count:89  Object:Gold_001
+
+Record: NPC_ "tr_m2_d_d1" Flags:0x0400 (Persistent)
+  NAME: ID:TR_m2_d_D1
+  MODL: Model:td\anim_death9.nif
+  FNAM: Name:Body
+  RNAM: Race:Dark Elf
+  CNAM: Class:Acrobat
+  ANAM: Faction:
+  BNAM: Head_Model:b_n_dark elf_f_head_03
+  KNAM: Hair_Model:b_n_dark elf_f_hair_05
+  SCRI: Script:TR_m2_Necrom_Corpse_sc
+  NPDT: Level:1
+	Str:40  Int:40  Wil:30  Agi:50  Spd:50  End:50  Per:30  Lck:40
+	Reputation:0  Health:0  Magicka:80  Fatigue:170  Disposition:50
+	FactionIndex:0  Rank:0  Gold:0
+	(Skills):
+	Acrobatics:35  Alchemy:5  Alteration:15  Armorer:5  Athletics:35  Axe:5
+	Block:5  Blunt_Weapon:5  Conjuration:5  Destruction:15  Enchant:5  Hand_To_Hand:20
+	Heavy_Armor:5  Illusion:5  Light_Armor:25  Long_Blade:10  Marksman:40  Medium_Armor:5
+	Mercantile:10  Mysticism:10  Restoration:5  Security:10  Short_Blade:20  Sneak:35
+	Spear:15  Speechcraft:20  Unarmored:30
+  FLAG: Flags:[0x0009 (Female)]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:000000  Services:[0x0000 ()]
+ *AI_W: Distance:               512  Duration:                 5  Time_Of_Day:              0
+	Idle_2:                  60  Idle_3:                  20  Idle_4:                  10
+	Idle_5:                   0  Idle_6:                   0  Idle_7:                   0
+	Idle_8:                   0  Idle_9:                   0  Unknown_1:                1
 
 Record: NPC_ "tr_m4_d_khirakaibandit1" Flags:0x0400 (Persistent)
   NAME: ID:TR_m4_D_KhirakaiBandit1
@@ -2878,6 +2914,7 @@ Record: NPC_ "tr_m4_gavros_falas" Flags:0x0000 ()
 
 Record: NPC_ "tr_m4_golvyn_saryon" Flags:0x0000 ()
   NAME: ID:TR_m4_Golvyn_Saryon
+  MODL: Model:base_anim.nif
   FNAM: Name:Golvyn Saryon
   RNAM: Race:Dark Elf
   CNAM: Class:Priest
@@ -3234,7 +3271,7 @@ Record: NPC_ "tr_m4_tt_tevuren_galdar" Flags:0x0000 ()
  *NPCO: Count:1  Object:indoril pauldron right
  *NPCO: Count:1  Object:indoril pauldron left
  *NPCO: Count:2  Object:p_restore_health_q
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:043576  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:73c976  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  10  Idle_3:                   0  Idle_4:                  10
 	Idle_5:                  20  Idle_6:                   5  Idle_7:                  10
@@ -3242,6 +3279,7 @@ Record: NPC_ "tr_m4_tt_tevuren_galdar" Flags:0x0000 ()
 
 Record: NPC_ "tr_m4_tt_orcvivec" Flags:0x0000 ()
   NAME: ID:TR_m4_TT_OrcVivec
+  MODL: Model:base_anim.nif
   FNAM: Name:Garash gro-Vivec
   RNAM: Race:Orc
   CNAM: Class:Barbarian
@@ -3267,7 +3305,7 @@ Record: NPC_ "tr_m4_tt_orcvivec" Flags:0x0000 ()
  *NPCO: Count:1  Object:bonemold_gah-julan_pauldron_r
  *NPCO: Count:1  Object:chitin pauldron - left
  *NPCS: Spell:TR_m4_TT_OrcVivecAbility
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:043576  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:73c976  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  30  Idle_3:                  20  Idle_4:                   0
 	Idle_5:                  30  Idle_6:                   0  Idle_7:                   0
@@ -3321,7 +3359,7 @@ Record: NPC_ "tr_m4_tt_ravur_othravel" Flags:0x0000 ()
  *NPCS: Spell:absorb personality
  *NPCS: Spell:absorb speed
  *NPCS: Spell:absorb willpower
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:043576  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:73c976  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  40  Idle_3:                   0  Idle_4:                  10
 	Idle_5:                   0  Idle_6:                   5  Idle_7:                   5
@@ -3431,7 +3469,7 @@ Record: CREA "tr_m4_tt_olmsguardgreat" Flags:0x0000 ()
  *NPCS: Spell:resist poison_75
  *NPCS: Spell:dread curse: endurance
  *NPCS: Spell:dread curse: strength
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:043576  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:73c976  Services:[0xa00000 ()]
  *AI_W: Distance:        200  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           30  Idle_3:           50  Idle_4:           30  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3461,7 +3499,7 @@ Record: CREA "tr_m4_tt_olmsguard" Flags:0x0000 ()
  *NPCS: Spell:resist poison_75
  *NPCS: Spell:grave curse: strength
  *NPCS: Spell:grave curse: endurance
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:043576  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:73c976  Services:[0xa00000 ()]
  *AI_W: Distance:       1000  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           50  Idle_3:           50  Idle_4:            0  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3490,7 +3528,7 @@ Record: CREA "tr_m4_tt_olmsguardghost" Flags:0x0000 ()
  *NPCS: Spell:immune to disease
  *NPCS: Spell:immune to frost
  *NPCS: Spell:immune to poison
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:043576  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:73c976  Services:[0xa00000 ()]
  *AI_W: Distance:       1000  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           50  Idle_3:           50  Idle_4:            0  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3537,7 +3575,7 @@ Record: NPC_ "tr_m4_tt_marja_iannus" Flags:0x0000 ()
 
 Record: NPC_ "tr_m4_tt_ulmon_dead" Flags:0x0400 (Persistent)
   NAME: ID:TR_m4_TT_Ulmon_Dead
-  MODL: Model:tr_death_d.nif
+  MODL: Model:td\anim_death7.nif
   FNAM: Name:Ulmon Vathri
   RNAM: Race:Dark Elf
   CNAM: Class:Acrobat
@@ -3925,6 +3963,13 @@ Record: CELL "andothren (0, -17)" Flags:0x0000 ()
   XSCL: Scale:1.04
   DATA: X:5321.382  Y:-133013.234  Z:339.873  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:3.2289
 
+Record: CELL "necrom, charnelworks mortuary" Flags:0x0000 ()
+  NAME: Name:Necrom, Charnelworks Mortuary
+  DATA: (Interior) Fog_Density:0.75  Flags:0x0005 (Illegal_To_Sleep_Here)
+  WHGT: Water_Height:0.00
+  AMBI: Ambient:RGB=(65,55,40)  Sunlight:RGB=(80,40,20)  Fog:RGB=(55,55,55) Fog_Density:0.75
+  NAM0: Reference_Count:506
+
 Record: CELL "olms ancestral tomb" Flags:0x0000 ()
   NAME: Name:Olms Ancestral Tomb
   DATA: (Interior) Fog_Density:0.75  Flags:0x0001 ()
@@ -3988,11 +4033,11 @@ Record: CELL "andothren, temple" Flags:0x0000 ()
   NAME: Name:TR_m4_TT_Tevuren_Galdar
   DATA: X:4206.605  Y:3905.253  Z:15021.995  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:2.3000
  *FRMR: ObjIdx:20  MastIdx:0
-  NAME: Name:TR_m4_TT_Ulmon_Dead
-  DATA: X:4147.896  Y:3979.524  Z:14016.000  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:4.9124
- *FRMR: ObjIdx:21  MastIdx:0
   NAME: Name:TR_m4_TT_Ravur_Othravel
   DATA: X:3940.138  Y:4348.787  Z:14752.910  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:4.5270
+ *FRMR: ObjIdx:21  MastIdx:0
+  NAME: Name:TR_m4_TT_Ulmon_Dead
+  DATA: X:4147.896  Y:3979.524  Z:14016.000  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:4.9124
  *FRMR: ObjIdx:22  MastIdx:0
   NAME: Name:TR_m4_TT_TempleCoffersB
   ANAM: Owner_Actor:TR_m4_TT_Nalvs_Andolin
@@ -4002,7 +4047,7 @@ Record: CELL "andothren, temple" Flags:0x0000 ()
   FLTV: Lock_Level:90
   KNAM: Key:TR_m4_TT_TempleCofferKey
   DATA: X:3786.271  Y:4048.574  Z:14616.396  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:0.1349
-  NAM0: Reference_Count:900
+  NAM0: Reference_Count:899
  *FRMR: ObjIdx:23  MastIdx:0
   NAME: Name:TR_m4_TT_VathriPipe
   DATA: X:3662.948  Y:4022.980  Z:14598.092  X_Angle:1.5000  Y_Angle:0.0000  Z_Angle:4.3832
@@ -4079,15 +4124,15 @@ Record: CELL "andothren, temple" Flags:0x0000 ()
  *FRMR: ObjIdx:37  MastIdx:0
   NAME: Name:TR_m4_TT_Fire
   XSCL: Scale:0.50
-  DATA: X:4205.908  Y:3942.581  Z:13976.859  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:0.0000
+  DATA: X:4205.908  Y:3942.580  Z:13976.859  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:0.0000
  *FRMR: ObjIdx:38  MastIdx:0
   NAME: Name:TR_m4_TT_Fire
   XSCL: Scale:0.50
-  DATA: X:4108.298  Y:3968.530  Z:13976.095  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:0.0000
+  DATA: X:4108.300  Y:3968.529  Z:13976.095  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:0.0000
  *FRMR: ObjIdx:39  MastIdx:0
   NAME: Name:TR_m4_TT_Fire
   XSCL: Scale:0.50
-  DATA: X:4179.494  Y:4016.371  Z:13973.930  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:0.0000
+  DATA: X:4179.493  Y:4016.371  Z:13973.930  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:0.0000
  *FRMR: ObjIdx:40  MastIdx:0
   NAME: Name:TR_m4_TT_UlmonWill
   DATA: X:3975.089  Y:3752.260  Z:14549.800  X_Angle:6.2483  Y_Angle:0.0349  Z_Angle:4.8832
@@ -4324,7 +4369,7 @@ Record: CELL "roth roryn region (-13, -18)" Flags:0x0000 ()
  *FRMR: ObjIdx:74  MastIdx:0
   NAME: Name:TR_m4_TT_OrcVivec
   DATA: X:-101822.836  Y:-146763.781  Z:3227.525  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:1.8000
-  NAM0: Reference_Count:330
+  NAM0: Reference_Count:328
 
 Record: CELL "omaynis, aro helseri: trader" Flags:0x0000 ()
   NAME: Name:Omaynis, Aro Helseri: Trader
@@ -5638,24 +5683,15 @@ Nalvs Andolin thanked me for sending the troublesome Orc of Bodrum away.
 Record: INFO "8668551729927804" (Journal:tr_m4_tt_troublesomeorc) Flags:0x0000 ()
   INAM: ID:8668551729927804
   PNAM: Prev_ID:14731200662208531725
-  NNAM: Next_ID:473203511309725369
+  NNAM: Next_ID:10015990889116431
   DATA: JournalIndex:140
   NAME: Response:
 Nalvs Andolin seemed to appreciate me sending the Orc to die at Red Mountain.
   QSTF: Quest_Finished:1
 
-Record: INFO "473203511309725369" (Journal:tr_m4_tt_troublesomeorc) Flags:0x0000 ()
-  INAM: ID:473203511309725369
-  PNAM: Prev_ID:8668551729927804
-  NNAM: Next_ID:10015990889116431
-  DATA: JournalIndex:150
-  NAME: Response:
-I met Garash gro-Vivec in a shrine of Malacath, whom he has renounced. He says he has found his path, and thanked me for guiding him. I wonder if I will ever see him again.
-  QSTF: Quest_Finished:1
-
 Record: INFO "10015990889116431" (Journal:tr_m4_tt_troublesomeorc) Flags:0x0000 ()
   INAM: ID:10015990889116431
-  PNAM: Prev_ID:473203511309725369
+  PNAM: Prev_ID:8668551729927804
   NNAM: Next_ID:2574932281225019232
   DATA: JournalIndex:200
   NAME: Response: Garash gro-Vivec, the troublesome Orc of Bodrum, is dead.
@@ -5705,18 +5741,26 @@ Record: INFO "102702068115277791" (Journal:tr_m4_tt_armunadventure) Flags:0x0000
 Record: INFO "27119211647669058" (Journal:tr_m4_tt_armunadventure) Flags:0x0000 ()
   INAM: ID:27119211647669058
   PNAM: Prev_ID:102702068115277791
-  NNAM: Next_ID:855413510151462243
+  NNAM: Next_ID:220785519211658096
   DATA: JournalIndex:10
   NAME: Response:
 I am to go to Arvud in the Armun Ashlands, find whoever killed a pilgrim north of the town, and bring them to justice.
 
-Record: INFO "855413510151462243" (Journal:tr_m4_tt_armunadventure) Flags:0x0000 ()
-  INAM: ID:855413510151462243
+Record: INFO "220785519211658096" (Journal:tr_m4_tt_armunadventure) Flags:0x0000 ()
+  INAM: ID:220785519211658096
   PNAM: Prev_ID:27119211647669058
-  NNAM: Next_ID:7150284082398930356
+  NNAM: Next_ID:855413510151462243
   DATA: JournalIndex:20
   NAME: Response:
 The people of Arvud suspect Daedric cultists in the shrine north of town, or the ashlanders to the northeast, were responsible for the death of the pilgrim.
+
+Record: INFO "855413510151462243" (Journal:tr_m4_tt_armunadventure) Flags:0x0000 ()
+  INAM: ID:855413510151462243
+  PNAM: Prev_ID:220785519211658096
+  NNAM: Next_ID:7150284082398930356
+  DATA: JournalIndex:30
+  NAME: Response:
+I spoke to an Orc at a Daedric shrine in the Armun Ashlands. He swore his people do not harm unarmed travelers, and suggested bandits may have taken up residence in the ruins to the east. Perhaps they are responsible for the death of a pilgrim.
 
 Record: INFO "7150284082398930356" (Journal:tr_m4_tt_armunadventure) Flags:0x0000 ()
   INAM: ID:7150284082398930356
@@ -8557,10 +8601,12 @@ Record: INFO "2464860352192816774" (Topic:shrine of forgiveness) Flags:0x0000 ()
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
   NAME: Response:
 Some may claim that the troublesome Orc you sent away was a genuine follower of the Tribunal. While clearly false, any appearance of impropriety must be avoided. Therefore, I need you to make a pilgrimage to the Monastery of Saint Aralor, and learn of the sacrifices the Saint made to earn the forgiveness of his masters.
- *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_TroublesomeOrc
+ *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_TroublesomeOrc
   INTV: Compare_Value:130
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_Forgiveness
   INTV: Compare_Value:10
+ *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_TroublesomeOrc
+  INTV: Compare_Value:140
   BNAM: Result:	Journal TR_m4_TT_Forgiveness 10
 
 Record: INFO "29362161902740612591" (Topic:shrine of forgiveness) Flags:0x0000 ()
@@ -10117,7 +10163,7 @@ Record: INFO "1639727858165913005" (Topic:death of a pilgrim) Flags:0x0000 ()
 What use would a dead pilgrim be to us? Do you see them among our numbers? No? Then clearly you need to look elsewhere.
  *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_ArmunAdventure
   INTV: Compare_Value:10
- *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_ArmunAdventure
+ *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_ArmunAdventure
   INTV: Compare_Value:30
 
 Record: INFO "2024390071615215654" (Topic:death of a pilgrim) Flags:0x0000 ()
@@ -10130,7 +10176,7 @@ Record: INFO "2024390071615215654" (Topic:death of a pilgrim) Flags:0x0000 ()
 We know better than to risk the wrath of the settled peoples, outlander. Whoever killed your pilgrim was not Tirigan. But these lands are full of dangers. There are Orcs in the Daedric shrine to the west, and bandits in the ruins to the east. Mabrigash prey on the unwary, and during ash storms and at night, worse things still come out to prowl these wastes. Any one of those could have killed a traveler. But not us.
  *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_ArmunAdventure
   INTV: Compare_Value:10
- *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_ArmunAdventure
+ *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_ArmunAdventure
   INTV: Compare_Value:30
  *SCVR: Index:4  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_ArmunAdventure_d
   INTV: Compare_Value:100
@@ -10145,7 +10191,7 @@ Record: INFO "62981599397416255" (Topic:death of a pilgrim) Flags:0x0000 ()
 We have no business with your Temple, and know well to stay away from the roads. We did not kill your pilgrim. Ask our leader, Vabal-Ajunta.
  *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_ArmunAdventure
   INTV: Compare_Value:10
- *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_ArmunAdventure
+ *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_ArmunAdventure
   INTV: Compare_Value:30
  *SCVR: Index:4  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_ArmunAdventure_d
   INTV: Compare_Value:100
@@ -10160,7 +10206,7 @@ Record: INFO "28236138942803529760" (Topic:death of a pilgrim) Flags:0x0000 ()
 We have no business with your Temple, and know well to stay away from the roads. We did not kill your pilgrim. Ask our leader, Vabal-Ajunta.
  *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_ArmunAdventure
   INTV: Compare_Value:10
- *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_ArmunAdventure
+ *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_ArmunAdventure
   INTV: Compare_Value:30
  *SCVR: Index:4  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_ArmunAdventure_d
   INTV: Compare_Value:100
@@ -10175,7 +10221,7 @@ Record: INFO "18546264412031316668" (Topic:death of a pilgrim) Flags:0x0000 ()
 We have no business with your Temple, and know well to stay away from the roads. We did not kill your pilgrim. Ask our leader, Vabal-Ajunta.
  *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_ArmunAdventure
   INTV: Compare_Value:10
- *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_ArmunAdventure
+ *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_ArmunAdventure
   INTV: Compare_Value:30
  *SCVR: Index:4  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_ArmunAdventure_d
   INTV: Compare_Value:100
@@ -10195,7 +10241,7 @@ We have no business with your Temple, and know well to stay away from the roads.
   INTV: Compare_Value:0
  *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_ArmunAdventure
   INTV: Compare_Value:10
- *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_ArmunAdventure
+ *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_ArmunAdventure
   INTV: Compare_Value:30
  *SCVR: Index:4  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_ArmunAdventure_d
   INTV: Compare_Value:100
@@ -10806,9 +10852,25 @@ Record: DIAL "penitent's ring" Flags:0x0000 ()
   NAME: ID:Penitent's Ring
   DATA: Type:(Topic)
 
+Record: INFO "1762016903693827188" (Topic:penitent's ring) Flags:0x0000 ()
+  INAM: ID:1762016903693827188
+  PNAM: Prev_ID:
+  NNAM: Next_ID:293269382910923255
+  DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:9
+  ONAM: Actor:TR_m4_Dram Marvos
+  DNAM: Pc_Faction:Temple
+  NAME: Response:
+Of course, %PCRank. The ring is yours to do with as you please.
+ *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_Forgiveness
+  INTV: Compare_Value:50
+  BNAM: Result:	if ( GetItemCount T_De_UNI_PenitentRing > 0 )
+		    player->additem T_De_UNI_PenitentRing 1
+		    removeitem T_De_UNI_PenitentRing 1
+		endif
+
 Record: INFO "293269382910923255" (Topic:penitent's ring) Flags:0x0000 ()
   INAM: ID:293269382910923255
-  PNAM: Prev_ID:
+  PNAM: Prev_ID:1762016903693827188
   NNAM: Next_ID:41746271234916777
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_Dram Marvos
@@ -10827,7 +10889,7 @@ I'll take that. Thank you, %PCRank. May you walk always in the presence of your 
 Record: INFO "41746271234916777" (Topic:penitent's ring) Flags:0x0000 ()
   INAM: ID:41746271234916777
   PNAM: Prev_ID:293269382910923255
-  NNAM: Next_ID:2501816274264672740
+  NNAM: Next_ID:1716914907140225009
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_Dram Marvos
   NAME: Response: You were to return it to me. Where is it, %PCRank?
@@ -10839,9 +10901,23 @@ Record: INFO "41746271234916777" (Topic:penitent's ring) Flags:0x0000 ()
 		    ModDisposition -5
 		endif
 
+Record: INFO "1716914907140225009" (Topic:penitent's ring) Flags:0x0000 ()
+  INAM: ID:1716914907140225009
+  PNAM: Prev_ID:41746271234916777
+  NNAM: Next_ID:2501816274264672740
+  DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:9
+  ONAM: Actor:TR_m4_Dram Marvos
+  DNAM: Pc_Faction:Temple
+  NAME: Response:
+It is a relic of Saint Aralor that we keep here in the monastery. Llaros Sadas held it last, I believe.
+ *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_Forgiveness
+  INTV: Compare_Value:10
+ *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_Forgiveness
+  INTV: Compare_Value:20
+
 Record: INFO "2501816274264672740" (Topic:penitent's ring) Flags:0x0000 ()
   INAM: ID:2501816274264672740
-  PNAM: Prev_ID:41746271234916777
+  PNAM: Prev_ID:1716914907140225009
   NNAM: Next_ID:10958275141094410183
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_Dram Marvos
@@ -11049,7 +11125,7 @@ You insult me, and my faith! With Vivec's blessing I shall smite you down!
 Record: INFO "1807917147159716528" (Topic:troublesome orc) Flags:0x0000 ()
   INAM: ID:1807917147159716528
   PNAM: Prev_ID:2204727702144618601
-  NNAM: Next_ID:214422847139601650
+  NNAM: Next_ID:313523791250927435
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_OrcVivec
   NAME: Response:
@@ -11063,22 +11139,9 @@ I only bring trouble to those with ill intentions! I have made it my duty to pro
 		endif
 		 Choice "This really is none of my business." 3
 
-Record: INFO "214422847139601650" (Topic:troublesome orc) Flags:0x0000 ()
-  INAM: ID:214422847139601650
-  PNAM: Prev_ID:1807917147159716528
-  NNAM: Next_ID:313523791250927435
-  DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
-  ONAM: Actor:TR_m4_Otrys Marano
-  NAME: Response:
-Garash? He's right over there, he helped me travel to this shrine.
- *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_TroublesomeOrc
-  INTV: Compare_Value:10
- *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_TroublesomeOrc
-  INTV: Compare_Value:50
-
 Record: INFO "313523791250927435" (Topic:troublesome orc) Flags:0x0000 ()
   INAM: ID:313523791250927435
-  PNAM: Prev_ID:214422847139601650
+  PNAM: Prev_ID:1807917147159716528
   NNAM: Next_ID:2914042582984111107
   DATA: Disposition:30  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_Golvyn_Saryon
@@ -11158,7 +11221,8 @@ Devious. Goes to show that Orcs truly do not have a place in the Tribunal Temple
 		TR_m4_TT_OrcVivec->PositionCell 21659, 55912, 7750, 69423, "Red Mountain Region"
 		TR_m4_TT_OrcVivec->AIWander 0, 0, 0, 0
 		Journal TR_m4_TT_TroublesomeOrc 140
-		ModPCFacRep 5 "Temple"
+		ModPCFacRep 5 "Temple"
+		"TR_m4_Otrys Marano"->Enable
 
 Record: INFO "142365728241365345" (Topic:troublesome orc) Flags:0x0000 ()
   INAM: ID:142365728241365345
@@ -11175,7 +11239,8 @@ Devious. Goes to show that Orcs truly do not have a place in the Tribunal Temple
 		TR_m4_TT_OrcVivec->PositionCell 21659, 55912, 7750, 69423, "Red Mountain Region"
 		TR_m4_TT_OrcVivec->AIWander 0, 0, 0, 0
 		Journal TR_m4_TT_TroublesomeOrc 140
-		ModPCFacRep 5 "Temple"
+		ModPCFacRep 5 "Temple"
+		"TR_m4_Otrys Marano"->Enable
 
 Record: INFO "7999224562783523000" (Topic:troublesome orc) Flags:0x0000 ()
   INAM: ID:7999224562783523000
@@ -11192,7 +11257,8 @@ And so the natural order is restored. Good work, %PCRank. It is good to know I c
 		TR_m4_TT_OrcVivec->PositionCell 3277, -2926, -1250, 0, "Hummurushtapi, Shrine"
 		TR_m4_TT_OrcVivec->AIWander 0, 0, 5, 0, 30, 20, 0, 30, 0, 0, 20, 20
 		Journal TR_m4_TT_TroublesomeOrc 130
-		ModPCFacRep 5 "Temple"
+		ModPCFacRep 5 "Temple"
+		"TR_m4_Otrys Marano"->Enable
 
 Record: INFO "30968274472303013155" (Topic:troublesome orc) Flags:0x0000 ()
   INAM: ID:30968274472303013155
@@ -11209,7 +11275,8 @@ I asked you to return him to Malacath, not this. Still, I suppose he will probab
 		TR_m4_TT_OrcVivec->PositionCell 3277, -2926, -1250, 0, "Hummurushtapi, Shrine"
 		TR_m4_TT_OrcVivec->AIWander 0, 0, 5, 0, 30, 20, 0, 30, 0, 0, 20, 20
 		Journal TR_m4_TT_TroublesomeOrc 120
-		ModPCFacRep 5 "Temple"
+		ModPCFacRep 5 "Temple"
+		"TR_m4_Otrys Marano"->Enable
 
 Record: INFO "96728140302753150" (Topic:troublesome orc) Flags:0x0000 ()
   INAM: ID:96728140302753150
@@ -11226,7 +11293,8 @@ I expressly told you to get rid of the Orc, not to encourage him. At least he's 
 		TR_m4_TT_OrcVivec->PositionCell 34961, -100332, 660, 0, "Vivec, Temple"
 		TR_m4_TT_OrcVivec->AIWander 500, 0, 5, 0, 30, 20, 0, 30, 0, 0, 20, 20
 		Journal TR_m4_TT_TroublesomeOrc 110
-		ModPCFacRep 5 "Temple"
+		ModPCFacRep 5 "Temple"
+		"TR_m4_Otrys Marano"->Enable
 
 Record: INFO "23095187873262210382" (Topic:troublesome orc) Flags:0x0000 ()
   INAM: ID:23095187873262210382
@@ -11240,7 +11308,8 @@ What? That's the opposite of what I told you to do. You disappoint me, %PCRank. 
   INTV: Compare_Value:3
   BNAM: Result:	ModDisposition -15
 		Journal TR_m4_TT_TroublesomeOrc 100
-		ModPCFacRep 5 "Temple"
+		ModPCFacRep 5 "Temple"
+		"TR_m4_Otrys Marano"->Enable
 
 Record: INFO "402103402670913883" (Topic:troublesome orc) Flags:0x0000 ()
   INAM: ID:402103402670913883
@@ -11254,7 +11323,8 @@ Great. Mockery of our Lord Vivec cannot be tolerated. Well done, %PCRank. Let me
   INTV: Compare_Value:2
   BNAM: Result:	ModDisposition 10
 		Journal TR_m4_TT_TroublesomeOrc 210
-		ModPCFacRep 5 "Temple"
+		ModPCFacRep 5 "Temple"
+		"TR_m4_Otrys Marano"->Enable
 
 Record: INFO "718812861620919942" (Topic:troublesome orc) Flags:0x0000 ()
   INAM: ID:718812861620919942
@@ -11276,8 +11346,6 @@ Record: INFO "68522756406432379" (Topic:troublesome orc) Flags:0x0000 ()
   NAME: Response: Have you taken care of this Orc in Bodrum?
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_TroublesomeOrc
   INTV: Compare_Value:200
- *SCVR: Index:1  Type:(Local)  Function:(Variable_Compare)  Comparison:(=)  Name:controlQ
-  INTV: Compare_Value:0
   BNAM: Result:	Choice "Not yet." 1 "I killed him." 2
 
 Record: INFO "22173271402516828436" (Topic:troublesome orc) Flags:0x0000 ()
@@ -11316,7 +11384,8 @@ Golvyn Saryon, the local priest, sent word about some trouble with some Orc. App
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_TroublesomeOrc
   INTV: Compare_Value:10
   BNAM: Result:	Journal TR_m4_TT_TroublesomeOrc 10
-		AddTopic Bodrum
+		AddTopic Bodrum
+		"TR_m4_Otrys Marano"->Disable
 
 Record: INFO "1783531186126314590" (Topic:troublesome orc) Flags:0x0000 ()
   INAM: ID:1783531186126314590
@@ -13755,7 +13824,7 @@ Record: INFO "690564952184431925" (Topic:tholer andas) Flags:0x0000 ()
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
   NAME: Response: You really are not the diplomatic kind, are you? *Sigh*
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_AndothrenCharity
-  INTV: Compare_Value:20
+  INTV: Compare_Value:10
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_AndothrenCharity
   INTV: Compare_Value:100
  *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_AndothrenCharityTholer
@@ -13792,8 +13861,10 @@ Have you managed to gain an audience with Tholer Andas, and convince him of the 
   INTV: Compare_Value:100
  *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_AndothrenCharityTholer
   INTV: Compare_Value:10
-  BNAM: Result:	if ( GetJournalIndex TR_m4_TT_AndothrenCharityTholer <= 20 )
-		    Choice "I'm afraid the councilor refuses to speak with me." 1
+  BNAM: Result:	if ( GetJournalIndex TR_m4_TT_AndothrenCharityTholer == 10 )
+		    Choice "I was not able to speak with the councilor." 1
+		elseif ( GetJournalIndex TR_m4_TT_AndothrenCharityTholer == 20 )
+		    Choice "I'm afraid the councilor refuses to support us." 1
 		elseif ( GetJournalIndex TR_m4_TT_AndothrenCharityTholer == 50 )
 		    Choice "He pledged to donate, but I have not collected his contribution yet." 3
 		elseif ( GetJournalIndex TR_m4_TT_AndothrenCharityTholer == 60 )
@@ -13847,7 +13918,7 @@ Record: INFO "26528257991441234" (Topic:ulmon vathri) Flags:0x0000 ()
   DATA: Disposition:30  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Marja_Iannus
   NAME: Response:
-He was the cause of a lot of grief for Felani, but I would still have liked to meet him. My wife speaks well of her youth, and it was only after she met me that her father turned bitter. I am sure he had a lot of love for her, despite them groing apart. Perhaps we could have reconciled.
+He was the cause of a lot of grief for Felani, but I would still have liked to meet him. My wife speaks well of her youth, and it was only after she met me that her father turned bitter. I am sure he had a lot of love for her, despite them growing apart. Perhaps we could have reconciled.
 
 Record: INFO "249101001804820792" (Topic:ulmon vathri) Flags:0x0000 ()
   INAM: ID:249101001804820792
@@ -14167,7 +14238,7 @@ Record: INFO "31221237351131126102" (Topic:ulmon vathri) Flags:0x0000 ()
   NAME: Response: Old Ulmon is dead? A pity. I hope he went peacefully.
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_WellnessCheck
   INTV: Compare_Value:100
- *SCVR: Index:2  Type:(Dead)  Function:(Dead_Type)  Comparison:(>=)  Name:TR_m4_Rindral_Herano
+ *SCVR: Index:2  Type:(Dead)  Function:(Dead_Type)  Comparison:(>=)  Name:TR_m4_Ulmon Vathri
   INTV: Compare_Value:1
   BNAM: Result:	Journal TR_m4_TT_WellnessCheck 110
 		ModPCFacRep 5 "Temple"
@@ -15447,7 +15518,7 @@ Muthsera %PCName, I believe you dropped this. Anyway, I uh, need to go. It's imp
 Record: INFO "2645204601446526312" (Greeting:greeting 1) Flags:0x0000 ()
   INAM: ID:2645204601446526312
   PNAM: Prev_ID:24045167582886815384
-  NNAM: Next_ID:2031222397819902
+  NNAM: Next_ID:169887230202715573
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
@@ -15934,6 +16005,8 @@ Record: INFO "195522622077722283" (Greeting:greeting 5) Flags:0x0000 ()
   NAME: Response: You will not take me alive!
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_LastWillAndTestament_b
   INTV: Compare_Value:71
+ *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_LastWillAndTestament_c
+  INTV: Compare_Value:75
   BNAM: Result:	Goodbye
 
 Record: INFO "2763171531425117293" (Greeting:greeting 5) Flags:0x0000 ()
@@ -16619,7 +16692,7 @@ Record: INFO "65916465147521895" (Greeting:greeting 5) Flags:0x0000 ()
 I hope Nalvs didn't give you too hard a time, muthsera? At least the people of Andothren will be well-fed. I spoke to the kitchen staff and they seemed really grateful. Perhaps you should see them in person. Anyway, how have you been? What happened when you were sent to check up on Ulmon Vathri in Omaynis?
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_KitchenSupplies
   INTV: Compare_Value:100
- *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_KitchenSupplies_b
+ *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_KitchenSupplies_b
   INTV: Compare_Value:100
  *SCVR: Index:2  Type:(Local)  Function:(Variable_Compare)  Comparison:(=)  Name:trackUlmon
   INTV: Compare_Value:0
@@ -16629,7 +16702,7 @@ I hope Nalvs didn't give you too hard a time, muthsera? At least the people of A
 Record: INFO "2105729012118719300" (Greeting:greeting 5) Flags:0x0000 ()
   INAM: ID:2105729012118719300
   PNAM: Prev_ID:65916465147521895
-  NNAM: Next_ID:955839001267523050
+  NNAM: Next_ID:9104291482917527884
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
@@ -16645,9 +16718,26 @@ I take it Nalvs was happy? I suppose there might be wisdom to frugality. Anyway,
  *SCVR: Index:4  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_LastWillAndTestament
   INTV: Compare_Value:0
 
+Record: INFO "9104291482917527884" (Greeting:greeting 5) Flags:0x0000 ()
+  INAM: ID:9104291482917527884
+  PNAM: Prev_ID:2105729012118719300
+  NNAM: Next_ID:955839001267523050
+  DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
+  ONAM: Actor:TR_m4_TT_Ravur_Othravel
+  NAME: Response:
+Hey muthsera %PCName! Where are you off to? Did Nalvs Andolin send you to take care of this troublesome Orc? And you never did tell me what was up with Ulmon Vathri in Omaynis.
+ *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_TroublesomeOrc
+  INTV: Compare_Value:10
+ *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_TroublesomeOrc_b
+  INTV: Compare_Value:10
+ *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_TroublesomeOrc
+  INTV: Compare_Value:50
+ *SCVR: Index:3  Type:(Local)  Function:(Variable_Compare)  Comparison:(=)  Name:trackUlmon
+  INTV: Compare_Value:0
+
 Record: INFO "955839001267523050" (Greeting:greeting 5) Flags:0x0000 ()
   INAM: ID:955839001267523050
-  PNAM: Prev_ID:2105729012118719300
+  PNAM: Prev_ID:9104291482917527884
   NNAM: Next_ID:9746324252310914023
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
@@ -16680,7 +16770,7 @@ I think the kitchen staff wanted to talk to you about those supplies you arrange
 Record: INFO "17022321071170030123" (Greeting:greeting 5) Flags:0x0000 ()
   INAM: ID:17022321071170030123
   PNAM: Prev_ID:9746324252310914023
-  NNAM: Next_ID:261793077718318551
+  NNAM: Next_ID:1334611325197157934
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
@@ -16692,9 +16782,24 @@ I think the kitchen staff wanted to talk to you about those supplies you arrange
  *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_KitchenSupplies_b
   INTV: Compare_Value:100
 
+Record: INFO "1334611325197157934" (Greeting:greeting 5) Flags:0x0000 ()
+  INAM: ID:1334611325197157934
+  PNAM: Prev_ID:17022321071170030123
+  NNAM: Next_ID:261793077718318551
+  DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
+  ONAM: Actor:TR_m4_TT_Ravur_Othravel
+  NAME: Response:
+Sounds like I'll be staying here in Andothren for a while, muthsera. And hey, you never did tell me what happened when you were sent to check on Ulmon Vathri.
+ *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_KitchenSupplies
+  INTV: Compare_Value:100
+ *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_TroublesomeOrc
+  INTV: Compare_Value:10
+ *SCVR: Index:2  Type:(Local)  Function:(Variable_Compare)  Comparison:(=)  Name:trackUlmon
+  INTV: Compare_Value:0
+
 Record: INFO "261793077718318551" (Greeting:greeting 5) Flags:0x0000 ()
   INAM: ID:261793077718318551
-  PNAM: Prev_ID:17022321071170030123
+  PNAM: Prev_ID:1334611325197157934
   NNAM: Next_ID:260801621722411365
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
@@ -16839,7 +16944,7 @@ What's that? You're looking for a cure for greed? Preposterous.
 Record: INFO "306111962245653138" (Greeting:greeting 5) Flags:0x0000 ()
   INAM: ID:306111962245653138
   PNAM: Prev_ID:287302278638199730
-  NNAM: Next_ID:3192728784824217146
+  NNAM: Next_ID:2503927070211192669
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:dialog placeholder
   NAME: Response: END TR MAP 4 ANDOTHREN GREETINGS
@@ -17636,7 +17741,7 @@ Record: INFO "17261128262703116356" (Topic:duties) Flags:0x0000 ()
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_LastWillAndTestament_b
   INTV: Compare_Value:60
  *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_LastWillAndTestament
-  INTV: Compare_Value:35
+  INTV: Compare_Value:45
 
 Record: INFO "14283289941790627484" (Topic:duties) Flags:0x0000 ()
   INAM: ID:14283289941790627484
@@ -17769,7 +17874,7 @@ It is time to emulate Saint Aralor and shed your worldly possessions, %PCRank.
 Record: INFO "932225307299836503" (Topic:duties) Flags:0x0000 ()
   INAM: ID:932225307299836503
   PNAM: Prev_ID:10848704343115994
-  NNAM: Next_ID:107342344535756174
+  NNAM: Next_ID:3071120041720525768
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
   DNAM: Pc_Faction:Temple
@@ -17784,9 +17889,21 @@ I need you to make a pilgrimage to the Shrine of Forgiveness.
  *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_Forgiveness
   INTV: Compare_Value:60
 
+Record: INFO "3071120041720525768" (Topic:duties) Flags:0x0000 ()
+  INAM: ID:3071120041720525768
+  PNAM: Prev_ID:932225307299836503
+  NNAM: Next_ID:107342344535756174
+  DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
+  ONAM: Actor:TR_m4_TT_Nalvs_Andolin
+  DNAM: Pc_Faction:Temple
+  NAME: Response:
+You were told to solve the situation with the troublesome Orc in Bodrum, %PCRank.
+ *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_TroublesomeOrc
+  INTV: Compare_Value:200
+
 Record: INFO "107342344535756174" (Topic:duties) Flags:0x0000 ()
   INAM: ID:107342344535756174
-  PNAM: Prev_ID:932225307299836503
+  PNAM: Prev_ID:3071120041720525768
   NNAM: Next_ID:1397523641179536173
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
