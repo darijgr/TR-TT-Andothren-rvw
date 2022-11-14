@@ -2,7 +2,7 @@
 Record: TES3 "()" Flags:0x0000 ()
   HEDR:   Version:1.3  Is_Master:False  Author:""
   Description:""
-  N_Records:1228
+  N_Records:1226
  *MAST: Master:Morrowind.esm
   DATA: Length:79837557
  *MAST: Master:Tribunal.esm
@@ -2729,33 +2729,6 @@ Record: CONT "tr_rr_monastery_chest" Flags:0x0000 ()
  *NPCO: Count:1  Object:T_Mw_Random_Gems
  *NPCO: Count:89  Object:Gold_001
 
-Record: NPC_ "tr_m2_d_d1" Flags:0x0400 (Persistent)
-  NAME: ID:TR_m2_d_D1
-  MODL: Model:td\anim_death9.nif
-  FNAM: Name:Body
-  RNAM: Race:Dark Elf
-  CNAM: Class:Acrobat
-  ANAM: Faction:
-  BNAM: Head_Model:b_n_dark elf_f_head_03
-  KNAM: Hair_Model:b_n_dark elf_f_hair_05
-  SCRI: Script:TR_m2_Necrom_Corpse_sc
-  NPDT: Level:1
-	Str:40  Int:40  Wil:30  Agi:50  Spd:50  End:50  Per:30  Lck:40
-	Reputation:0  Health:0  Magicka:80  Fatigue:170  Disposition:50
-	FactionIndex:0  Rank:0  Gold:0
-	(Skills):
-	Acrobatics:35  Alchemy:5  Alteration:15  Armorer:5  Athletics:35  Axe:5
-	Block:5  Blunt_Weapon:5  Conjuration:5  Destruction:15  Enchant:5  Hand_To_Hand:20
-	Heavy_Armor:5  Illusion:5  Light_Armor:25  Long_Blade:10  Marksman:40  Medium_Armor:5
-	Mercantile:10  Mysticism:10  Restoration:5  Security:10  Short_Blade:20  Sneak:35
-	Spear:15  Speechcraft:20  Unarmored:30
-  FLAG: Flags:[0x0009 (Female)]
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:000000  Services:[0x0000 ()]
- *AI_W: Distance:               512  Duration:                 5  Time_Of_Day:              0
-	Idle_2:                  60  Idle_3:                  20  Idle_4:                  10
-	Idle_5:                   0  Idle_6:                   0  Idle_7:                   0
-	Idle_8:                   0  Idle_9:                   0  Unknown_1:                1
-
 Record: NPC_ "tr_m4_d_khirakaibandit1" Flags:0x0400 (Persistent)
   NAME: ID:TR_m4_D_KhirakaiBandit1
   FNAM: Name:Dead Bandit
@@ -3962,13 +3935,6 @@ Record: CELL "andothren (0, -17)" Flags:0x0000 ()
   NAME: Name:furn_de_overhang_09
   XSCL: Scale:1.04
   DATA: X:5321.382  Y:-133013.234  Z:339.873  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:3.2289
-
-Record: CELL "necrom, charnelworks mortuary" Flags:0x0000 ()
-  NAME: Name:Necrom, Charnelworks Mortuary
-  DATA: (Interior) Fog_Density:0.75  Flags:0x0005 (Illegal_To_Sleep_Here)
-  WHGT: Water_Height:0.00
-  AMBI: Ambient:RGB=(65,55,40)  Sunlight:RGB=(80,40,20)  Fog:RGB=(55,55,55) Fog_Density:0.75
-  NAM0: Reference_Count:506
 
 Record: CELL "olms ancestral tomb" Flags:0x0000 ()
   NAME: Name:Olms Ancestral Tomb
