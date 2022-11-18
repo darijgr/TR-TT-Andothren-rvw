@@ -2,7 +2,7 @@
 Record: TES3 "()" Flags:0x0000 ()
   HEDR:   Version:1.3  Is_Master:False  Author:""
   Description:""
-  N_Records:1227
+  N_Records:1236
  *MAST: Master:Morrowind.esm
   DATA: Length:79837557
  *MAST: Master:Tribunal.esm
@@ -10,7 +10,7 @@ Record: TES3 "()" Flags:0x0000 ()
  *MAST: Master:Bloodmoon.esm
   DATA: Length:9631798
  *MAST: Master:Tamriel_Data.esm
-  DATA: Length:10193005
+  DATA: Length:10684550
 
 Record: GLOB "tr_m4_tt_andothrenfinale" Flags:0x0000 ()
   NAME: ID:TR_m4_TT_AndothrenFinale
@@ -160,6 +160,71 @@ if ( GetJournalIndex TR_m4_TT_KitchenSupplies >= 101 )
 endif
 
 if ( TR_Map )
+	return
+endif
+
+set TR_Map to 4
+
+End
+
+Record: SCPT "tr_m4_q_mm_ashvubabisc" Flags:0x0000 ()
+  SCHD: ID:TR_m4_q_mm_AshvubabiSC  Num_Shorts:9  Num_Longs:0  Num_Floats:0  Data_Size:498  Local_Var_Size:81
+  SCVR: Script_Variables: TR_Map,control,controlQ,NoLore,OnPCHitMe,DoOnce,State,T_Local_NPC,T_Local_NoLore
+  SCDT: Bytecode: (compiled script code)
+  SCTX: Script_Text:
+Begin TR_m4_q_mm_AshvubabiSC
+
+short TR_Map
+short control
+short controlQ
+short NoLore
+short OnPCHitMe
+short DoOnce
+short State
+short T_Local_NPC
+short T_Local_NoLore
+
+;control and ControlQ used for the quest TR_m4_Arv_Metamorphosis
+
+if ( State == 10 )						;Kills the mind slaves when she dies (mostly for dramatic effect)
+	TR_m4_q_mm_Bisaya->SetHealth 0
+	TR_m4_q_mm_Sharpatu->SetHealth 0
+endif
+
+
+If ( DoOnce )
+	return
+endif
+
+if ( OnDeath )								;Just updates journal OnDeath
+	if ( GetJournalIndex "TR_m4_Arv_Metamorphosis" > 10 )
+		Journal TR_m4_Arv_Metamorphosis 60
+	endif
+	
+	set State to 10
+	set DoOnce to 1
+	set TR_m4_q_mm_AshvuDead to 1 ;Global var, needed to use it because GetDeadCount is fps intensive
+
+	if ( GetJournalIndex TR_m4_TT_ArmunAdventure > 0 )
+		if ( GetJournalIndex TR_m4_TT_ArmunAdventure < 100 )
+			Journal TR_m4_TT_ArmunAdventure_f 100
+		endif
+	endif
+
+endif
+
+if ( OnPCHitMe )
+	SetFight 100
+	TR_m4_q_mm_Bisaya->SetFight 100
+	TR_m4_q_mm_Sharpatu->SetFight 100
+	StartCombat player
+	TR_m4_q_mm_Bisaya->StartCombat player
+	TR_m4_q_mm_Sharpatu->StartCombat player
+	Set OnPCHitME to 0
+endif
+
+
+if ( TR_Map == 4 )
 	return
 endif
 
@@ -827,7 +892,7 @@ StopScript TR_m4_TT_MoveFelaniScript
 End
 
 Record: SCPT "tr_m4_tt_nalvs_andolin_sc" Flags:0x0000 ()
-  SCHD: ID:TR_m4_TT_Nalvs_Andolin_sc  Num_Shorts:11  Num_Longs:0  Num_Floats:1  Data_Size:2522  Local_Var_Size:121
+  SCHD: ID:TR_m4_TT_Nalvs_Andolin_sc  Num_Shorts:11  Num_Longs:0  Num_Floats:1  Data_Size:2444  Local_Var_Size:121
   SCVR: Script_Variables: TR_Map,control,controlQ,NoLore,T_Local_NPC,moneyExpected,moneySet,moneySatisfied,T_Local_NoLore,noHit,ThankIbelard,timer
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
@@ -883,13 +948,7 @@ if ( controlQ == 0 )
 		else
 			set controlQ to -1
 		endif
-	elseif ( GetDeadCount TR_m4_V_Ofelia > 0 )
-		if ( GetDeadCount "TR_m4_Ulmon Vathri" == 0 )
-			set controlQ to 1
-		else
-			set controlQ to -1
-		endif
-	elseif ( GetDeadCount TR_m4_q_mm_Bisaya > 0 )
+	elseif ( GetJournalIndex TR_m4_TT_ArmunAdventure_f >= 100 )
 		if ( GetDeadCount "TR_m4_Ulmon Vathri" == 0 )
 			set controlQ to 1
 		else
@@ -2453,6 +2512,193 @@ endif
 
 End
 
+Record: SCPT "tr_m4_v_ofelia_sc" Flags:0x0000 ()
+  SCHD: ID:TR_m4_V_Ofelia_sc  Num_Shorts:18  Num_Longs:0  Num_Floats:1  Data_Size:1444  Local_Var_Size:170
+  SCVR: Script_Variables: nolore,TR_Map,TR_Vamp,control,controlQ,NoHello,NoFlee,NoIdle,NoIntruder,NoThief,T_Local_NPC,T_Local_NoLore,checkBlood,doOnce,state,ashStorm,fixHead,T_Local_Khajiit,timer
+  SCDT: Bytecode: (compiled script code)
+  SCTX: Script_Text:
+begin TR_m4_V_Ofelia_sc
+
+;Should check for all vanilla and T_D province mod infection
+;---
+;Checks run on cellchange and then constantly if applicable
+;No need for always-running global scripts like vanilla
+
+;    PROVINCE LOCAL VARIABLES HERE
+short nolore
+short TR_Map
+short TR_Vamp
+short control
+short controlQ
+
+short NoHello
+short NoFlee
+short NoIdle
+short NoIntruder
+short NoThief
+short T_Local_NPC
+short T_Local_NoLore
+
+short checkBlood
+short doOnce
+short state
+
+;Vanilla global PCVampire
+;Vanilla global PCWerewolf
+;Tamriel_Data global T_Glob_PorphyricInfected
+
+;Baluath ash storm benefits variables
+float timer
+short ashStorm
+short fixHead
+short T_Local_Khajiit
+
+if ( T_Local_Khajiit == 0 )
+	set T_Local_Khajiit to -1
+
+	if ( GetRace "T_Els_Cathay" )
+		set T_Local_Khajiit to 1
+	elseif ( GetRace "T_Els_Cathay-raht" )
+		set T_Local_Khajiit to 1
+	elseif ( GetRace "T_Els_Ohmes" )
+		set T_Local_Khajiit to 1
+	elseif ( GetRace "T_Els_Ohmes-raht" )
+		set T_Local_Khajiit to 1
+	elseif ( GetRace "T_Els_Suthay" )
+		set T_Local_Khajiit to 1
+	elseif ( GetRace "Khajiit" )
+		set T_Local_Khajiit to 1
+	endif
+endif
+
+;-----------------------------------------------
+; Drop vampire dust on death like vanilla
+;-----------------------------------------------
+
+if ( OnDeath )
+	AddItem "ingred_vampire_dust_01" 1
+
+	if ( GetJournalIndex TR_m4_TT_ArmunAdventure > 0 )
+		if ( GetJournalIndex TR_m4_TT_ArmunAdventure < 100 )
+			Journal TR_m4_TT_ArmunAdventure_c 110
+		endif
+	endif
+endif
+
+;-----------------------------------------------
+; Check player infection/vampire status
+;-----------------------------------------------
+
+if ( CellChanged )
+	set checkBlood to 0
+	set state to 0
+
+	if ( T_Glob_PorphyricInfected )
+	elseif ( player->GetSpell "Vampire Blood Quarra" )
+	elseif ( player->GetSpell "Vampire Blood Aundae" )
+	elseif ( player->GetSpell "Vampire Blood Berne" )
+	elseif ( PCVampire != 0 )
+	elseif ( PCWerewolf == 1 )
+	else
+		;Player isn't infected/vampire/cured vampire/werewolf
+		set checkBlood to 1
+	endif
+endif
+
+if ( fixHead )
+	;Mod-added heads disappear when the Vampirism effect is removed/swapped
+	;To fix this we equip a helmet and remove it to reset the head model
+	set fixHead to 0
+	equip T_Glb_Var_HeadFixer ;Lack of AddItem is intentional
+	RemoveItem T_Glb_Var_HeadFixer 1
+endif
+
+if ( MenuMode )
+	return
+endif
+
+;Baluath stuff, see cure script
+set timer to ( timer + GetSecondsPassed )
+if ( timer > 1 )
+	set timer to 0
+	if ( ashStorm )
+		set ashStorm to 0
+	endif
+	if ( GetWindSpeed )
+		if ( GetCurrentWeather >= 6 ) ;ash
+			if ( GetCurrentWeather <= 7 ) ;blight
+				set ashStorm to 1
+			endif
+		endif
+	endif
+	if ( ashStorm )
+		if ( GetSpell "T_Vamp_Ab_Baluath_Ash" == 0 )
+			AddSpell "T_Vamp_Ab_Baluath_Ash"
+			AddSpell "T_Vamp_Sp_Baluath_Ash"
+			AddSpell "T_Vamp_Ab_Baluath_SunDmg"
+			RemoveSpell "vampire sun damage"
+			set fixHead to 1
+		endif
+	elseif ( GetSpell "T_Vamp_Ab_Baluath_Ash" )
+		RemoveSpell "T_Vamp_Ab_Baluath_Ash"
+		RemoveSpell "T_Vamp_Sp_Baluath_Ash"
+		AddSpell "vampire sun damage"
+		RemoveSpell "T_Vamp_Ab_Baluath_SunDmg"
+		set fixHead to 1
+	endif
+endif
+
+
+;------------------------------------------------
+; Player was not infected before changing cell,
+; so constantly check for infection and then run 
+; this clan's specific global script
+;------------------------------------------------
+
+if ( checkBlood )
+	if ( player->GetSpellEffects "T_Vamp_Dis_Baluath" )
+		if ( ScriptRunning "T_ScVamp_Baluath_PC" != 1 )
+			StartScript "T_ScVamp_Baluath_PC"
+		endif
+	endif
+
+;------------------------------------------------
+; Player was infected/vampire before changing cell,
+; so check whether player is in an enemy clan
+;------------------------------------------------
+
+elseif ( state != 1 )
+	if ( VampClan == 100 )
+		SetFight 30	;Player is a friendly vampire
+	else
+		SetFight 90	;Player is an enemy vampire
+	endif
+
+	set state to 1
+endif
+
+;------------------------------------------------
+; Apply vampire spells/abilities to this NPC once
+;------------------------------------------------
+
+if ( doOnce == 0 )
+	AddSpell "T_Vamp_Dis_Baluath"
+	AddSpell "T_Vamp_Ab_Baluath"
+	AddSpell "Vampire Attributes"
+	AddSpell "Vampire Skills"
+	AddSpell "Vampire Immunities"
+	AddSpell "Vampire Sun Damage"
+	AddSpell "Vampire Touch"
+	ModRestoration 75
+	;set province-specific location variable for dialogue here
+	set TR_Map to 4
+	set TR_Vamp to 1
+	set doOnce to 1
+endif
+
+end
+
+
 Record: SCPT "tr_m4_vabalajunta_sc" Flags:0x0000 ()
   SCHD: ID:TR_m4_VabalAjunta_sc  Num_Shorts:6  Num_Longs:0  Num_Floats:0  Data_Size:324  Local_Var_Size:59
   SCVR: Script_Variables: TR_Map,control,controlQ,T_Local_NPC,T_Local_Khajiit,NoLore
@@ -2731,6 +2977,7 @@ Record: CONT "tr_rr_monastery_chest" Flags:0x0000 ()
 
 Record: NPC_ "tr_m4_d_khirakaibandit1" Flags:0x0400 (Persistent)
   NAME: ID:TR_m4_D_KhirakaiBandit1
+  MODL: Model:base_anim.nif
   FNAM: Name:Dead Bandit
   RNAM: Race:Dark Elf
   CNAM: Class:Rogue
@@ -2763,6 +3010,7 @@ Record: NPC_ "tr_m4_d_khirakaibandit1" Flags:0x0400 (Persistent)
 
 Record: NPC_ "tr_m4_d_khirakaibandit2" Flags:0x0400 (Persistent)
   NAME: ID:TR_m4_D_KhirakaiBandit2
+  MODL: Model:base_anim.nif
   FNAM: Name:Dead Bandit
   RNAM: Race:Dark Elf
   CNAM: Class:Rogue
@@ -3138,6 +3386,28 @@ Record: NPC_ "tr_m4_uls edralo" Flags:0x0000 ()
 	Idle_5:                   0  Idle_6:                   0  Idle_7:                   0
 	Idle_8:                   0  Idle_9:                   0  Unknown_1:                1
 
+Record: NPC_ "tr_m4_v_ofelia" Flags:0x0000 ()
+  NAME: ID:TR_m4_V_Ofelia
+  MODL: Model:base_anim_female.nif
+  FNAM: Name:Ofelia
+  RNAM: Race:Breton
+  CNAM: Class:Sorcerer
+  ANAM: Faction:T_Mw_Clan_Baluath
+  BNAM: Head_Model:T_B_Bre_HeadFemTR_05
+  KNAM: Hair_Model:b_n_breton_f_hair_02
+  SCRI: Script:TR_m4_V_Ofelia_sc
+  NPDT: Level:28  Disposition:20  FactionIndex:12  Rank:5  Gold:0
+  FLAG: Flags:[0x0019 (Autocalc, Female)]
+ *NPCO: Count:1  Object:T_De_Cm_Shirt_15
+ *NPCO: Count:1  Object:T_De_Cm_Pants_05
+ *NPCO: Count:1  Object:p_chameleon_b
+ *NPCO: Count:1  Object:p_restore_health_e
+  AIDT: Hello:30  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:000000  Services:[0x0000 ()]
+ *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
+	Idle_2:                  60  Idle_3:                  20  Idle_4:                  10
+	Idle_5:                  10  Idle_6:                   0  Idle_7:                   0
+	Idle_8:                   0  Idle_9:                   0  Unknown_1:                1
+
 Record: NPC_ "tr_m4_vabal-ajunta" Flags:0x0000 ()
   NAME: ID:TR_m4_Vabal-Ajunta
   FNAM: Name:Vabal-Ajunta
@@ -3243,7 +3513,7 @@ Record: NPC_ "tr_m4_tt_tevuren_galdar" Flags:0x0000 ()
  *NPCO: Count:1  Object:indoril pauldron right
  *NPCO: Count:1  Object:indoril pauldron left
  *NPCO: Count:2  Object:p_restore_health_q
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:091b76  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:73ce75  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  10  Idle_3:                   0  Idle_4:                  10
 	Idle_5:                  20  Idle_6:                   5  Idle_7:                  10
@@ -3276,7 +3546,7 @@ Record: NPC_ "tr_m4_tt_orcvivec" Flags:0x0000 ()
  *NPCO: Count:1  Object:bonemold_gah-julan_pauldron_r
  *NPCO: Count:1  Object:chitin pauldron - left
  *NPCS: Spell:TR_m4_TT_OrcVivecAbility
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:091b76  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:73ce75  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  30  Idle_3:                  20  Idle_4:                   0
 	Idle_5:                  30  Idle_6:                   0  Idle_7:                   0
@@ -3330,7 +3600,7 @@ Record: NPC_ "tr_m4_tt_ravur_othravel" Flags:0x0000 ()
  *NPCS: Spell:absorb personality
  *NPCS: Spell:absorb speed
  *NPCS: Spell:absorb willpower
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:091b76  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:73ce75  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  40  Idle_3:                   0  Idle_4:                  10
 	Idle_5:                   0  Idle_6:                   5  Idle_7:                   5
@@ -3440,7 +3710,7 @@ Record: CREA "tr_m4_tt_olmsguardgreat" Flags:0x0000 ()
  *NPCS: Spell:resist poison_75
  *NPCS: Spell:dread curse: endurance
  *NPCS: Spell:dread curse: strength
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:091b76  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:73ce75  Services:[0xa00000 ()]
  *AI_W: Distance:        200  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           30  Idle_3:           50  Idle_4:           30  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3470,7 +3740,7 @@ Record: CREA "tr_m4_tt_olmsguard" Flags:0x0000 ()
  *NPCS: Spell:resist poison_75
  *NPCS: Spell:grave curse: strength
  *NPCS: Spell:grave curse: endurance
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:091b76  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:73ce75  Services:[0xa00000 ()]
  *AI_W: Distance:       1000  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           50  Idle_3:           50  Idle_4:            0  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3499,7 +3769,7 @@ Record: CREA "tr_m4_tt_olmsguardghost" Flags:0x0000 ()
  *NPCS: Spell:immune to disease
  *NPCS: Spell:immune to frost
  *NPCS: Spell:immune to poison
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:091b76  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:73ce75  Services:[0xa00000 ()]
  *AI_W: Distance:       1000  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           50  Idle_3:           50  Idle_4:            0  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -4011,7 +4281,7 @@ Record: CELL "andothren, temple" Flags:0x0000 ()
   FLTV: Lock_Level:90
   KNAM: Key:TR_m4_TT_TempleCofferKey
   DATA: X:3786.271  Y:4048.574  Z:14616.396  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:0.1349
-  NAM0: Reference_Count:900
+  NAM0: Reference_Count:899
  *FRMR: ObjIdx:23  MastIdx:0
   NAME: Name:TR_m4_TT_VathriPipe
   DATA: X:3662.948  Y:4022.980  Z:14598.092  X_Angle:1.5000  Y_Angle:0.0000  Z_Angle:4.3832
@@ -4333,7 +4603,7 @@ Record: CELL "roth roryn region (-13, -18)" Flags:0x0000 ()
  *FRMR: ObjIdx:74  MastIdx:0
   NAME: Name:TR_m4_TT_OrcVivec
   DATA: X:-101822.836  Y:-146763.781  Z:3227.525  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:1.8000
-  NAM0: Reference_Count:330
+  NAM0: Reference_Count:328
 
 Record: CELL "omaynis, aro helseri: trader" Flags:0x0000 ()
   NAME: Name:Omaynis, Aro Helseri: Trader
@@ -5226,10 +5496,18 @@ Record: INFO "19428172263184119101" (Journal:tr_m4_tt_armunadventure_c) Flags:0x
 Record: INFO "1369823552261061095" (Journal:tr_m4_tt_armunadventure_c) Flags:0x0000 ()
   INAM: ID:1369823552261061095
   PNAM: Prev_ID:19428172263184119101
-  NNAM: Next_ID:
+  NNAM: Next_ID:13715938543186366
   DATA: JournalIndex:100
   NAME: Response:
-I have found two dead bandits northeast of Arvud. Presumably they were the ones that ambushed the pilgrim. I should report back to Nalvs Andolin.
+I have found two dead bandits northeast of Arvud. Presumably they were the ones that ambushed the pilgrim.
+
+Record: INFO "13715938543186366" (Journal:tr_m4_tt_armunadventure_c) Flags:0x0000 ()
+  INAM: ID:13715938543186366
+  PNAM: Prev_ID:1369823552261061095
+  NNAM: Next_ID:
+  DATA: JournalIndex:110
+  NAME: Response:
+I destroyed a nest of vampires in the ruins where I found the dead bandits.
 
 Record: DIAL "tr_m4_tt_armunadventure_d" Flags:0x0000 ()
   NAME: ID:TR_m4_TT_ArmunAdventure_d
@@ -5290,6 +5568,34 @@ I fought and killed the troublesome Orc, Garash gro-Vivec, in one of Malacath's 
 Record: DIAL "tr_m4_and_missingmerchant" Flags:0x0000 ()
   NAME: ID:TR_m4_And_MissingMerchant
   DATA: Type:(Journal)
+
+Record: DIAL "tr_m4_tt_armunadventure_f" Flags:0x0000 ()
+  NAME: ID:TR_m4_TT_ArmunAdventure_f
+  DATA: Type:(Journal)
+
+Record: INFO "29761289211913618423" (Journal:tr_m4_tt_armunadventure_f) Flags:0x0000 ()
+  INAM: ID:29761289211913618423
+  PNAM: Prev_ID:
+  NNAM: Next_ID:93155531937812462
+  DATA: JournalIndex:0
+  NAME: Response: Temple: Armun Ashlands Avenger
+  QSTN: Quest_Name:1
+
+Record: INFO "93155531937812462" (Journal:tr_m4_tt_armunadventure_f) Flags:0x0000 ()
+  INAM: ID:93155531937812462
+  PNAM: Prev_ID:29761289211913618423
+  NNAM: Next_ID:1769776912294617282
+  DATA: JournalIndex:10
+  NAME: Response:
+The mabrigash in the ruins near Arvud deny having anything to do with the death of a pilgrim I was sent to avenge.
+
+Record: INFO "1769776912294617282" (Journal:tr_m4_tt_armunadventure_f) Flags:0x0000 ()
+  INAM: ID:1769776912294617282
+  PNAM: Prev_ID:93155531937812462
+  NNAM: Next_ID:
+  DATA: JournalIndex:100
+  NAME: Response:
+I killed the mabrigash northeast of Arvud. If they were responsible for the death of a pilgrim, they are no longer a threat.
 
 Record: DIAL "tr_m4_and_gamblingaddict" Flags:0x0000 ()
   NAME: ID:TR_m4_And_GamblingAddict
@@ -5735,6 +6041,11 @@ Record: INFO "7150284082398930356" (Journal:tr_m4_tt_armunadventure) Flags:0x000
 Nalvs Andolin seemed glad that I returned from my expedition to the Armun Ashland, having made the presence of the Temple felt in the area, even if we might never be sure if we caught the pilgrim's killer.
   QSTF: Quest_Finished:1
 
+Record: DIAL "tr_m4_tt_armunavenger_f" Flags:0x0020 (Deleted)
+  NAME: ID:TR_m4_TT_ArmunAvenger_f
+  DATA: Type:(Journal)
+  DELE: Deleted:0
+
 Record: DIAL "tr_m4_tt_wellnesscheck" Flags:0x0000 ()
   NAME: ID:TR_m4_TT_WellnessCheck
   DATA: Type:(Journal)
@@ -5922,6 +6233,11 @@ Record: INFO "2596321042541919367" (Journal:tr_m4_om_statuea) Flags:0x0000 ()
   DATA: JournalIndex:80
   NAME: Response:
 The Andothren Temple is willing to provide the remaining half of the statue funds for Indoril Beroth, in the form of scrolls and poultices of equivalent value. I should tell Indoril Beroth that the matter of payment is taken care of.
+
+Record: DIAL "" Flags:0x0020 (Deleted)
+  NAME: ID:
+  DATA: Type:(Journal)
+  DELE: Deleted:0
 
 Record: DIAL "order of doctrine and ordination" Flags:0x0000 ()
   NAME: ID:Order of Doctrine and Ordination
@@ -9780,8 +10096,8 @@ Vampires? I'm surprised you made it out alive then, %PCName. Excellent work. Do 
   INTV: Compare_Value:10
  *SCVR: Index:2  Type:(Function)  Function:(Choice)  Comparison:(=)  Name:
   INTV: Compare_Value:2
- *SCVR: Index:3  Type:(Dead)  Function:(Dead_Type)  Comparison:(>=)  Name:TR_m4_V_Ofelia
-  INTV: Compare_Value:1
+ *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_ArmunAdventure_c
+  INTV: Compare_Value:110
  *SCVR: Index:4  Type:(Local)  Function:(Variable_Compare)  Comparison:(>=)  Name:controlQ
   INTV: Compare_Value:4
   BNAM: Result:	Journal TR_m4_TT_ArmunAdventure 100
@@ -9804,8 +10120,8 @@ Vampires? I'm surprised you made it out alive then, %PCName. Excellent work. Do 
   INTV: Compare_Value:10
  *SCVR: Index:2  Type:(Function)  Function:(Choice)  Comparison:(=)  Name:
   INTV: Compare_Value:2
- *SCVR: Index:3  Type:(Dead)  Function:(Dead_Type)  Comparison:(>=)  Name:TR_m4_V_Ofelia
-  INTV: Compare_Value:1
+ *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_ArmunAdventure_c
+  INTV: Compare_Value:110
   BNAM: Result:	Journal TR_m4_TT_ArmunAdventure 100
 		ModDisposition 10
 		set TR_m4_TT_Ravur_Othravel.trackAshlands to 2
@@ -9927,7 +10243,7 @@ Good work. The Ashlands are better off without these vile spawn of the House of 
 Record: INFO "583215868666914888" (Topic:death of a pilgrim) Flags:0x0000 ()
   INAM: ID:583215868666914888
   PNAM: Prev_ID:6042234783000620561
-  NNAM: Next_ID:102893159618113380
+  NNAM: Next_ID:6982114381651331965
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
   NAME: Response:
@@ -9944,54 +10260,9 @@ Good work. The Ashlands are better off without these vile spawn of the House of 
 		ModPCFacRep 5 "Temple"
 		Player->ModReputation 1
 
-Record: INFO "102893159618113380" (Topic:death of a pilgrim) Flags:0x0000 ()
-  INAM: ID:102893159618113380
-  PNAM: Prev_ID:583215868666914888
-  NNAM: Next_ID:6982114381651331965
-  DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
-  ONAM: Actor:TR_m4_TT_Nalvs_Andolin
-  NAME: Response:
-I'm sure you've had all sorts of adventures. Tell me, whatever group of miscreants did you mete out justice upon?
- *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_ArmunAdventure
-  INTV: Compare_Value:100
- *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_ArmunAdventure
-  INTV: Compare_Value:10
- *SCVR: Index:2  Type:(Local)  Function:(Variable_Compare)  Comparison:(=)  Name:controlQ
-  INTV: Compare_Value:-1
-  BNAM: Result:	if ( GetJournalIndex TR_m4_TT_ArmunAdventure_b >= 100 )
-		    if ( GetJournalIndex TR_m4_TT_ArmunAdventure_e >= 90 )
-		        Choice "I found a group of Malacath cultists, including the troublesome Orc of Bodrum. They are dead now." 1
-		    else
-		        Choice "I slayed a group of Malacath cultists." 1
-		    endif
-		elseif ( GetJournalIndex TR_m4_TT_ArmunAdventure_e >= 90 )
-		    Choice "I found the troublesome Orc of Bodrum in a Malacath shrine. He is dead now." 1
-		endif
-		if ( GetDeadCount TR_m4_V_Ofelia >= 1 )
-		    Choice "I found two dead bandits, and destroyed the vampires that killed them." 2
-		elseif ( GetJournalIndex TR_m4_TT_ArmunAdventure_c >= 100 )
-		    Choice "I found two bandits, dead in a ruin." 2
-		endif
-		if ( GetJournalIndex TR_m4_TT_ArmunAdventure_d >= 100 )
-		    Choice "I killed an Ashlander chief." 3
-		endif
-		if ( GetDeadCount TR_m4_q_mm_Bisaya >= 1 )
-		    Choice "I slayed a mabrigash and her cronies." 4
-		endif
-		if ( controlQ >= 6 )
-		    Choice "I do not know who was responsible, but many of the Temple's enemies are dead." 5
-		endif
-		if ( GetJournalIndex TR_m4_TT_ArmunAdventure_e == 50 )
-		    if ( TR_m4_TT_OrcHostile == 0 )
-		        set TR_m4_TT_OrcVivec.controlQ to 30
-		        TR_m4_TT_OrcVivec->PositionCell 3235, -134270, 700, 0, "Andothren"
-		        TR_m4_TT_OrcVivec->AIWander 200, 0, 5, 0, 30, 20, 0, 30, 0, 0, 20, 20
-		    endif
-		endif
-
 Record: INFO "6982114381651331965" (Topic:death of a pilgrim) Flags:0x0000 ()
   INAM: ID:6982114381651331965
-  PNAM: Prev_ID:102893159618113380
+  PNAM: Prev_ID:583215868666914888
   NNAM: Next_ID:1822310631981516244
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
@@ -10001,8 +10272,8 @@ I'm sure you've had all sorts of adventures. Tell me, whatever group of miscrean
   INTV: Compare_Value:100
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_ArmunAdventure
   INTV: Compare_Value:10
- *SCVR: Index:2  Type:(Local)  Function:(Variable_Compare)  Comparison:(>=)  Name:controlQ
-  INTV: Compare_Value:4
+ *SCVR: Index:2  Type:(Local)  Function:(Variable_Compare)  Comparison:(!=)  Name:controlQ
+  INTV: Compare_Value:0
   BNAM: Result:	if ( GetJournalIndex TR_m4_TT_ArmunAdventure_b >= 100 )
 		    if ( GetJournalIndex TR_m4_TT_ArmunAdventure_e >= 90 )
 		        Choice "I found a group of Malacath cultists, including the troublesome Orc of Bodrum. They are dead now." 1
@@ -10012,7 +10283,7 @@ I'm sure you've had all sorts of adventures. Tell me, whatever group of miscrean
 		elseif ( GetJournalIndex TR_m4_TT_ArmunAdventure_e >= 90 )
 		    Choice "I found the troublesome Orc of Bodrum in a Malacath shrine. He is dead now." 1
 		endif
-		if ( GetDeadCount TR_m4_V_Ofelia >= 1 )
+		if (  GetJournalIndex TR_m4_TT_ArmunAdventure_c >= 110 )
 		    Choice "I found two dead bandits, and destroyed the vampires that killed them." 2
 		elseif ( GetJournalIndex TR_m4_TT_ArmunAdventure_c >= 100 )
 		    Choice "I found two bandits, dead in a ruin." 2
@@ -10020,7 +10291,7 @@ I'm sure you've had all sorts of adventures. Tell me, whatever group of miscrean
 		if ( GetJournalIndex TR_m4_TT_ArmunAdventure_d >= 100 )
 		    Choice "I killed an Ashlander chief." 3
 		endif
-		if ( GetDeadCount TR_m4_q_mm_Bisaya >= 1 )
+		if ( GetJournalIndex TR_m4_TT_ArmunAdventure_f >= 100 )
 		    Choice "I slayed a mabrigash and her cronies." 4
 		endif
 		if ( controlQ >= 6 )
@@ -10174,6 +10445,7 @@ What use would a dead pilgrim be to us? Do you see them among our numbers? No? T
   INTV: Compare_Value:10
  *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_ArmunAdventure
   INTV: Compare_Value:30
+  BNAM: Result:	Journal TR_m4_TT_ArmunAdventure_f 10
 
 Record: INFO "2024390071615215654" (Topic:death of a pilgrim) Flags:0x0000 ()
   INAM: ID:2024390071615215654
@@ -15467,13 +15739,11 @@ Record: INFO "25594303842039632000" (Greeting:greeting 1) Flags:0x0000 ()
 		endif
 		if ( GetJournalIndex TR_m4_TT_ArmunAdventure_c >= 100 )
 		    set controlQ to ( controlQ + 1 )
-		elseif ( GetDeadCount TR_m4_V_Ofelia >= 1 )
-		    set controlQ to ( controlQ + 1 )
 		endif
 		if ( GetJournalIndex TR_m4_TT_ArmunAdventure_d >= 100 )
 		    set controlQ to ( controlQ + 1 )
 		endif
-		if ( GetDeadCount TR_m4_q_mm_Bisaya > 0 )
+		if ( GetJournalIndex TR_m4_TT_ArmunAdventure_f >= 100 )
 		    set controlQ to ( controlQ + 1 )
 		endif
 		; get will
@@ -15527,7 +15797,7 @@ Muthsera %PCName, I believe you dropped this. Anyway, I uh, need to go. It's imp
 Record: INFO "2645204601446526312" (Greeting:greeting 1) Flags:0x0000 ()
   INAM: ID:2645204601446526312
   PNAM: Prev_ID:24045167582886815384
-  NNAM: Next_ID:2031222397819902
+  NNAM: Next_ID:169887230202715573
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
@@ -16953,7 +17223,7 @@ What's that? You're looking for a cure for greed? Preposterous.
 Record: INFO "306111962245653138" (Greeting:greeting 5) Flags:0x0000 ()
   INAM: ID:306111962245653138
   PNAM: Prev_ID:287302278638199730
-  NNAM: Next_ID:3192728784824217146
+  NNAM: Next_ID:22905124942942024791
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:dialog placeholder
   NAME: Response: END TR MAP 4 ANDOTHREN GREETINGS
