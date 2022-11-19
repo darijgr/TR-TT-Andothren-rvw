@@ -2,7 +2,7 @@
 Record: TES3 "()" Flags:0x0000 ()
   HEDR:   Version:1.3  Is_Master:False  Author:""
   Description:""
-  N_Records:1234
+  N_Records:1238
  *MAST: Master:Morrowind.esm
   DATA: Length:79837557
  *MAST: Master:Tribunal.esm
@@ -10,7 +10,7 @@ Record: TES3 "()" Flags:0x0000 ()
  *MAST: Master:Bloodmoon.esm
   DATA: Length:9631798
  *MAST: Master:Tamriel_Data.esm
-  DATA: Length:10193005
+  DATA: Length:10684550
 
 Record: GLOB "tr_m4_tt_andothrenfinale" Flags:0x0000 ()
   NAME: ID:TR_m4_TT_AndothrenFinale
@@ -3514,7 +3514,7 @@ Record: NPC_ "tr_m4_tt_tevuren_galdar" Flags:0x0000 ()
  *NPCO: Count:1  Object:indoril pauldron right
  *NPCO: Count:1  Object:indoril pauldron left
  *NPCO: Count:2  Object:p_restore_health_q
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:091b76  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:73ce75  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  10  Idle_3:                   0  Idle_4:                  10
 	Idle_5:                  20  Idle_6:                   5  Idle_7:                  10
@@ -3547,7 +3547,7 @@ Record: NPC_ "tr_m4_tt_orcvivec" Flags:0x0000 ()
  *NPCO: Count:1  Object:bonemold_gah-julan_pauldron_r
  *NPCO: Count:1  Object:chitin pauldron - left
  *NPCS: Spell:TR_m4_TT_OrcVivecAbility
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:091b76  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:73ce75  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  30  Idle_3:                  20  Idle_4:                   0
 	Idle_5:                  30  Idle_6:                   0  Idle_7:                   0
@@ -3601,7 +3601,7 @@ Record: NPC_ "tr_m4_tt_ravur_othravel" Flags:0x0000 ()
  *NPCS: Spell:absorb personality
  *NPCS: Spell:absorb speed
  *NPCS: Spell:absorb willpower
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:091b76  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:73ce75  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  40  Idle_3:                   0  Idle_4:                  10
 	Idle_5:                   0  Idle_6:                   5  Idle_7:                   5
@@ -3711,7 +3711,7 @@ Record: CREA "tr_m4_tt_olmsguardgreat" Flags:0x0000 ()
  *NPCS: Spell:resist poison_75
  *NPCS: Spell:dread curse: endurance
  *NPCS: Spell:dread curse: strength
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:091b76  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:73ce75  Services:[0xa00000 ()]
  *AI_W: Distance:        200  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           30  Idle_3:           50  Idle_4:           30  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3741,7 +3741,7 @@ Record: CREA "tr_m4_tt_olmsguard" Flags:0x0000 ()
  *NPCS: Spell:resist poison_75
  *NPCS: Spell:grave curse: strength
  *NPCS: Spell:grave curse: endurance
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:091b76  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:73ce75  Services:[0xa00000 ()]
  *AI_W: Distance:       1000  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           50  Idle_3:           50  Idle_4:            0  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3770,7 +3770,7 @@ Record: CREA "tr_m4_tt_olmsguardghost" Flags:0x0000 ()
  *NPCS: Spell:immune to disease
  *NPCS: Spell:immune to frost
  *NPCS: Spell:immune to poison
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:091b76  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:73ce75  Services:[0xa00000 ()]
  *AI_W: Distance:       1000  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           50  Idle_3:           50  Idle_4:            0  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -4282,7 +4282,7 @@ Record: CELL "andothren, temple" Flags:0x0000 ()
   FLTV: Lock_Level:90
   KNAM: Key:TR_m4_TT_TempleCofferKey
   DATA: X:3786.271  Y:4048.574  Z:14616.396  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:0.1349
-  NAM0: Reference_Count:900
+  NAM0: Reference_Count:899
  *FRMR: ObjIdx:23  MastIdx:0
   NAME: Name:TR_m4_TT_VathriPipe
   DATA: X:3662.948  Y:4022.980  Z:14598.092  X_Angle:1.5000  Y_Angle:0.0000  Z_Angle:4.3832
@@ -4604,7 +4604,7 @@ Record: CELL "roth roryn region (-13, -18)" Flags:0x0000 ()
  *FRMR: ObjIdx:74  MastIdx:0
   NAME: Name:TR_m4_TT_OrcVivec
   DATA: X:-101822.836  Y:-146763.781  Z:3227.525  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:1.8000
-  NAM0: Reference_Count:330
+  NAM0: Reference_Count:328
 
 Record: CELL "omaynis, aro helseri: trader" Flags:0x0000 ()
   NAME: Name:Omaynis, Aro Helseri: Trader
@@ -4634,14 +4634,22 @@ Record: INFO "193461322026499295" (Journal:tr_m4_tt_andothrencharitytholer) Flag
 Record: INFO "24729193471142422838" (Journal:tr_m4_tt_andothrencharitytholer) Flags:0x0000 ()
   INAM: ID:24729193471142422838
   PNAM: Prev_ID:193461322026499295
-  NNAM: Next_ID:64134512697912275
+  NNAM: Next_ID:1250636081678421357
   DATA: JournalIndex:10
   NAME: Response:
 Ulvys Ules, the steward of Tholer Andas, said the councilor already makes regular donations to the Temple, and that I should meet with Tholer Andas directly if I wanted to solicit an additional contribution from the councilor.
 
+Record: INFO "1250636081678421357" (Journal:tr_m4_tt_andothrencharitytholer) Flags:0x0000 ()
+  INAM: ID:1250636081678421357
+  PNAM: Prev_ID:24729193471142422838
+  NNAM: Next_ID:64134512697912275
+  DATA: JournalIndex:15
+  NAME: Response:
+Tholer Andas appears reluctant to support the charitable mission of the Temple.
+
 Record: INFO "64134512697912275" (Journal:tr_m4_tt_andothrencharitytholer) Flags:0x0000 ()
   INAM: ID:64134512697912275
-  PNAM: Prev_ID:24729193471142422838
+  PNAM: Prev_ID:1250636081678421357
   NNAM: Next_ID:1289024398318716000
   DATA: JournalIndex:20
   NAME: Response:
@@ -5135,18 +5143,25 @@ Mels Mathyn offered to donate to the Temple if I roughed up, or intimidated a co
 Record: INFO "13717138232990115105" (Journal:tr_m4_tt_andothrencharitymels) Flags:0x0000 ()
   INAM: ID:13717138232990115105
   PNAM: Prev_ID:31126114603265013713
-  NNAM: Next_ID:1855510009447123422
+  NNAM: Next_ID:283032656238843568
   DATA: JournalIndex:20
   NAME: Response:
 Mels Mathyn told me to find the drunk Dunmer that insulted him in the Dancing Cup, in the eastern part of town, and send him a message. I am to convince him to apologize to  Mels. It was suggested I use intimidation or violence to teach the commoner a lesson, but perhaps he can be reasoned with.
 
-Record: INFO "1855510009447123422" (Journal:tr_m4_tt_andothrencharitymels) Flags:0x0000 ()
-  INAM: ID:1855510009447123422
+Record: INFO "283032656238843568" (Journal:tr_m4_tt_andothrencharitymels) Flags:0x0000 ()
+  INAM: ID:283032656238843568
   PNAM: Prev_ID:13717138232990115105
-  NNAM: Next_ID:156093181462229909
+  NNAM: Next_ID:1855510009447123422
   DATA: JournalIndex:30
   NAME: Response:
 I convinced Velms Braven to apologize to Mels for his insults.
+
+Record: INFO "1855510009447123422" (Journal:tr_m4_tt_andothrencharitymels) Flags:0x0000 ()
+  INAM: ID:1855510009447123422
+  PNAM: Prev_ID:283032656238843568
+  NNAM: Next_ID:156093181462229909
+  DATA: JournalIndex:35
+  NAME: Response: Velms Braven is dead.
 
 Record: INFO "156093181462229909" (Journal:tr_m4_tt_andothrencharitymels) Flags:0x0000 ()
   INAM: ID:156093181462229909
@@ -7312,6 +7327,7 @@ I find that hard to believe, unless your Temple has severely mismanaged its asse
   INTV: Compare_Value:10
  *SCVR: Index:4  Type:(Function)  Function:(Choice)  Comparison:(=)  Name:
   INTV: Compare_Value:1
+  BNAM: Result:	Journal TR_m4_TT_AndothrenCharityTholer 15
 
 Record: INFO "11879302772703321052" (Topic:support the charitable mission) Flags:0x0000 ()
   INAM: ID:11879302772703321052
@@ -7328,7 +7344,7 @@ Surely you are aware that I already contribute generously to your Temple. Why is
  *SCVR: Index:2  Type:(Global)  Function:(Variable_Compare)  Comparison:(=)  Name:TR_m4_AndasGuestState
   INTV: Compare_Value:2
  *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_AndothrenCharityTholer
-  INTV: Compare_Value:10
+  INTV: Compare_Value:15
   BNAM: Result:	Choice "The poor people of Andothren are hurting, and the Temple's capacity to support them has been stretched to its limits." 1 "That's a fair point. I will tell my Master that your support is already adequate." 2
 		StartScript T_ScSpeech_SkillCheck
 
@@ -7346,7 +7362,8 @@ Did my servants tell you I had time for you? No? Then wait your turn.
   INTV: Compare_Value:100
  *SCVR: Index:2  Type:(Global)  Function:(Variable_Compare)  Comparison:(=)  Name:TR_m4_AndasGuestState
   INTV: Compare_Value:1
-  BNAM: Result:	Goodbye
+  BNAM: Result:	Journal TR_m4_TT_AndothrenCharityTholer 15
+		Goodbye
 		ModDisposition -10
 
 Record: INFO "858429814136499226" (Topic:support the charitable mission) Flags:0x0000 ()
@@ -7362,7 +7379,8 @@ You were not invited to enter my estate, %PCRace. Leave, and don't come back, un
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_AndothrenCharity
   INTV: Compare_Value:100
   BNAM: Result:	Journal TR_m4_TT_AndothrenCharityTholer 20
-		ModDisposition -20
+		ModDisposition -20
+		Goodbye
 
 Record: DIAL "shed your worldly possessions" Flags:0x0000 ()
   NAME: ID:shed your worldly possessions
@@ -9798,7 +9816,7 @@ I... *hic* whaddaya.. you scare me. I will *hic* apologize, no w-w-worries.
 Record: INFO "128118722808527947" (Persuasion:intimidate success) Flags:0x0000 ()
   INAM: ID:128118722808527947
   PNAM: Prev_ID:139280344220234
-  NNAM: Next_ID:2492712729227796400
+  NNAM: Next_ID:48892775142141281
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m2_Adrosu Balmayn
   NAME: Response: Ooo ooo?
@@ -10888,7 +10906,7 @@ Record: INFO "6803124613167012833" (Persuasion:intimidate fail) Flags:0x0000 ()
 Record: INFO "139953001914403315" (Persuasion:intimidate fail) Flags:0x0000 ()
   INAM: ID:139953001914403315
   PNAM: Prev_ID:6803124613167012833
-  NNAM: Next_ID:3175721552478125873
+  NNAM: Next_ID:8254292772599714060
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m2_Adrosu Balmayn
   NAME: Response: Ooo ooo?
@@ -11949,7 +11967,8 @@ I thought the Temple would be above petty tricks like this. No, I do not buy you
   INTV: Compare_Value:1
  *SCVR: Index:3  Type:(Global)  Function:(Variable_Compare)  Comparison:(=)  Name:TR_m4_AndasGuestState
   INTV: Compare_Value:2
-  BNAM: Result:	ModDisposition -5
+  BNAM: Result:	Journal TR_m4_TT_AndothrenCharityTholer 15
+		ModDisposition -5
 
 Record: INFO "16331251833181726903" (Topic:cure for greed) Flags:0x0000 ()
   INAM: ID:16331251833181726903
@@ -13268,9 +13287,26 @@ Record: DIAL "send a message" Flags:0x0000 ()
   NAME: ID:send a message
   DATA: Type:(Topic)
 
+Record: INFO "15795113322106630762" (Topic:send a message) Flags:0x0000 ()
+  INAM: ID:15795113322106630762
+  PNAM: Prev_ID:
+  NNAM: Next_ID:698623656206420496
+  DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
+  ONAM: Actor:TR_m4_Mels_Mathyn
+  NAME: Response:
+You killed him? You're unexpectedly ruthless for a Temple lackey, outlander. But effective. As promised, here's payment. We're done here, %PCRace.
+ *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_AndothrenCharity
+  INTV: Compare_Value:30
+ *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_AndothrenCharity
+  INTV: Compare_Value:100
+ *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_AndothrenCharityMels
+  INTV: Compare_Value:35
+  BNAM: Result:	player->additem gold_001 200
+		Journal TR_m4_TT_AndothrenCharityMels 50
+
 Record: INFO "698623656206420496" (Topic:send a message) Flags:0x0000 ()
   INAM: ID:698623656206420496
-  PNAM: Prev_ID:
+  PNAM: Prev_ID:15795113322106630762
   NNAM: Next_ID:291908080602714834
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_Mels_Mathyn
@@ -14135,6 +14171,8 @@ Have you managed to gain an audience with Tholer Andas, and convince him of the 
   INTV: Compare_Value:10
   BNAM: Result:	if ( GetJournalIndex TR_m4_TT_AndothrenCharityTholer == 10 )
 		    Choice "I was not able to speak with the councilor." 1
+		elseif ( GetJournalIndex TR_m4_TT_AndothrenCharityTholer == 15 )
+		    Choice "The councilor seems unlikely to support us." 1
 		elseif ( GetJournalIndex TR_m4_TT_AndothrenCharityTholer == 20 )
 		    Choice "I'm afraid the councilor refuses to support us." 1
 		elseif ( GetJournalIndex TR_m4_TT_AndothrenCharityTholer == 50 )
@@ -15125,7 +15163,7 @@ Mels Mathyn is dead? Well, so much for getting him to support our cause.
 Record: INFO "5004215842474610714" (Topic:mels mathyn) Flags:0x0000 ()
   INAM: ID:5004215842474610714
   PNAM: Prev_ID:282862131246558188
-  NNAM: Next_ID:16936154140213384
+  NNAM: Next_ID:2207119727186625086
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
   NAME: Response: You've already told me about his support.
@@ -15136,9 +15174,24 @@ Record: INFO "5004215842474610714" (Topic:mels mathyn) Flags:0x0000 ()
  *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_AndothrenCharity
   INTV: Compare_Value:50
 
+Record: INFO "2207119727186625086" (Topic:mels mathyn) Flags:0x0000 ()
+  INAM: ID:2207119727186625086
+  PNAM: Prev_ID:5004215842474610714
+  NNAM: Next_ID:16936154140213384
+  DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
+  ONAM: Actor:TR_m4_TT_Nalvs_Andolin
+  NAME: Response: Well, what are you talking to me for, then? Get to it!
+ *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_AndothrenCharity
+  INTV: Compare_Value:20
+ *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_AndothrenCharity
+  INTV: Compare_Value:100
+ *SCVR: Index:2  Type:(Function)  Function:(Choice)  Comparison:(=)  Name:
+  INTV: Compare_Value:4
+  BNAM: Result:	ModDisposition -5
+
 Record: INFO "16936154140213384" (Topic:mels mathyn) Flags:0x0000 ()
   INAM: ID:16936154140213384
-  PNAM: Prev_ID:5004215842474610714
+  PNAM: Prev_ID:2207119727186625086
   NNAM: Next_ID:428022679507417911
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
@@ -15788,7 +15841,7 @@ Muthsera %PCName, I believe you dropped this. Anyway, I uh, need to go. It's imp
 Record: INFO "2645204601446526312" (Greeting:greeting 1) Flags:0x0000 ()
   INAM: ID:2645204601446526312
   PNAM: Prev_ID:24045167582886815384
-  NNAM: Next_ID:2031222397819902
+  NNAM: Next_ID:169887230202715573
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
@@ -17214,7 +17267,7 @@ What's that? You're looking for a cure for greed? Preposterous.
 Record: INFO "306111962245653138" (Greeting:greeting 5) Flags:0x0000 ()
   INAM: ID:306111962245653138
   PNAM: Prev_ID:287302278638199730
-  NNAM: Next_ID:3192728784824217146
+  NNAM: Next_ID:28752168842658022311
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:dialog placeholder
   NAME: Response: END TR MAP 4 ANDOTHREN GREETINGS
