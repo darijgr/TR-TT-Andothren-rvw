@@ -2,7 +2,7 @@
 Record: TES3 "()" Flags:0x0000 ()
   HEDR:   Version:1.3  Is_Master:False  Author:""
   Description:""
-  N_Records:1236
+  N_Records:1234
  *MAST: Master:Morrowind.esm
   DATA: Length:79837557
  *MAST: Master:Tribunal.esm
@@ -10,7 +10,7 @@ Record: TES3 "()" Flags:0x0000 ()
  *MAST: Master:Bloodmoon.esm
   DATA: Length:9631798
  *MAST: Master:Tamriel_Data.esm
-  DATA: Length:10684550
+  DATA: Length:10193005
 
 Record: GLOB "tr_m4_tt_andothrenfinale" Flags:0x0000 ()
   NAME: ID:TR_m4_TT_AndothrenFinale
@@ -168,7 +168,7 @@ set TR_Map to 4
 End
 
 Record: SCPT "tr_m4_q_mm_ashvubabisc" Flags:0x0000 ()
-  SCHD: ID:TR_m4_q_mm_AshvubabiSC  Num_Shorts:9  Num_Longs:0  Num_Floats:0  Data_Size:498  Local_Var_Size:81
+  SCHD: ID:TR_m4_q_mm_AshvubabiSC  Num_Shorts:9  Num_Longs:0  Num_Floats:0  Data_Size:556  Local_Var_Size:81
   SCVR: Script_Variables: TR_Map,control,controlQ,NoLore,OnPCHitMe,DoOnce,State,T_Local_NPC,T_Local_NoLore
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
@@ -200,6 +200,10 @@ if ( OnDeath )								;Just updates journal OnDeath
 	if ( GetJournalIndex "TR_m4_Arv_Metamorphosis" > 10 )
 		Journal TR_m4_Arv_Metamorphosis 60
 	endif
+
+	; un-curse the player if the player was cursed
+	Player->RemoveSpell "TR_m4_q_mm_SelfCurse"
+	StopScript "TR_m4_q_mm_AshvuCurseSC"
 	
 	set State to 10
 	set DoOnce to 1
@@ -2977,7 +2981,6 @@ Record: CONT "tr_rr_monastery_chest" Flags:0x0000 ()
 
 Record: NPC_ "tr_m4_d_khirakaibandit1" Flags:0x0400 (Persistent)
   NAME: ID:TR_m4_D_KhirakaiBandit1
-  MODL: Model:base_anim.nif
   FNAM: Name:Dead Bandit
   RNAM: Race:Dark Elf
   CNAM: Class:Rogue
@@ -3010,7 +3013,6 @@ Record: NPC_ "tr_m4_d_khirakaibandit1" Flags:0x0400 (Persistent)
 
 Record: NPC_ "tr_m4_d_khirakaibandit2" Flags:0x0400 (Persistent)
   NAME: ID:TR_m4_D_KhirakaiBandit2
-  MODL: Model:base_anim.nif
   FNAM: Name:Dead Bandit
   RNAM: Race:Dark Elf
   CNAM: Class:Rogue
@@ -3388,7 +3390,6 @@ Record: NPC_ "tr_m4_uls edralo" Flags:0x0000 ()
 
 Record: NPC_ "tr_m4_v_ofelia" Flags:0x0000 ()
   NAME: ID:TR_m4_V_Ofelia
-  MODL: Model:base_anim_female.nif
   FNAM: Name:Ofelia
   RNAM: Race:Breton
   CNAM: Class:Sorcerer
@@ -3513,7 +3514,7 @@ Record: NPC_ "tr_m4_tt_tevuren_galdar" Flags:0x0000 ()
  *NPCO: Count:1  Object:indoril pauldron right
  *NPCO: Count:1  Object:indoril pauldron left
  *NPCO: Count:2  Object:p_restore_health_q
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:73ce75  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:091b76  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  10  Idle_3:                   0  Idle_4:                  10
 	Idle_5:                  20  Idle_6:                   5  Idle_7:                  10
@@ -3546,7 +3547,7 @@ Record: NPC_ "tr_m4_tt_orcvivec" Flags:0x0000 ()
  *NPCO: Count:1  Object:bonemold_gah-julan_pauldron_r
  *NPCO: Count:1  Object:chitin pauldron - left
  *NPCS: Spell:TR_m4_TT_OrcVivecAbility
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:73ce75  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:091b76  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  30  Idle_3:                  20  Idle_4:                   0
 	Idle_5:                  30  Idle_6:                   0  Idle_7:                   0
@@ -3600,7 +3601,7 @@ Record: NPC_ "tr_m4_tt_ravur_othravel" Flags:0x0000 ()
  *NPCS: Spell:absorb personality
  *NPCS: Spell:absorb speed
  *NPCS: Spell:absorb willpower
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:73ce75  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:091b76  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  40  Idle_3:                   0  Idle_4:                  10
 	Idle_5:                   0  Idle_6:                   5  Idle_7:                   5
@@ -3710,7 +3711,7 @@ Record: CREA "tr_m4_tt_olmsguardgreat" Flags:0x0000 ()
  *NPCS: Spell:resist poison_75
  *NPCS: Spell:dread curse: endurance
  *NPCS: Spell:dread curse: strength
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:73ce75  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:091b76  Services:[0xa00000 ()]
  *AI_W: Distance:        200  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           30  Idle_3:           50  Idle_4:           30  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3740,7 +3741,7 @@ Record: CREA "tr_m4_tt_olmsguard" Flags:0x0000 ()
  *NPCS: Spell:resist poison_75
  *NPCS: Spell:grave curse: strength
  *NPCS: Spell:grave curse: endurance
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:73ce75  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:091b76  Services:[0xa00000 ()]
  *AI_W: Distance:       1000  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           50  Idle_3:           50  Idle_4:            0  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3769,7 +3770,7 @@ Record: CREA "tr_m4_tt_olmsguardghost" Flags:0x0000 ()
  *NPCS: Spell:immune to disease
  *NPCS: Spell:immune to frost
  *NPCS: Spell:immune to poison
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:73ce75  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:091b76  Services:[0xa00000 ()]
  *AI_W: Distance:       1000  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           50  Idle_3:           50  Idle_4:            0  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -4281,7 +4282,7 @@ Record: CELL "andothren, temple" Flags:0x0000 ()
   FLTV: Lock_Level:90
   KNAM: Key:TR_m4_TT_TempleCofferKey
   DATA: X:3786.271  Y:4048.574  Z:14616.396  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:0.1349
-  NAM0: Reference_Count:899
+  NAM0: Reference_Count:900
  *FRMR: ObjIdx:23  MastIdx:0
   NAME: Name:TR_m4_TT_VathriPipe
   DATA: X:3662.948  Y:4022.980  Z:14598.092  X_Angle:1.5000  Y_Angle:0.0000  Z_Angle:4.3832
@@ -4603,7 +4604,7 @@ Record: CELL "roth roryn region (-13, -18)" Flags:0x0000 ()
  *FRMR: ObjIdx:74  MastIdx:0
   NAME: Name:TR_m4_TT_OrcVivec
   DATA: X:-101822.836  Y:-146763.781  Z:3227.525  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:1.8000
-  NAM0: Reference_Count:328
+  NAM0: Reference_Count:330
 
 Record: CELL "omaynis, aro helseri: trader" Flags:0x0000 ()
   NAME: Name:Omaynis, Aro Helseri: Trader
@@ -6041,11 +6042,6 @@ Record: INFO "7150284082398930356" (Journal:tr_m4_tt_armunadventure) Flags:0x000
 Nalvs Andolin seemed glad that I returned from my expedition to the Armun Ashland, having made the presence of the Temple felt in the area, even if we might never be sure if we caught the pilgrim's killer.
   QSTF: Quest_Finished:1
 
-Record: DIAL "tr_m4_tt_armunavenger_f" Flags:0x0020 (Deleted)
-  NAME: ID:TR_m4_TT_ArmunAvenger_f
-  DATA: Type:(Journal)
-  DELE: Deleted:0
-
 Record: DIAL "tr_m4_tt_wellnesscheck" Flags:0x0000 ()
   NAME: ID:TR_m4_TT_WellnessCheck
   DATA: Type:(Journal)
@@ -6233,11 +6229,6 @@ Record: INFO "2596321042541919367" (Journal:tr_m4_om_statuea) Flags:0x0000 ()
   DATA: JournalIndex:80
   NAME: Response:
 The Andothren Temple is willing to provide the remaining half of the statue funds for Indoril Beroth, in the form of scrolls and poultices of equivalent value. I should tell Indoril Beroth that the matter of payment is taken care of.
-
-Record: DIAL "" Flags:0x0020 (Deleted)
-  NAME: ID:
-  DATA: Type:(Journal)
-  DELE: Deleted:0
 
 Record: DIAL "order of doctrine and ordination" Flags:0x0000 ()
   NAME: ID:Order of Doctrine and Ordination
@@ -15797,7 +15788,7 @@ Muthsera %PCName, I believe you dropped this. Anyway, I uh, need to go. It's imp
 Record: INFO "2645204601446526312" (Greeting:greeting 1) Flags:0x0000 ()
   INAM: ID:2645204601446526312
   PNAM: Prev_ID:24045167582886815384
-  NNAM: Next_ID:169887230202715573
+  NNAM: Next_ID:2031222397819902
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
@@ -17223,7 +17214,7 @@ What's that? You're looking for a cure for greed? Preposterous.
 Record: INFO "306111962245653138" (Greeting:greeting 5) Flags:0x0000 ()
   INAM: ID:306111962245653138
   PNAM: Prev_ID:287302278638199730
-  NNAM: Next_ID:22905124942942024791
+  NNAM: Next_ID:3192728784824217146
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:dialog placeholder
   NAME: Response: END TR MAP 4 ANDOTHREN GREETINGS
