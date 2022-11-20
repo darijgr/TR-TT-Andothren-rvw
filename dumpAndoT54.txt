@@ -9459,7 +9459,7 @@ Perhaps I am too pessimistic. But I find the timing to be highly suspicious. If 
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_LastWillAndTestament
   INTV: Compare_Value:10
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_LastWillAndTestament
-  INTV: Compare_Value:50
+  INTV: Compare_Value:30
   BNAM: Result:	AddTopic "prepare for their arrival"
 
 Record: INFO "2729882441924812552" (Topic:ulmon vathri's will) Flags:0x0000 ()
