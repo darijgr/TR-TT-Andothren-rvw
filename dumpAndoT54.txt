@@ -439,6 +439,7 @@ elseif ( doOnce == 1 )
 elseif ( doOnce == 2 )
 	if ( GetJournalIndex TR_m4_TT_TroublesomeOrc > 20 )
 		if ( CellChanged )
+			; move the pilgrim on the Bodrum bridge out of harm's way
 			TR_m4_TT_Tevuren_Galdar->PositionCell -380 522 -255 1920 "Sinramen Monastery"
 			TR_m4_TT_Tevuren_Galdar->AIWander 0 0 0 25 10 0 10 20 5 10 20 0
 			set doOnce to 3
@@ -456,6 +457,7 @@ elseif ( doOnce == 3 )
 	endif
 elseif ( doOnce == 4 )
 	if ( TR_m4_TT_AndothrenFinale )
+		; the coins grow legs...
 		set doOnce to 5
 		PositionCell 4852.568 3661.374 15499.300 5502 "Omaynis, Ulmon Vathri's House"
 	endif
@@ -464,7 +466,7 @@ endif
 End
 
 Record: SCPT "tr_m4_tt_felani_vathri_sc" Flags:0x0000 ()
-  SCHD: ID:TR_m4_TT_Felani_Vathri_sc  Num_Shorts:6  Num_Longs:3  Num_Floats:0  Data_Size:1624  Local_Var_Size:73
+  SCHD: ID:TR_m4_TT_Felani_Vathri_sc  Num_Shorts:6  Num_Longs:3  Num_Floats:0  Data_Size:1622  Local_Var_Size:73
   SCVR: Script_Variables: TR_Map,control,controlQ,NoLore,T_Local_NPC,T_Local_NoLore,posX,posY,posZ
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
@@ -551,7 +553,10 @@ elseif ( controlQ == 3 )
 		AIWander 0 0 0 10 20 0 30 20 0 0 20 0
 		Face 4148 3980
 	endif
+	; controlQ will be set to 5 from dialogue (when Felani asks the player
+	; to escort her back out of the Temple).
 elseif ( controlQ == 5 )
+	; following the player out of the Temple:
 	if ( GetInterior == 0 )
 		if ( GetDistance player > 500 )
 			;do nothing
@@ -568,10 +573,10 @@ elseif ( controlQ == 5 )
 			AITravel 5267 -132962 72
 			set controlQ to 9
 			Return
-			endif
 		endif
 	endif
 elseif ( controlQ <= 7 )
+	; walking back to the Dancing Cup:
 	if ( controlQ >= 6 )
 		if ( controlQ == 6 )
 			if ( GetAIPackageDone )
@@ -9950,7 +9955,7 @@ Record: INFO "16034241248025186" (Topic:death of a pilgrim) Flags:0x0000 ()
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
-It will probably be impossible to find out what exactly happened to that pilgrim in the Ashlands, I think Nalvs just wants a show of force, or a scapegoat. I'd be surprised if he even knew the pilgrim's name. Be careful not to direct your ire at the innocent, %PCName.
+It will probably be impossible to find out what exactly happened to that pilgrim in the Ashlands. I think Nalvs just wants a show of force, or a scapegoat. I'd be surprised if he even knew the pilgrim's name. Be careful not to direct your ire at the innocent, %PCName.
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>)  Name:TR_m4_TT_ArmunAdventure
   INTV: Compare_Value:0
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_ArmunAdventure

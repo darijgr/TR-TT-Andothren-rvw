@@ -1,3 +1,7 @@
+***********************************************
+QUEST 1: PILGRIMAGES
+***********************************************
+
 QUEST: Temple: Pilgrimages
 REVIEWED: no
 
@@ -11,3 +15,258 @@ JOURNAL TR_m4_TT_ShrineBodrum
 10: (fin) I made the pilgrimage to the Shrine to the Battle of Bodrum and read the message inscribed there.
 
 NOTE: REVIEW CHANGES
+
+***********************************************
+QUEST 2: WELLNESS CHECK
+***********************************************
+
+QUEST: Temple: Wellness Check
+REVIEWED: no
+
+JOURNAL TR_m4_TT_WellnessCheck
+10: I am to visit Ulmon Vathri in Omaynis and make sure that he is well.
+20: Ulmon Vathri wants a cure for greed.
+25: Ulmon Vathri is adamant that he needs a potion to cure him of his greed, and suggested I talk to Nalvs Andolin about it if I don't believe him.
+30: I have given Ulmon Vathri a potion of cure common disease, and he seems satisfied. I should report back to Nalvs Andolin in Andothren.
+40: I have convinced Ulmon Vathri that he did not need a potion to face his ancestors.
+100: (fin) Nalvs Andolin thanked me for checking on Ulmon Vathri.
+101: (fin) Nalvs Andolin thanked me for checking on Ulmon Vathri.
+110: (fin) Ulmon Vathri is dead.
+
+***********************************************
+QUEST 3: KITCHEN SUPPLIES
+***********************************************
+
+QUEST: Temple: Kitchen Supplies
+REVIEWED: no
+
+JOURNAL TR_m4_TT_KitchenSupplies
+10: Nalvs Andolin tasked me with finding Ravur Othravel, who was sent to the western docks to procure supplies for the kitchen, but hasn't returned.
+20: A fisherman in Andothren told me Ravur Othravel went to the east of town to look for better supplies.
+25: I found Ravur in the eastern part of Andothren.
+30: Ravur Othravel wants me to negotiate with Gavros Falas.
+90: I have told Ravur Othravel that I had secured supplies for the Temple kitchen, and she will return to the Temple. I should report back to Nalvs Andolin.
+100: (fin) Nalvs Andolin thanked me for the rat meat.
+101: (fin) Nalvs wasn't happy that I spent money on Gavros's food.
+
+JOURNAL TR_m4_TT_KitchenSupplies_a
+100: I bought a crate of rat meat from a fisherman.
+
+JOURNAL TR_m4_TT_KitchenSupplies_b
+100: I convinced Gavros Falas to sponsor the Temple kitchen for an extended period of time.
+110: Sani Edralo thanked me for getting Gavros' sponsorship.
+
+***********************************************
+QUEST 4: TROUBLESOME ORC
+***********************************************
+
+QUEST: Temple: A Troublesome Orc
+REVIEWED: no
+
+JOURNAL TR_m4_TT_TroublesomeOrc
+10: Nalvs Andolin sent me to Bodrum to deal with a troublesome Orc. Apparently the Orc has been harassing pilgrims on the roads.
+15: Apparently there has been a misunderstanding. The troublesome Orc is, in fact, not a brigand, but an eccentric follower of Vivec.
+20: I should talk to Garash gro-Vivec, the troublesome Orc of Bodrum, myself. Golvyn Saryon mentioned he was last seen on the bridge across the Pryai, west of Bodrum.
+30: After an initial confrontation, Garash gro-Vivec agreed to talk to me.
+31: Garash told me of his travels through Malahk-Bazul and his encounter with a knight in glass.
+32: Garash has devoted himself to emulating Vivec after a devotee of Vivec saved his life.
+33: Garash insists that I prove the strength of my own devotion to Vivec to him, before he is willing to accept my counsel.
+34: I convinced Garash of the strength of my devotion to Vivec. Hopefully he will now let me talk to him about his desperate need for guidance.
+35: Our battle convinced Garash of the strength of my faith, and he seems open to the idea that he is in desperate need for guidance in Temple doctrine.
+50: I invited Garash gro-Vivec to the Andothren Temple.
+60: I sent Garash gro-Vivec on a pilgrimage to Vivec city.
+70: I encouraged Garash gro-Vivec to formally renounce Malacath at one of his shrines.
+80: I convinced Garash gro-Vivec to worship Malacath instead.
+90: I sent Garash gro-Vivec on an impossible mission. I doubt we will hear from him again.
+100: (fin) Nalvs Andolin strongly disagreed with me inviting the troublesome Orc of Bodrum to Andothren.
+110: (fin) Nalvs Andolin was not pleased that I tried to guide Garash gro-Vivec to be a proper member of the Temple.
+120: (fin) Nalvs Andolin was not thrilled with the idea of Garash gro-Vivec renouncing Malacath, though he seems to hope that we will not see the Orc again.
+130: (fin) Nalvs Andolin thanked me for sending the troublesome Orc of Bodrum away.
+140: (fin) Nalvs Andolin seemed to appreciate me sending the Orc to die at Red Mountain.
+200: (fin) Garash gro-Vivec is dead.
+210: (fin) Nalvs Andolin thanked me for killing Garash.
+
+JOURNAL TR_m4_TT_TroublesomeOrc_b
+10: Ravur Othravel gave me a book on how to treat heretics.
+
+JOURNAL TR_m4_TT_TroublesomeOrc_c
+10: Garash wants a reading aid to go with the book.
+20: I have brought Garash both Saryoni's Sermons and ABCs for Barbarians. I should come back in a day.
+30: It has been a day. I wonder if Garash has made any progress.
+
+JOURNAL TR_m4_TT_BooksBarbarians
+10: (rest) Ravur Othravel asked me to find a copy of "ABCs for Barbarians" to help educate Garash.
+20: I brought a copy of "ABCs for Barbarians" to Ravur Othravel. She thanked me, and asked me to find the other books in the series: "Arithmetic for Barbarians" and "Geometry for Barbarians."
+25: (rest) Ravur Othravel asked me to find copies of "Arithmetic for Barbarians" and "Geometry for Barbarians" to help educate Garash.
+30: I brought "Arithmetic for Barbarians" to Ravur Othravel. Now all that's left to find is "Geometry for Barbarians."
+35: I brought "Geometry for Barbarians" to Ravur Othravel. Now all that's left to find is "Arithmetic for Barbarians."
+100: (fin) I have delivered both "Arithmetic for Barbarians" and "Geometry for Barbarians" to Ravur Othravel, and she will see to Garash' continued education.
+110: (fin) Since Garash gro-Vivec is dead, there's no use in procuring any more books for him.
+120: (fin) Ravur Othravel is dead, so there's no use in bringing her books to teach Garash.
+200: (fin) Garash gro-Vivec thanked me for all I have done for him.
+
+***********************************************
+QUEST 5: FORGIVENESS
+***********************************************
+
+QUEST: Temple: Pilgrimage to the Shrine of Forgiveness
+REVIEWED: no
+
+JOURNAL TR_m4_TT_Forgiveness
+10: Nalvs Andolin told me to make a pilgrimage to the Shrine of Forgiveness in the Monastery of Saint Aralor.
+20: The Shrine of Forgiveness is located in the cavern below the monastery, and can be accessed using the Penitent's Ring.
+50: I have read the inscription on the Shrine of Forgiveness.
+60: Nalvs Andolin is shaking me down.
+100: (fin) I donated a single septim to the Temple, and in response Nalvs expelled me from the Temple. Turns out he does not have a sense of humor.
+101: (fin) My contribution to the Temple coffers was deemed insufficient, and Nalvs wasn't very happy with me.
+102: (fin) I made a contribution that Nalvs deemed sufficient, and he gave me a book in return.
+103: (fin) Nalvs Andolin was ecstatic with my contribution to the Temple, and rewarded me with a book. He seems convinced my generous donation will be multiplied manyfold by the grace of the Tribunal.
+
+***********************************************
+QUEST 6: SHAKEDOWN
+***********************************************
+
+QUEST: Temple: Andothren Charity
+REVIEWED: no
+
+JOURNAL ID:TR_m4_TT_AndothrenCharity
+10: Nalvs Andolin told me of the moral decay.
+20: Nalvs wants me to bully nobles.
+30: I should offer a "cure for greed" to Tholas Horaren, Milns Lloran, Zalan, Mels Mathyn, and Tholer Andas. I can pick up the potions from Gadani Pathavel.
+40: I received five potions.
+50: Mels' donation is now with the Temple.
+100: (fin) I am done collecting donations.
+110: Gadani Pathavel was glad I didn't use the potion scam.
+
+JOURNAL TR_m4_TT_AndothrenCharityTholer
+10: Ulvys says I should meet Tholer Andos directly.
+15: Tholer Andas appears reluctant.
+20: Tholer kicked me out.
+50: Tholer agreed; get it from Ules.
+60: Got scrip.
+100: Nalvs accepted donation.
+101: Told Nalvs of failure.
+102: Given gold to Nalvs.
+110: Andas cannot support the misson.
+
+JOURNAL TR_m4_TT_AndothrenCharityTholas
+10: Tholas Horaren seems paranoid.
+50: Tricked Tholas Horaren using potion.
+60: Tholas Horaren donated without heavy trickery.
+70: Tholas' wife (Manse Horaren) donated.
+100: Donation in Temple.
+101: Told Nalvs of Tholas Horaren's refusal.
+110: Tholas cannot donate.
+
+JOURNAL TR_m4_TT_AndothrenCharityZalan
+10: Zalan does not seem eager to support the Temple.
+50: Zalan tricked using cure.
+60: Zalan convinced.
+100: Zalan's donation given to Nalvs.
+110: Zalan won't donate.
+
+JOURNAL R_m4_TT_AndothrenCharityMilns
+10: Milns Lloran claims she has made a recent contribution to the Temple already.
+50: I blackmailed Milns Lloran into increasing her donations to the Temple.
+60: I convinced Milns Lloran to give us an advance on next year's contribution.
+100: I handed Milns' donation to Nalvs Andolin.
+101: I told Nalvs that Milns' previous donation should suffice.
+110: Milns Lloran cannot support the charitable mission.
+
+JOURNAL TR_m4_TT_AndothrenCharityMels
+10: Mels Mathyn will donate if I fuck a Dunmer up. I declined.
+20: Mels Mathyn asked me to fuck up a drunk Dunmer in the Dancing Cup.
+30: I convinced Velms Braven to apologize to Mels for his insults.
+35: Velms Braven dead.
+40: Ravur Othravel wanted to try to convince Mels herself. I should leave her alone.
+50: Mels was satisfied and donated.
+60: Ravur has convinced Mels to donate.
+110: Mels Mathyn cannot support the charitable mission.
+
+***********************************************
+QUEST 7: ASHLANDS
+***********************************************
+
+QUEST: Temple: Armun Ashlands Avenger
+REVIEWED: no
+
+JOURNAL TR_m4_TT_ArmunAdventure
+10: I am to go to Arvud, find whoever killed a pilgrim north of the town, and bring them to justice.
+20: The people of Arvud suspect Daedric cultists in the shrine north of town, or the ashlanders to the northeast, were responsible for the death of the pilgrim.
+30: An Orc in the Daedric ruin directed me to the ruins to the east.
+100: (fin) Nalvs Andolin seemed glad that I returned from my expedition to the Armun Ashland, having made the presence of the Temple felt in the area, even if we might never be sure if we caught the pilgrim's killer.
+
+JOURNAL TR_m4_TT_ArmunAdventure_b
+100: I have slain the cultists of Malacath in Hummurushtapi. I'm sure Nalvs Andolin would be happy to hear that.
+
+JOURNAL TR_m4_TT_ArmunAdventure_c
+100: I have found two dead bandits northeast of Arvud. Presumably they were the ones that ambushed the pilgrim.
+110: I killed the vampires.
+
+JOURNAL TR_m4_TT_ArmunAdventure_d
+100: I killed the Ashlander chief, Vabal-Ajunta. Surely the Ashlanders had something to do with the death of a pilgrim in the Armun.
+
+JOURNAL TR_m4_TT_ArmunAdventure_e [Temple: Troublesome Orc]
+50: After fighting alongside him to defeat Malacath's cultists, I invited Garash gro-Vivec, the troublesome Orc of Bodrum, to join the Temple in Andothren.
+90: Garash gro-Vivec, the troublesome Orc of Bodrum, died in one of Malacath's shrines.
+100: I fought and killed the troublesome Orc, Garash gro-Vivec, in one of Malacath's shrines.
+
+JOURNAL TR_m4_TT_ArmunAdventure_f
+10: The mabrigash in the ruins near Arvud deny having anything to do with the death of a pilgrim I was sent to avenge.
+100: I killed the mabrigash northeast of Arvud. If they were responsible for the death of a pilgrim, they are no longer a threat.
+
+***********************************************
+QUEST 8: LAST WILL
+***********************************************
+
+QUEST: Temple: The Last Will and Testament of Ulmon Vathri
+REVIEWED: no
+
+JOURNAL TR_m4_TT_LastWillAndTestament
+5: Nalvs Andolin told me to follow him into the Temple tombs.
+10: Ulmon Vathri has passed away.
+15: His estranged daughter is in Andothren and might be getting suspicious.
+20: I should check with Ravur Othravel.
+25: I found Felani outside the Dancing Cup. I should escort her.
+30: I have escorted Felani to the Temple tomb.
+35: The cremation ceremony should have concluded by now. I should see if Nalvs Andolin or Felani need anything of me.
+40: I should escort Felani and her partner back to the Dancing Cup.
+45: I should see Ravur again.
+50: It has been decided that Ulmon Vathri's house and possessions should pass to his daughter Felani. I should bring her the good news at the Dancing Cup.
+55: Felani was grateful.
+60: (fin) Felani thanked for Ulmon Vathri's unsent letter and rewarded me.
+200: Both Ravur and Nalvs are dead.
+
+JOURNAL TR_m4_TT_LastWillAndTestament_b
+10: Ravur covertly slipped me a note and ran upstairs.
+15: I should meet Ravur upstairs and not talk to Nalvs.
+20: Ravur told me she is spying on Nalvs.
+25: Ravur thinks Nalvs manipulated Ulmon.
+30: Find Felani at the Dancing Cup.
+35: Investigate Nalvs' office.
+55: Ravur was distressed that all the contents of the Temple coffers had been removed before we searched Nalvs' office. She suggests we wait to see what Nalvs' next move is.
+60: Nalvs Andolin has fled. Confront him at Ulmon Vathri's house.
+65: Found Nalvs Andolin in Ulmon Vathri's house.
+66: I arrived late to Ulmon Vathri's house in Omaynis.
+70: Nalvs Andolin attempted to convince me not to hand him over to the Ordinators.
+71: Ravur Othravel joined me in Omaynis, and attempted to arrest Nalvs Andolin.
+75: Nalvs Andolin attacked Ravur Othravel, and died in the ensuing fight.
+80: Ravur told me to collect the fortune Nalvs Andolin absconded from the Temple with, and return it to her.
+85: Meet Ravur back in Andothren.
+86: Settle Ulmon Vathri's will.
+100: (fin) Reward given by Ravur, questline complete.
+
+JOURNAL TR_m4_TT_LastWillAndTestament_c
+10: I showed Nalvs the note Ravur gave me, and he told me to keep an eye on her.
+20: Nalvs Andolin denies defrauding the Temple and forbade me from speaking to Ravur Othravel again.
+75: Nalvs Andolin attacked Ravur Othravel, and killed her.
+80: Nalvs Andolin thanked me for not helping Ravur Othravel apprehend him.
+100: Nalvs decided to return Ulmon Vathri's inheritance to Felani, and asked that he and I never speak again.
+
+JOURNAL TR_m4_TT_LastWillAndTestament_d
+10: found key to Nalvs' office.
+
+JOURNAL TR_m4_TT_LastWillAndTestament_e
+10: Found letter by Ulmon to his daughter. She will be interested to see its contents.
+50: The Temple coffers in Nalvs' office are empty.
+
