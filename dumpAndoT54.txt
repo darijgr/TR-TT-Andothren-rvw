@@ -16580,7 +16580,8 @@ Record: INFO "27766128223027922429" (Greeting:greeting 5) Flags:0x0000 ()
   NAME: Response: Defend me, %PCName!
  *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_LastWillAndTestament_b
   INTV: Compare_Value:71
-  BNAM: Result:	Goodbye
+  BNAM: Result:	StartCombat TR_m4_TT_Nalvs_Andolin
+		Goodbye
 
 Record: INFO "1276432971729830038" (Greeting:greeting 5) Flags:0x0000 ()
   INAM: ID:1276432971729830038
