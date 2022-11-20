@@ -208,8 +208,8 @@ JOURNAL TR_m4_TT_ArmunAdventure_d
 
 JOURNAL TR_m4_TT_ArmunAdventure_e [Temple: Troublesome Orc]
 50: After fighting alongside him to defeat Malacath's cultists, I invited Garash gro-Vivec, the troublesome Orc of Bodrum, to join the Temple in Andothren.
-90: Garash gro-Vivec, the troublesome Orc of Bodrum, died in one of Malacath's shrines.
-100: I fought and killed the troublesome Orc, Garash gro-Vivec, in one of Malacath's shrines.
+90: (fin) Garash gro-Vivec, the troublesome Orc of Bodrum, died in one of Malacath's shrines.
+100: (fin) I fought and killed the troublesome Orc, Garash gro-Vivec, in one of Malacath's shrines.
 
 JOURNAL TR_m4_TT_ArmunAdventure_f
 10: The mabrigash in the ruins near Arvud deny having anything to do with the death of a pilgrim I was sent to avenge.

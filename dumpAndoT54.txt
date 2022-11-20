@@ -5634,6 +5634,7 @@ Record: INFO "13791115043115631004" (Journal:tr_m4_tt_armunadventure_e) Flags:0x
   DATA: JournalIndex:90
   NAME: Response:
 Garash gro-Vivec, the troublesome Orc of Bodrum, died in one of Malacath's shrines.
+  QSTF: Quest_Finished:1
 
 Record: INFO "1785623097200459581" (Journal:tr_m4_tt_armunadventure_e) Flags:0x0000 ()
   INAM: ID:1785623097200459581
@@ -5642,6 +5643,7 @@ Record: INFO "1785623097200459581" (Journal:tr_m4_tt_armunadventure_e) Flags:0x0
   DATA: JournalIndex:100
   NAME: Response:
 I fought and killed the troublesome Orc, Garash gro-Vivec, in one of Malacath's shrines.
+  QSTF: Quest_Finished:1
 
 Record: DIAL "tr_m4_and_missingmerchant" Flags:0x0000 ()
   NAME: ID:TR_m4_And_MissingMerchant
@@ -11405,8 +11407,10 @@ Record: INFO "11591248821813723868" (Topic:troublesome orc) Flags:0x0000 ()
   ONAM: Actor:TR_m4_TT_OrcVivec
   NAME: Response:
 I shall tell you my tale, and of my devotion to Vivec, %PCRace. And then you may judge me, if you are strong of faith and arm.
- *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_TroublesomeOrc
+ *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_TroublesomeOrc
   INTV: Compare_Value:30
+ *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_TroublesomeOrc
+  INTV: Compare_Value:31
 
 Record: INFO "2015029759118621501" (Topic:troublesome orc) Flags:0x0000 ()
   INAM: ID:2015029759118621501
