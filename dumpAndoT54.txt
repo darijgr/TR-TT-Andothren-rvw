@@ -2,7 +2,7 @@
 Record: TES3 "()" Flags:0x0000 ()
   HEDR:   Version:1.3  Is_Master:False  Author:""
   Description:""
-  N_Records:1239
+  N_Records:1235
  *MAST: Master:Morrowind.esm
   DATA: Length:79837557
  *MAST: Master:Tribunal.esm
@@ -9806,15 +9806,6 @@ Record: DIAL "intimidate success" Flags:0x0000 ()
   NAME: ID:Intimidate Success
   DATA: Type:(Persuasion)
 
-Record: INFO "12481291253253215308" (Persuasion:intimidate success) Flags:0x0000 ()
-  INAM: ID:12481291253253215308
-  PNAM: Prev_ID:157997456106822924
-  NNAM: Next_ID:139280344220234
-  DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
-  ONAM: Actor:TR_m4_Bel-Betu
-  NAME: Response:
-Don't do anything rash, adventurer. There's much I could teach you.
-
 Record: INFO "139280344220234" (Persuasion:intimidate success) Flags:0x0000 ()
   INAM: ID:139280344220234
   PNAM: Prev_ID:12481291253253215308
@@ -9830,15 +9821,6 @@ I... *hic* whaddaya.. you scare me. I will *hic* apologize, no w-w-worries.
 		if ( TR_m4_TT_Ravur_Othravel->GetDistance player < 100000 )
 		    set TR_m4_TT_Ravur_Othravel.trackGreedMels to -1
 		endif
-
-Record: INFO "128118722808527947" (Persuasion:intimidate success) Flags:0x0000 ()
-  INAM: ID:128118722808527947
-  PNAM: Prev_ID:139280344220234
-  NNAM: Next_ID:48892775142141281
-  DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
-  ONAM: Actor:TR_m2_Adrosu Balmayn
-  NAME: Response: Ooo ooo?
-  BNAM: Result:	setdisposition 50
 
 Record: DIAL "tomb of saint olms" Flags:0x0000 ()
   NAME: ID:Tomb of Saint Olms
@@ -10902,15 +10884,6 @@ Record: DIAL "intimidate fail" Flags:0x0000 ()
   NAME: ID:Intimidate Fail
   DATA: Type:(Persuasion)
 
-Record: INFO "34748180502231929" (Persuasion:intimidate fail) Flags:0x0000 ()
-  INAM: ID:34748180502231929
-  PNAM: Prev_ID:51221362149622068
-  NNAM: Next_ID:6803124613167012833
-  DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
-  ONAM: Actor:TR_m4_Bel-Betu
-  NAME: Response:
-You cannot threaten me, you fool. I am an immortal, unbreakable crystal. Go ahead, take a few swings at me. See what it does.
-
 Record: INFO "6803124613167012833" (Persuasion:intimidate fail) Flags:0x0000 ()
   INAM: ID:6803124613167012833
   PNAM: Prev_ID:34748180502231929
@@ -10920,15 +10893,6 @@ Record: INFO "6803124613167012833" (Persuasion:intimidate fail) Flags:0x0000 ()
   NAME: Response: I don't *hic* uh... whaddayasay?
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_AndothrenCharityMels
   INTV: Compare_Value:20
-
-Record: INFO "139953001914403315" (Persuasion:intimidate fail) Flags:0x0000 ()
-  INAM: ID:139953001914403315
-  PNAM: Prev_ID:6803124613167012833
-  NNAM: Next_ID:8254292772599714060
-  DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
-  ONAM: Actor:TR_m2_Adrosu Balmayn
-  NAME: Response: Ooo ooo?
-  BNAM: Result:	setdisposition 50
 
 Record: DIAL "travel together" Flags:0x0000 ()
   NAME: ID:travel together
