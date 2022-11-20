@@ -1,25 +1,6 @@
 QUEST: Temple: A Troublesome Orc
 REVIEWED: no
 
-JOURNAL TR_m4_TT_TroublesomeOrc_b
-10: Ravur Othravel gave me a book on how to treat heretics.
-
-JOURNAL TR_m4_TT_TroublesomeOrc_c
-10: Garash wants a reading aid to go with the book.
-20: I have brought Garash both Saryoni's Sermons and ABCs for Barbarians. I should come back in a day.
-30: It has been a day. I wonder if Garash has made any progress.
-
-JOURNAL TR_m4_TT_BooksBarbarians
-10: (rest) Ravur Othravel asked me to find a copy of "ABCs for Barbarians" to help educate Garash.
-20: I brought a copy of "ABCs for Barbarians" to Ravur Othravel. She thanked me, and asked me to find the other books in the series: "Arithmetic for Barbarians" and "Geometry for Barbarians."
-25: (rest) Ravur Othravel asked me to find copies of "Arithmetic for Barbarians" and "Geometry for Barbarians" to help educate Garash.
-30: I brought "Arithmetic for Barbarians" to Ravur Othravel. Now all that's left to find is "Geometry for Barbarians."
-35: I brought "Geometry for Barbarians" to Ravur Othravel. Now all that's left to find is "Arithmetic for Barbarians."
-100: (fin) I have delivered both "Arithmetic for Barbarians" and "Geometry for Barbarians" to Ravur Othravel, and she will see to Garash' continued education.
-110: (fin) Since Garash gro-Vivec is dead, there's no use in procuring any more books for him.
-120: (fin) Ravur Othravel is dead, so there's no use in bringing her books to teach Garash.
-200: (fin) Garash gro-Vivec thanked me for all I have done for him.
-
 JOURNAL TR_m4_TT_TroublesomeOrc
 10: Nalvs Andolin sent me to Bodrum to deal with a troublesome Orc. Apparently the Orc has been harassing pilgrims on the roads.
 15: Apparently there has been a misunderstanding. The troublesome Orc is, in fact, not a brigand, but an eccentric follower of Vivec.
@@ -42,4 +23,23 @@ JOURNAL TR_m4_TT_TroublesomeOrc
 140: (fin) Nalvs Andolin seemed to appreciate me sending the Orc to die at Red Mountain.
 200: (fin) Garash gro-Vivec is dead.
 210: (fin) Nalvs Andolin thanked me for killing Garash.
+
+JOURNAL TR_m4_TT_TroublesomeOrc_b
+10: Ravur Othravel gave me a book on how to treat heretics.
+
+JOURNAL TR_m4_TT_TroublesomeOrc_c
+10: Garash wants a reading aid to go with the book.
+20: I have brought Garash both Saryoni's Sermons and ABCs for Barbarians. I should come back in a day.
+30: It has been a day. I wonder if Garash has made any progress.
+
+JOURNAL TR_m4_TT_BooksBarbarians
+10: (rest) Ravur Othravel asked me to find a copy of "ABCs for Barbarians" to help educate Garash.
+20: I brought a copy of "ABCs for Barbarians" to Ravur Othravel. She thanked me, and asked me to find the other books in the series: "Arithmetic for Barbarians" and "Geometry for Barbarians."
+25: (rest) Ravur Othravel asked me to find copies of "Arithmetic for Barbarians" and "Geometry for Barbarians" to help educate Garash.
+30: I brought "Arithmetic for Barbarians" to Ravur Othravel. Now all that's left to find is "Geometry for Barbarians."
+35: I brought "Geometry for Barbarians" to Ravur Othravel. Now all that's left to find is "Arithmetic for Barbarians."
+100: (fin) I have delivered both "Arithmetic for Barbarians" and "Geometry for Barbarians" to Ravur Othravel, and she will see to Garash' continued education.
+110: (fin) Since Garash gro-Vivec is dead, there's no use in procuring any more books for him.
+120: (fin) Ravur Othravel is dead, so there's no use in bringing her books to teach Garash.
+200: (fin) Garash gro-Vivec thanked me for all I have done for him.
 

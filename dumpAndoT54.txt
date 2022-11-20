@@ -8350,7 +8350,7 @@ Record: INFO "1571412598159566933" (Topic:moral decay in andothren) Flags:0x0000
   NAME: Response:
 I think Nalvs is overstating things a little. Sure, Andothren has problems, but so does any city. Most people here are ardent supporters of the Tribunal Temple, nobles included.
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_AndothrenCharity
-  INTV: Compare_Value:30
+  INTV: Compare_Value:20
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_AndothrenCharity
   INTV: Compare_Value:100
 
@@ -8721,7 +8721,7 @@ Hm. You have a point. I suppose another test is in order. We could both jump off
   INTV: Compare_Value:3
  *SCVR: Index:1  Type:(Global)  Function:(Global)  Comparison:(>=)  Name:T_Glob_Speech_Debate
   FLTV: Result_Value:1.50
-  BNAM: Result:	Choice "You think, and you listen. You don't just ask what Vivec would have done, but why he would have done, what he would have done." 4 "Actually, jumping off the bridge is an amazing idea. I'm sure Vivec would approve." 5
+  BNAM: Result:	Choice "You think, and you listen. You don't just ask what Vivec would have done, but why he would have done what he would have done." 4 "Actually, jumping off the bridge is an amazing idea. I'm sure Vivec would approve." 5
 
 Record: INFO "794290262593127563" (Topic:strength of your faith) Flags:0x0000 ()
   INAM: ID:794290262593127563
@@ -8874,7 +8874,7 @@ Record: INFO "5921463762758101" (Topic:shrine of forgiveness) Flags:0x0000 ()
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
   NAME: Response:
-Your recent actions make me doubt the sincerety of your devotion, %PCRank. Before I give you any more duties, I need you to make a pilgrimage to prove your faith in the Tribunal. Travel to the Monastery of Saint Aralor, and learn the sacrifices the Saint made to earn the forgiveness of his masters.
+Your recent actions make me doubt the sincerity of your devotion, %PCRank. Before I give you any more duties, I need you to make a pilgrimage to prove your faith in the Tribunal. Travel to the Monastery of Saint Aralor, and learn the sacrifices the Saint made to earn the forgiveness of his masters.
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_TroublesomeOrc
   INTV: Compare_Value:100
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_Forgiveness
@@ -8901,7 +8901,7 @@ Record: INFO "2464860352192816774" (Topic:shrine of forgiveness) Flags:0x0000 ()
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
   NAME: Response:
-Some may claim that the troublesome Orc you sent away was a genuine follower of the Tribunal. While clearly false, any appearance of impropriety must be avoided. Therefore, I need you to make a pilgrimage to the Monastery of Saint Aralor, and learn of the sacrifices the Saint made to earn the forgiveness of his masters.
+Some may claim that the troublesome Orc you sent away was a genuine follower of the Tribunal. While this is clearly false, any appearance of impropriety must be avoided. Therefore, I need you to make a pilgrimage to the Monastery of Saint Aralor, and learn of the sacrifices the Saint made to earn the forgiveness of his masters.
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_TroublesomeOrc
   INTV: Compare_Value:130
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_Forgiveness
@@ -8917,7 +8917,7 @@ Record: INFO "29362161902740612591" (Topic:shrine of forgiveness) Flags:0x0000 (
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
   NAME: Response:
-Some may claim that the troublesome Orc you killed was a genuine follower of the Tribunal. While clearly false, any appearance of impropriety must be avoided. Therefore, I need you to make a pilgrimage to the Monastery of Saint Aralor, and learn of the sacrifices the Saint made to earn the forgiveness of his masters.
+Some may claim that the troublesome Orc you killed was a genuine follower of the Tribunal. A falsehood, yet we must avoid any appearance of impropriety. Therefore, I need you to make a pilgrimage to the Monastery of Saint Aralor, and learn of the sacrifices the Saint made to earn the forgiveness of his masters.
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_TroublesomeOrc
   INTV: Compare_Value:210
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_Forgiveness
