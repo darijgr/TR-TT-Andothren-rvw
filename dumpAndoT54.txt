@@ -8979,7 +8979,7 @@ Record: INFO "3253771352310311299" (Topic:defrauding the temple) Flags:0x0000 ()
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
   NAME: Response:
-I can't be caught by the Ordinators. They will do terrible things to me, %PCRank %PCName. They will take my hands and my feet and burn me on a pire. But you remember the teachings of mercy of our Lady Almalexia, don't you? Surely I don't deserve whatever the Ordinators will do to me? Tell you what, you can share in these riches. After all, you too deserve to be rewarded for diligently doing your duties? Here, take this, please. An advance. And then let us discuss what you can do to help me.
+I can't be caught by the Ordinators. They will do terrible things to me, %PCRank %PCName. They will take my hands and my feet and burn me on a pyre. But you remember the teachings of mercy of our Lady Almalexia, don't you? Surely I don't deserve whatever the Ordinators will do to me? Tell you what, you can share in these riches. After all, you too deserve to be rewarded for diligently doing your duties? Here, take this, please. An advance. And then let us discuss what you can do to help me.
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_LastWillAndTestament_b
   INTV: Compare_Value:60
  *SCVR: Index:1  Type:(Function)  Function:(Choice)  Comparison:(=)  Name:
