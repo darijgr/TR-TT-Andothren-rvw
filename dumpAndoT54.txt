@@ -2,7 +2,7 @@
 Record: TES3 "()" Flags:0x0000 ()
   HEDR:   Version:1.3  Is_Master:False  Author:""
   Description:""
-  N_Records:1238
+  N_Records:1239
  *MAST: Master:Morrowind.esm
   DATA: Length:79837557
  *MAST: Master:Tribunal.esm
@@ -10,7 +10,7 @@ Record: TES3 "()" Flags:0x0000 ()
  *MAST: Master:Bloodmoon.esm
   DATA: Length:9631798
  *MAST: Master:Tamriel_Data.esm
-  DATA: Length:10193005
+  DATA: Length:10684550
 
 Record: GLOB "tr_m4_tt_andothrenfinale" Flags:0x0000 ()
   NAME: ID:TR_m4_TT_AndothrenFinale
@@ -4292,7 +4292,7 @@ Record: CELL "andothren, temple" Flags:0x0000 ()
   FLTV: Lock_Level:90
   KNAM: Key:TR_m4_TT_TempleCofferKey
   DATA: X:3786.271  Y:4048.574  Z:14616.396  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:0.1349
-  NAM0: Reference_Count:900
+  NAM0: Reference_Count:899
  *FRMR: ObjIdx:23  MastIdx:0
   NAME: Name:TR_m4_TT_VathriPipe
   DATA: X:3662.948  Y:4022.980  Z:14598.092  X_Angle:1.5000  Y_Angle:0.0000  Z_Angle:4.3832
@@ -4614,7 +4614,7 @@ Record: CELL "roth roryn region (-13, -18)" Flags:0x0000 ()
  *FRMR: ObjIdx:74  MastIdx:0
   NAME: Name:TR_m4_TT_OrcVivec
   DATA: X:-101822.836  Y:-146763.781  Z:3227.525  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:1.8000
-  NAM0: Reference_Count:330
+  NAM0: Reference_Count:328
 
 Record: CELL "omaynis, aro helseri: trader" Flags:0x0000 ()
   NAME: Name:Omaynis, Aro Helseri: Trader
@@ -9828,7 +9828,7 @@ I... *hic* whaddaya.. you scare me. I will *hic* apologize, no w-w-worries.
 Record: INFO "128118722808527947" (Persuasion:intimidate success) Flags:0x0000 ()
   INAM: ID:128118722808527947
   PNAM: Prev_ID:139280344220234
-  NNAM: Next_ID:2492712729227796400
+  NNAM: Next_ID:48892775142141281
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m2_Adrosu Balmayn
   NAME: Response: Ooo ooo?
@@ -10918,7 +10918,7 @@ Record: INFO "6803124613167012833" (Persuasion:intimidate fail) Flags:0x0000 ()
 Record: INFO "139953001914403315" (Persuasion:intimidate fail) Flags:0x0000 ()
   INAM: ID:139953001914403315
   PNAM: Prev_ID:6803124613167012833
-  NNAM: Next_ID:3175721552478125873
+  NNAM: Next_ID:8254292772599714060
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m2_Adrosu Balmayn
   NAME: Response: Ooo ooo?
@@ -15853,7 +15853,7 @@ Muthsera %PCName, I believe you dropped this. Anyway, I uh, need to go. It's imp
 Record: INFO "2645204601446526312" (Greeting:greeting 1) Flags:0x0000 ()
   INAM: ID:2645204601446526312
   PNAM: Prev_ID:24045167582886815384
-  NNAM: Next_ID:2031222397819902
+  NNAM: Next_ID:169887230202715573
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
@@ -16944,6 +16944,8 @@ You're back! Whatever happened with that troublesome Orc you were sent to deal w
   INTV: Compare_Value:10
  *SCVR: Index:3  Type:(Local)  Function:(Variable_Compare)  Comparison:(=)  Name:trackUlmon
   INTV: Compare_Value:0
+ *SCVR: Index:4  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_LastWillAndTestament_b
+  INTV: Compare_Value:0
 
 Record: INFO "23005251221910524825" (Greeting:greeting 5) Flags:0x0000 ()
   INAM: ID:23005251221910524825
@@ -16959,6 +16961,8 @@ You're back! Whatever happened with that troublesome Orc you were sent to deal w
   INTV: Compare_Value:0
  *SCVR: Index:2  Type:(Local)  Function:(Variable_Compare)  Comparison:(<)  Name:trackOrc
   INTV: Compare_Value:10
+ *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_LastWillAndTestament_b
+  INTV: Compare_Value:0
 
 Record: INFO "53391975250131917" (Greeting:greeting 5) Flags:0x0000 ()
   INAM: ID:53391975250131917
@@ -17279,7 +17283,7 @@ What's that? You're looking for a cure for greed? Preposterous.
 Record: INFO "306111962245653138" (Greeting:greeting 5) Flags:0x0000 ()
   INAM: ID:306111962245653138
   PNAM: Prev_ID:287302278638199730
-  NNAM: Next_ID:3192728784824217146
+  NNAM: Next_ID:28752168842658022311
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:dialog placeholder
   NAME: Response: END TR MAP 4 ANDOTHREN GREETINGS
@@ -18054,7 +18058,7 @@ Before I give you any other duties, you should prove your faith by making three 
 Record: INFO "103762621315123149" (Topic:duties) Flags:0x0000 ()
   INAM: ID:103762621315123149
   PNAM: Prev_ID:31296189681299625396
-  NNAM: Next_ID:17261128262703116356
+  NNAM: Next_ID:14800193023152730424
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   DNAM: Pc_Faction:Temple
@@ -18063,9 +18067,24 @@ You have done more than enough for our Temple here in Andothren, serjo %PCName. 
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_LastWillAndTestament_b
   INTV: Compare_Value:86
 
+Record: INFO "14800193023152730424" (Topic:duties) Flags:0x0000 ()
+  INAM: ID:14800193023152730424
+  PNAM: Prev_ID:103762621315123149
+  NNAM: Next_ID:17261128262703116356
+  DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
+  ONAM: Actor:TR_m4_TT_Nalvs_Andolin
+  DNAM: Pc_Faction:Temple
+  NAME: Response: Bring Felani and Marja back to the Dancing Cup, %PCRank.
+ *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_LastWillAndTestament
+  INTV: Compare_Value:10
+ *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_LastWillAndTestament_b
+  INTV: Compare_Value:60
+ *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_LastWillAndTestament
+  INTV: Compare_Value:40
+
 Record: INFO "17261128262703116356" (Topic:duties) Flags:0x0000 ()
   INAM: ID:17261128262703116356
-  PNAM: Prev_ID:103762621315123149
+  PNAM: Prev_ID:14800193023152730424
   NNAM: Next_ID:14283289941790627484
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
@@ -18076,7 +18095,7 @@ Record: INFO "17261128262703116356" (Topic:duties) Flags:0x0000 ()
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_LastWillAndTestament_b
   INTV: Compare_Value:60
  *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_LastWillAndTestament
-  INTV: Compare_Value:45
+  INTV: Compare_Value:40
 
 Record: INFO "14283289941790627484" (Topic:duties) Flags:0x0000 ()
   INAM: ID:14283289941790627484
