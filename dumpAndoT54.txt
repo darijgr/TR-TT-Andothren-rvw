@@ -464,7 +464,7 @@ endif
 End
 
 Record: SCPT "tr_m4_tt_felani_vathri_sc" Flags:0x0000 ()
-  SCHD: ID:TR_m4_TT_Felani_Vathri_sc  Num_Shorts:6  Num_Longs:3  Num_Floats:0  Data_Size:1664  Local_Var_Size:73
+  SCHD: ID:TR_m4_TT_Felani_Vathri_sc  Num_Shorts:6  Num_Longs:3  Num_Floats:0  Data_Size:1624  Local_Var_Size:73
   SCVR: Script_Variables: TR_Map,control,controlQ,NoLore,T_Local_NPC,T_Local_NoLore,posX,posY,posZ
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
@@ -499,7 +499,8 @@ endif
 if ( control == 0 )
 	if ( GetDistance player < 400 )
 		set control to 1
-		Say "TR\Vo\TR_DeF_Cry.mp3" "[Soft weeping.]"
+		; Uncomment the following line once that voice line is in Data:
+		; Say "TR\Vo\TR_DeF_Cry.mp3" "[Soft weeping.]"
 	endif
 endif
 
@@ -19011,7 +19012,6 @@ Record: INFO "26993295941577213777" (Voice:idle) Flags:0x0000 ()
   NNAM: Next_ID:160014977237055961
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Felani_Vathri
-  SNAM: Sound_File:TR\Vo\TR_DeF_Cry.mp3
   NAME: Response: [Soft crying.]
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>)  Name:TR_m4_TT_LastWillAndTestament
   INTV: Compare_Value:0
