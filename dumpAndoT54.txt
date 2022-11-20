@@ -9243,11 +9243,13 @@ Record: INFO "1655833781205312664" (Topic:books for barbarians) Flags:0x0000 ()
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
-What a great find, %PCName! It is high time Garash learned basic shapes. Now all I need is "Arithmetic for Barbarians" and we'll have a complete curriculum.
+What a great find, %PCName! It is high time Garash learned his shapes. Now all I need is "Arithmetic for Barbarians" and we'll have a complete curriculum.
  *SCVR: Index:0  Type:(Item)  Function:(Item_Type)  Comparison:(>=)  Name:T_Bk_BarbariansGeometryTR
   INTV: Compare_Value:1
- *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_BooksBarbarians
+ *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_BooksBarbarians
   INTV: Compare_Value:20
+ *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_BooksBarbarians
+  INTV: Compare_Value:25
   BNAM: Result:	ModDisposition 10
 		player->RemoveItem T_Bk_BarbariansGeometryTR 1
 		AddItem T_Bk_BarbariansGeometryTR 1
@@ -9265,8 +9267,10 @@ Record: INFO "284616678678911533" (Topic:books for barbarians) Flags:0x0000 ()
 What a great find, %PCName! It is high time Garash learned basic calculation. Now all I need is "Geometry for Barbarians" and we'll have a complete curriculum.
  *SCVR: Index:0  Type:(Item)  Function:(Item_Type)  Comparison:(>=)  Name:T_Bk_BarbariansArithmeticTR
   INTV: Compare_Value:1
- *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_BooksBarbarians
+ *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_BooksBarbarians
   INTV: Compare_Value:20
+ *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_BooksBarbarians
+  INTV: Compare_Value:25
   BNAM: Result:	ModDisposition 10
 		player->RemoveItem T_Bk_BarbariansArithmeticTR 1
 		AddItem T_Bk_BarbariansArithmeticTR 1
@@ -9292,7 +9296,7 @@ Record: INFO "2470212947439427148" (Topic:books for barbarians) Flags:0x0000 ()
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
-The next books we'll need are "Arithmetic for Barbarians" and "Geometry for Barbarians." Like I said, I'm not sure where to find them, and they're a less common than "ABCs." But they're vital to teaching Garash the basics.
+The next books we'll need are "Arithmetic for Barbarians" and "Geometry for Barbarians." Like I said, I'm not sure where to find them, and they're a lot less common than "ABCs." But they're vital to teaching Garash the basics.
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_BooksBarbarians
   INTV: Compare_Value:20
  *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_BooksBarbarians
