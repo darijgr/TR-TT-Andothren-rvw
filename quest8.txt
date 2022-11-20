@@ -20,7 +20,7 @@ JOURNAL TR_m4_TT_LastWillAndTestament_b
 10: Ravur covertly slipped me a note and ran upstairs.
 15: I should meet Ravur upstairs and not talk to Nalvs.
 20: Ravur told me she is spying on Nalvs.
-25: Ravur thinks Nalvs manipulted Ulmon.
+25: Ravur thinks Nalvs manipulated Ulmon.
 30: Find Felani at the Dancing Cup.
 35: Investigate Nalvs' office.
 55: Ravur was distressed that all the contents of the Temple coffers had been removed before we searched Nalvs' office. She suggests we wait to see what Nalvs' next move is.

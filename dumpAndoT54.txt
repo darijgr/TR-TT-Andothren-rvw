@@ -9053,6 +9053,8 @@ Record: INFO "21742136641719259" (Topic:defrauding the temple) Flags:0x0000 ()
 Preposterous! I would never. I have dedicated my life to the Temple and the Tribunal. The sanctity of our Temple and the funds entrusted to us are beyond question, and to insinuate I would act in contravention of my duties is deeply insulting!
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_LastWillAndTestament_b
   INTV: Compare_Value:60
+ *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_LastWillAndTestament_b
+  INTV: Compare_Value:70
   BNAM: Result:	ModDisposition -15
 		Choice "Do you expect me to believe that all of these riches belonged to Ulmon Vathri? He had nothing of the sort." 1
 		; set up the fireworks
