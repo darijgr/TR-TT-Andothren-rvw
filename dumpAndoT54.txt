@@ -18633,6 +18633,8 @@ The Temple coffers are empty? Completely empty? Are you sure? That must mean... 
   INTV: Compare_Value:50
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_LastWillAndTestament_b
   INTV: Compare_Value:35
+ *SCVR: Index:2  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_LastWillAndTestament_b
+  INTV: Compare_Value:60
   BNAM: Result:	Journal TR_m4_TT_LastWillAndTestament_b 55
 		Journal TR_m4_TT_LastWillAndTestament 35
 		AITravel 4278 4888 13970
