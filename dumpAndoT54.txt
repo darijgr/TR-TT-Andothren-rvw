@@ -9509,7 +9509,6 @@ Let's see what Nalvs Andolin's next move is before we take any further action.
   INTV: Compare_Value:55
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_LastWillAndTestament_b
   INTV: Compare_Value:80
-  BNAM: Result:	Journal TR_m4_TT_LastWillAndTestament_b 30
 
 Record: INFO "10250309172890517207" (Topic:ulmon vathri's will) Flags:0x0000 ()
   INAM: ID:10250309172890517207
@@ -9522,7 +9521,7 @@ I think Nalvs either coerced or tricked Ulmon Vathri into willing his estate to 
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_LastWillAndTestament_b
   INTV: Compare_Value:25
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_LastWillAndTestament_b
-  INTV: Compare_Value:80
+  INTV: Compare_Value:55
   BNAM: Result:	Journal TR_m4_TT_LastWillAndTestament_b 30
 
 Record: INFO "2456211562436428710" (Topic:ulmon vathri's will) Flags:0x0000 ()
