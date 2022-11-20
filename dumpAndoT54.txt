@@ -8335,7 +8335,7 @@ Record: INFO "168475468228872336" (Topic:moral decay in andothren) Flags:0x0000 
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Nalvs_Andolin
   NAME: Response:
-It is truly a desperate situation. If we do not steer the nobles of Andothren away from their fascination with Imperial fortune, I fear this corruption will trickle down from on high onto the common people.
+It is truly a desperate situation. If we do not steer the nobles of Andothren away from their fascination with Imperial fortune, I fear this corruption will trickle down from on high onto the common people. A cure for greed is needed before the affliction can spread.
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(>=)  Name:TR_m4_TT_AndothrenCharity
   INTV: Compare_Value:10
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(<)  Name:TR_m4_TT_AndothrenCharity
@@ -9242,7 +9242,7 @@ Record: INFO "1655833781205312664" (Topic:books for barbarians) Flags:0x0000 ()
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
-What a great find, %PCName! It is high time Garash learned basic shapes. Now all I need is "Arithmetic for Barbarians" and we'll have a complete syllabus.
+What a great find, %PCName! It is high time Garash learned basic shapes. Now all I need is "Arithmetic for Barbarians" and we'll have a complete curriculum.
  *SCVR: Index:0  Type:(Item)  Function:(Item_Type)  Comparison:(>=)  Name:T_Bk_BarbariansGeometryTR
   INTV: Compare_Value:1
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_BooksBarbarians
@@ -9261,7 +9261,7 @@ Record: INFO "284616678678911533" (Topic:books for barbarians) Flags:0x0000 ()
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
-What a great find, %PCName! It is high time Garash learned basic calculation. Now all I need is "Geometry for Barbarians" and we'll have a complete syllabus.
+What a great find, %PCName! It is high time Garash learned basic calculation. Now all I need is "Geometry for Barbarians" and we'll have a complete curriculum.
  *SCVR: Index:0  Type:(Item)  Function:(Item_Type)  Comparison:(>=)  Name:T_Bk_BarbariansArithmeticTR
   INTV: Compare_Value:1
  *SCVR: Index:1  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_BooksBarbarians
@@ -9326,7 +9326,7 @@ Record: INFO "217981791698122944" (Topic:books for barbarians) Flags:0x0000 ()
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
-With these books, all we need now is a little patience and perseverence, and Garash will be a true member of our Temple. I'll see to his continued education, %PCName. You've done your part, now let me do mine.
+With these books, all we need now is a little patience and perseverance, and Garash will be a true member of our Temple. I'll see to his continued education, %PCName. You've done your part, now let me do mine.
  *SCVR: Index:0  Type:(Journal)  Function:(Journal_Type)  Comparison:(=)  Name:TR_m4_TT_BooksBarbarians
   INTV: Compare_Value:100
 
