@@ -5,7 +5,8 @@ JOURNAL TR_m4_TT_ArmunAdventure_b
 100: I have slain the cultists of Malacath in Hummurushtapi. I'm sure Nalvs Andolin would be happy to hear that.
 
 JOURNAL TR_m4_TT_ArmunAdventure_c
-100: I have found two dead bandits northeast of Arvud. Presumably they were the ones that ambushed the pilgrim. I should report back to Nalvs Andolin.
+100: I have found two dead bandits northeast of Arvud. Presumably they were the ones that ambushed the pilgrim.
+110: I killed the vampires.
 
 JOURNAL TR_m4_TT_ArmunAdventure_d
 100: I killed the Ashlander chief, Vabal-Ajunta. Surely the Ashlanders had something to do with the death of a pilgrim in the Armun.
@@ -21,3 +22,6 @@ JOURNAL TR_m4_TT_ArmunAdventure
 30: An Orc in the Daedric ruin directed me to the ruins to the east.
 100: (fin) Nalvs Andolin seemed glad that I returned from my expedition to the Armun Ashland, having made the presence of the Temple felt in the area, even if we might never be sure if we caught the pilgrim's killer.
 
+JOURNAL TR_m4_TT_ArmunAdventure_f
+10: The mabrigash in the ruins near Arvud deny having anything to do with the death of a pilgrim I was sent to avenge.
+100: I killed the mabrigash northeast of Arvud. If they were responsible for the death of a pilgrim, they are no longer a threat.

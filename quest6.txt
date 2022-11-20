@@ -12,6 +12,7 @@ JOURNAL ID:TR_m4_TT_AndothrenCharity
 
 JOURNAL TR_m4_TT_AndothrenCharityTholer
 10: Ulvys says I should meet Tholer Andos directly.
+15: Tholer Andas appears reluctant.
 20: Tholer kicked me out.
 50: Tholer agreed; get it from Ules.
 60: Got scrip.
@@ -48,6 +49,7 @@ JOURNAL TR_m4_TT_AndothrenCharityMels
 10: Mels Mathyn will donate if I fuck a Dunmer up. I declined.
 20: Mels Mathyn asked me to fuck up a drunk Dunmer in the Dancing Cup.
 30: I convinced Velms Braven to apologize to Mels for his insults.
+35: Velms Braven dead.
 40: Ravur Othravel wanted to try to convince Mels herself. I should leave her alone.
 50: Mels was satisfied and donated.
 60: Ravur has convinced Mels to donate.

@@ -10,7 +10,7 @@ Record: TES3 "()" Flags:0x0000 ()
  *MAST: Master:Bloodmoon.esm
   DATA: Length:9631798
  *MAST: Master:Tamriel_Data.esm
-  DATA: Length:10684550
+  DATA: Length:10193005
 
 Record: GLOB "tr_m4_tt_andothrenfinale" Flags:0x0000 ()
   NAME: ID:TR_m4_TT_AndothrenFinale
@@ -321,7 +321,7 @@ End
 
 
 Record: SCPT "tr_m4_tt_armunadvc_sc" Flags:0x0000 ()
-  SCHD: ID:TR_m4_TT_ArmunAdvC_sc  Num_Shorts:0  Num_Longs:0  Num_Floats:0  Data_Size:131  Local_Var_Size:0
+  SCHD: ID:TR_m4_TT_ArmunAdvC_sc  Num_Shorts:0  Num_Longs:0  Num_Floats:0  Data_Size:196  Local_Var_Size:0
   SCDT: Bytecode: (compiled script code)
   SCTX: Script_Text:
 Begin TR_m4_TT_ArmunAdvC_sc
@@ -330,11 +330,21 @@ Begin TR_m4_TT_ArmunAdvC_sc
 ; TR_m4_D_KhirakaiBandit2, the dead bandits in Khirakai,
 ; for Andothren Temple quest TR_m4_TT_ArmunAdventure.
 
-if ( OnActivate )
+; They should only appear when the quest has started.
+if ( getDisabled == 0 )
+	if ( GetJournalIndex TR_m4_TT_ArmunAdventure == 0 )
+		disable
+		return
+	endif
+else
 	if ( GetJournalIndex TR_m4_TT_ArmunAdventure > 0 )
-		if ( GetJournalIndex TR_m4_TT_ArmunAdventure_c < 100 )
-			Journal TR_m4_TT_ArmunAdventure_c 100
-		endif
+		enable
+	endif
+endif
+
+if ( OnActivate )
+	if ( GetJournalIndex TR_m4_TT_ArmunAdventure_c < 100 )
+		Journal TR_m4_TT_ArmunAdventure_c 100
 	endif
 	Activate
 endif
@@ -3514,7 +3524,7 @@ Record: NPC_ "tr_m4_tt_tevuren_galdar" Flags:0x0000 ()
  *NPCO: Count:1  Object:indoril pauldron right
  *NPCO: Count:1  Object:indoril pauldron left
  *NPCO: Count:2  Object:p_restore_health_q
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:73ce75  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:091b76  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  10  Idle_3:                   0  Idle_4:                  10
 	Idle_5:                  20  Idle_6:                   5  Idle_7:                  10
@@ -3547,7 +3557,7 @@ Record: NPC_ "tr_m4_tt_orcvivec" Flags:0x0000 ()
  *NPCO: Count:1  Object:bonemold_gah-julan_pauldron_r
  *NPCO: Count:1  Object:chitin pauldron - left
  *NPCS: Spell:TR_m4_TT_OrcVivecAbility
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:73ce75  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:091b76  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  30  Idle_3:                  20  Idle_4:                   0
 	Idle_5:                  30  Idle_6:                   0  Idle_7:                   0
@@ -3601,7 +3611,7 @@ Record: NPC_ "tr_m4_tt_ravur_othravel" Flags:0x0000 ()
  *NPCS: Spell:absorb personality
  *NPCS: Spell:absorb speed
  *NPCS: Spell:absorb willpower
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:73ce75  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:091b76  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  40  Idle_3:                   0  Idle_4:                  10
 	Idle_5:                   0  Idle_6:                   5  Idle_7:                   5
@@ -3711,7 +3721,7 @@ Record: CREA "tr_m4_tt_olmsguardgreat" Flags:0x0000 ()
  *NPCS: Spell:resist poison_75
  *NPCS: Spell:dread curse: endurance
  *NPCS: Spell:dread curse: strength
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:73ce75  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:091b76  Services:[0xa00000 ()]
  *AI_W: Distance:        200  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           30  Idle_3:           50  Idle_4:           30  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3741,7 +3751,7 @@ Record: CREA "tr_m4_tt_olmsguard" Flags:0x0000 ()
  *NPCS: Spell:resist poison_75
  *NPCS: Spell:grave curse: strength
  *NPCS: Spell:grave curse: endurance
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:73ce75  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:091b76  Services:[0xa00000 ()]
  *AI_W: Distance:       1000  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           50  Idle_3:           50  Idle_4:            0  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3770,7 +3780,7 @@ Record: CREA "tr_m4_tt_olmsguardghost" Flags:0x0000 ()
  *NPCS: Spell:immune to disease
  *NPCS: Spell:immune to frost
  *NPCS: Spell:immune to poison
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:73ce75  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:091b76  Services:[0xa00000 ()]
  *AI_W: Distance:       1000  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           50  Idle_3:           50  Idle_4:            0  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -4282,7 +4292,7 @@ Record: CELL "andothren, temple" Flags:0x0000 ()
   FLTV: Lock_Level:90
   KNAM: Key:TR_m4_TT_TempleCofferKey
   DATA: X:3786.271  Y:4048.574  Z:14616.396  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:0.1349
-  NAM0: Reference_Count:899
+  NAM0: Reference_Count:900
  *FRMR: ObjIdx:23  MastIdx:0
   NAME: Name:TR_m4_TT_VathriPipe
   DATA: X:3662.948  Y:4022.980  Z:14598.092  X_Angle:1.5000  Y_Angle:0.0000  Z_Angle:4.3832
@@ -4604,7 +4614,7 @@ Record: CELL "roth roryn region (-13, -18)" Flags:0x0000 ()
  *FRMR: ObjIdx:74  MastIdx:0
   NAME: Name:TR_m4_TT_OrcVivec
   DATA: X:-101822.836  Y:-146763.781  Z:3227.525  X_Angle:0.0000  Y_Angle:0.0000  Z_Angle:1.8000
-  NAM0: Reference_Count:328
+  NAM0: Reference_Count:330
 
 Record: CELL "omaynis, aro helseri: trader" Flags:0x0000 ()
   NAME: Name:Omaynis, Aro Helseri: Trader
@@ -5603,7 +5613,7 @@ Record: INFO "93155531937812462" (Journal:tr_m4_tt_armunadventure_f) Flags:0x000
   NNAM: Next_ID:1769776912294617282
   DATA: JournalIndex:10
   NAME: Response:
-The mabrigash in the ruins near Arvud deny having anything to do with the death of a pilgrim I was sent to avenge.
+The mabrigash in the ruins near Arvud denies having anything to do with the death of a pilgrim I was sent to avenge.
 
 Record: INFO "1769776912294617282" (Journal:tr_m4_tt_armunadventure_f) Flags:0x0000 ()
   INAM: ID:1769776912294617282
@@ -5611,7 +5621,7 @@ Record: INFO "1769776912294617282" (Journal:tr_m4_tt_armunadventure_f) Flags:0x0
   NNAM: Next_ID:
   DATA: JournalIndex:100
   NAME: Response:
-I killed the mabrigash northeast of Arvud. If they were responsible for the death of a pilgrim, they are no longer a threat.
+I killed the mabrigash northeast of Arvud. If she was responsible for the death of a pilgrim, she is no longer a threat.
 
 Record: DIAL "tr_m4_and_gamblingaddict" Flags:0x0000 ()
   NAME: ID:TR_m4_And_GamblingAddict
@@ -7263,7 +7273,7 @@ Record: INFO "46442668732079480" (Topic:support the charitable mission) Flags:0x
  *SCVR: Index:2  Type:(Global)  Function:(Variable_Compare)  Comparison:(=)  Name:TR_m4_AndasGuestState
   INTV: Compare_Value:2
  *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_AndothrenCharityTholer
-  INTV: Compare_Value:10
+  INTV: Compare_Value:15
  *SCVR: Index:4  Type:(Function)  Function:(Choice)  Comparison:(=)  Name:
   INTV: Compare_Value:2
 
@@ -7282,7 +7292,7 @@ I suppose I could increase my support, provided that the resulting business gets
  *SCVR: Index:2  Type:(Global)  Function:(Variable_Compare)  Comparison:(=)  Name:TR_m4_AndasGuestState
   INTV: Compare_Value:2
  *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_AndothrenCharityTholer
-  INTV: Compare_Value:10
+  INTV: Compare_Value:15
  *SCVR: Index:4  Type:(Function)  Function:(Choice)  Comparison:(=)  Name:
   INTV: Compare_Value:1
   BNAM: Result:	Journal TR_m4_TT_AndothrenCharityTholer 50
@@ -7302,7 +7312,7 @@ I suppose I could increase my support, provided that the resulting business gets
  *SCVR: Index:2  Type:(Global)  Function:(Variable_Compare)  Comparison:(=)  Name:TR_m4_AndasGuestState
   INTV: Compare_Value:2
  *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_AndothrenCharityTholer
-  INTV: Compare_Value:10
+  INTV: Compare_Value:15
  *SCVR: Index:4  Type:(Function)  Function:(Choice)  Comparison:(=)  Name:
   INTV: Compare_Value:1
  *SCVR: Index:5  Type:(Global)  Function:(Global)  Comparison:(>=)  Name:T_Glob_Speech_Sway
@@ -7324,10 +7334,12 @@ I find that hard to believe, unless your Temple has severely mismanaged its asse
  *SCVR: Index:2  Type:(Global)  Function:(Variable_Compare)  Comparison:(=)  Name:TR_m4_AndasGuestState
   INTV: Compare_Value:2
  *SCVR: Index:3  Type:(Journal)  Function:(Journal_Type)  Comparison:(<=)  Name:TR_m4_TT_AndothrenCharityTholer
-  INTV: Compare_Value:10
+  INTV: Compare_Value:15
  *SCVR: Index:4  Type:(Function)  Function:(Choice)  Comparison:(=)  Name:
   INTV: Compare_Value:1
-  BNAM: Result:	Journal TR_m4_TT_AndothrenCharityTholer 15
+  BNAM: Result:	if ( getJournalIndex TR_m4_TT_AndothrenCharityTholer < 15 )
+		    Journal TR_m4_TT_AndothrenCharityTholer 15
+		endif
 
 Record: INFO "11879302772703321052" (Topic:support the charitable mission) Flags:0x0000 ()
   INAM: ID:11879302772703321052
@@ -9816,7 +9828,7 @@ I... *hic* whaddaya.. you scare me. I will *hic* apologize, no w-w-worries.
 Record: INFO "128118722808527947" (Persuasion:intimidate success) Flags:0x0000 ()
   INAM: ID:128118722808527947
   PNAM: Prev_ID:139280344220234
-  NNAM: Next_ID:48892775142141281
+  NNAM: Next_ID:2492712729227796400
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m2_Adrosu Balmayn
   NAME: Response: Ooo ooo?
@@ -10906,7 +10918,7 @@ Record: INFO "6803124613167012833" (Persuasion:intimidate fail) Flags:0x0000 ()
 Record: INFO "139953001914403315" (Persuasion:intimidate fail) Flags:0x0000 ()
   INAM: ID:139953001914403315
   PNAM: Prev_ID:6803124613167012833
-  NNAM: Next_ID:8254292772599714060
+  NNAM: Next_ID:3175721552478125873
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m2_Adrosu Balmayn
   NAME: Response: Ooo ooo?
@@ -15841,7 +15853,7 @@ Muthsera %PCName, I believe you dropped this. Anyway, I uh, need to go. It's imp
 Record: INFO "2645204601446526312" (Greeting:greeting 1) Flags:0x0000 ()
   INAM: ID:2645204601446526312
   PNAM: Prev_ID:24045167582886815384
-  NNAM: Next_ID:169887230202715573
+  NNAM: Next_ID:2031222397819902
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:TR_m4_TT_Ravur_Othravel
   NAME: Response:
@@ -17267,7 +17279,7 @@ What's that? You're looking for a cure for greed? Preposterous.
 Record: INFO "306111962245653138" (Greeting:greeting 5) Flags:0x0000 ()
   INAM: ID:306111962245653138
   PNAM: Prev_ID:287302278638199730
-  NNAM: Next_ID:28752168842658022311
+  NNAM: Next_ID:3192728784824217146
   DATA: Disposition:0  Rank:None  Sex:None  PC_Rank:None
   ONAM: Actor:dialog placeholder
   NAME: Response: END TR MAP 4 ANDOTHREN GREETINGS
