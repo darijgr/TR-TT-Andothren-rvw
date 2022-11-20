@@ -935,6 +935,8 @@ short noHit
 short ThankIbelard ; for "Remnants of Resdayn"
 
 if ( moneySet == 1 )
+	; Figure out how much money to expect the player to donate.
+	; This is for quest TR_m4_TT_Forgiveness.
 	set moneySet to ( player->GetItemCount gold_001 )
 	set moneySet to ( moneySet / 10 )
 	if ( moneyExpected < moneySet )
@@ -944,6 +946,8 @@ if ( moneySet == 1 )
 endif
 
 if ( controlQ == 0 )
+	; Find out what the player has done in the Armun Ashlands.
+	; This is for quest TR_m4_TT_ArmunAdventure.
 	if ( GetJournalIndex TR_m4_TT_ArmunAdventure_b >= 100 )
 		if ( GetDeadCount "TR_m4_Ulmon Vathri" == 0 )
 			set controlQ to 1
@@ -999,6 +1003,7 @@ elseif ( controlQ == 2 )
 		ForceGreeting
 	endif
 elseif ( controlQ == 10 )
+	; Nalvs is escorting the player to the tomb.
 	if ( GetAIPackageDone )
 		set controlQ to 11
 		AIWander 0 0 5 20 20 20 0 10 10 20 0
@@ -1009,6 +1014,7 @@ elseif ( controlQ == 10 )
 elseif ( controlQ == 11 )
 	if ( GetJournalIndex TR_m4_TT_LastWillAndTestament >= 45 )
 		if ( CellChanged )
+			 ; Nalvs flees to Omaynis:
 			set controlQ to 12
 			TR_m4_TT_Ravur_Othravel->PositionCell 3940 4349 14753 15000 "Andothren, Temple"
 			TR_m4_TT_Ravur_Othravel->AIWander 0, 0, 5, 0, 40, 0, 10, 0, 5, 5, 25, 5
@@ -1037,11 +1043,13 @@ elseif ( controlQ == 12 )
 		endif
 	endif
 elseif ( controlQ == 20 )
+	; Ravur has called on Nalvs to surrender.
 	if ( MenuMode == 0 )
 		set controlQ to 21
 		ForceGreeting
 	endif
 elseif ( controlQ == 22 )
+	; Nalvs has started combat.
 	if ( OnDeath )
 		if ( GetDeadCount TR_m4_TT_Ravur_Othravel > 0 )
 			Journal TR_m4_TT_LastWillAndTestament 200
@@ -1254,6 +1262,7 @@ elseif ( GetJournalIndex TR_m4_TT_TroublesomeOrc <= 20 )
 		Enable
 	endif
 elseif ( GetJournalIndex TR_m4_TT_TroublesomeOrc == 150 )
+	; not sure what this is for
 	if ( controlQ == 39 )
 		if ( GetDisabled == 0 )
 			if ( CellChanged )
@@ -1464,7 +1473,8 @@ elseif ( controlQ == 11 )
 		Return
 	endif
 elseif ( controlQ == 12 )
-	; 
+	; Player tells the orc to jump down the bridge.
+	; Currently, this quest path is unavailable, but may be implemented letter.
 elseif ( controlQ == 13 )
 ;	MessageBox "Travel 1"
 	set controlQ to 14
@@ -1525,16 +1535,19 @@ elseif ( controlQ == 19 )
 	ClearForceJump
 	set controlQ to 20
 elseif ( controlQ == 30 )
+	; The orc appears in Andothren near the shrine.
 	if ( GetDisabled )
 		Enable
 	endif
 	set controlQ to 31
 elseif ( controlQ == 33 )
+	; The orc goes to Hummurushtapi.
 	if ( GetDisabled == 0 )
 		Disable
 	endif
 	set controlQ to 34
 elseif ( controlQ == 34 )
+	; ... and gets enabled right in time to serve as a scapegoat.
 	if ( GetJournalIndex TR_m4_TT_ArmunAdventure > 0 )
 		if ( GetDisabled )
 			Enable
@@ -1544,8 +1557,10 @@ elseif ( controlQ == 34 )
 elseif ( controlQ == 35 )
 	if ( GetDistance player < 1000 )
 		if ( GetJournalIndex TR_m4_TT_TroublesomeOrc == 130 )
+			; Serve Malacath and fight the player.
 			SetFight 100
 		else
+			; Denounce Malacath and fight all the other orcs.
 			TR_m4_Orkrat->StartCombat TR_m4_TT_OrcVivec
 			"TR_m4_Rulka gra-Bolg"->StartCombat TR_m4_TT_OrcVivec
 			"TR_m4_Grash gra-Aragras"->StartCombat TR_m4_TT_OrcVivec
@@ -1565,6 +1580,7 @@ elseif ( controlQ == 36 )
 		endif
 	endif
 elseif ( controlQ == 38 )
+	; After forcegreeting the player:
 	if ( GetJournalIndex TR_m4_TT_ArmunAdventure_b == 100 )
 		if ( GetDistance player < 750 )
 			set controlQ to 39
@@ -1572,6 +1588,7 @@ elseif ( controlQ == 38 )
 		endif
 	endif
 elseif ( controlQ == 40 )
+	; The Red Mountain is calling!
 	if ( GetDisabled )
 		Enable
 	endif
@@ -1671,6 +1688,8 @@ if ( controlQ == 0 )
 		Face playerX playerY
 	endif
 elseif ( controlQ == 2 )
+	; Ravur teleports back to the Temple. This is called several times in the
+	; questline (first after the Kitchen Supplies quest).
 	if ( MenuMode == 0 )
 		set timer to ( timer + GetSecondsPassed )
 		if ( timer > 1.2 )
@@ -1707,6 +1726,7 @@ elseif ( controlQ == 3 )
 ;	set controlQ to 7	; back and forth because somehow her Hello / PC head tracking was broken before.
 ;	Enable
 elseif ( controlQ == 12 )
+	; Player has been sent out to harrass nobles with potions.
 	if ( GetJournalIndex TR_m4_TT_TroublesomeOrc != 100 )
 		if ( player->GetPos Z < 14800 )
 			set controlQ to 13
@@ -1735,6 +1755,7 @@ elseif ( controlQ == 15 )
 		ForceGreeting
 	endif
 elseif ( controlQ == 18 )
+	; Ravur follows the player to the nobles.
 	; primary following stage, make sure she stays in Andothren and doesn't drown.
 	if ( control >= 1 )	; if following
 		if ( GetPCCell "Andothren" != 1 )
@@ -1800,6 +1821,7 @@ elseif ( controlQ == 19 )
 		set timer to 0
 	endif
 elseif ( controlQ == 21 )
+	; Ralvs has escorted the player to the tomb (start of quest TR_m4_TT_LastWillAndTestament).
 	set controlQ to 22
 	AITravel 4218 5092 13970
 elseif ( controlQ == 22 )
@@ -1821,17 +1843,20 @@ elseif ( controlQ == 23 )
 		endif
 	endif
 elseif ( controlQ == 25 )
+	; Ravur has dropped the player a message and is running up the stairway.
 	if ( GetAIPackageDone )
 		ClearForceRun
 		set controlQ to 26
 		SetHello 30
 	endif
 elseif ( controlQ == 26 )
+	; Ravur has arrived in the dorm.
 	if ( GetJournalIndex TR_m4_TT_LastWillAndTestament == 30 )
 		set controlQ to 27
 		set timer to 0
 	endif
 elseif ( controlQ == 27 )
+	; 2-minute timer for the player to find proof in Nalvs's office.
 	if ( MenuMode == 0 )
 		set timer to ( timer + GetSecondsPassed )
 	endif
@@ -1839,16 +1864,19 @@ elseif ( controlQ == 27 )
 		set controlQ to 28
 	endif
 elseif ( controlQ == 29 )
+	; Enough of the sleuthing...
 	if ( GetAIPackageDone )
 		SetHello 30
 		set controlQ to 30
 	endif
 elseif ( controlQ == 31 )
+	; Nalvs has fled Andothren.
 	if ( player->GetPos X > 3800 )
 		set controlQ to 32
 		ForceGreeting
 	endif
 elseif ( controlQ == 34 )
+	; Ravur goes to Omaynis.
 	if ( MenuMode )
 		Return
 	endif
@@ -1899,6 +1927,20 @@ if ( trackOrc < 10 )
 	endif
 endif
 
+; The trackPlayerMorals variable tracks how well the player conducted himself during
+; some ethical decisions (from Ravur's viewpoint).
+; It is fed by auxiliary variables like trackAshlands and trackGreedTholas, which
+; evaluate the player's actions in specific situations.
+; Each of these auxiliary variables has the following semantics:
+; 0: Player has behaved neutrally or not made the decision yet.
+; [1, 9]: Player has done well (the better, the larger the value).
+; [10, infinity): Player has done well, and the variable has already been fed into
+;                      trackPlayerMorals.
+; [-9, -1]: Player has done badly (the worse, the larger the absolute value).
+; (-infinity, -10]: Player has done badly, and the variable has already been fed into
+;                      trackPlayerMorals.
+
+; How well did the player do during the Ashlands quest?
 if ( trackAshlands == -3 )
 	set trackAshlands to -10
 	set trackPlayerMorals to ( trackPlayerMorals - 3 )
@@ -1914,6 +1956,7 @@ elseif ( trackAshlands < 0 )
 	endif
 endif
 
+; How well did the player act around the nobles?
 ; if trackGreedTholas is set to a low value, escalate it to trackPlayerMorals and fix it at a higher magnitude
 if ( trackGreedTholas >= 10 )
 elseif ( trackGreedTholas <= -10 )
@@ -3534,7 +3577,7 @@ Record: NPC_ "tr_m4_tt_tevuren_galdar" Flags:0x0000 ()
  *NPCO: Count:1  Object:indoril pauldron right
  *NPCO: Count:1  Object:indoril pauldron left
  *NPCO: Count:2  Object:p_restore_health_q
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:73ce75  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:091b76  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  10  Idle_3:                   0  Idle_4:                  10
 	Idle_5:                  20  Idle_6:                   5  Idle_7:                  10
@@ -3567,7 +3610,7 @@ Record: NPC_ "tr_m4_tt_orcvivec" Flags:0x0000 ()
  *NPCO: Count:1  Object:bonemold_gah-julan_pauldron_r
  *NPCO: Count:1  Object:chitin pauldron - left
  *NPCS: Spell:TR_m4_TT_OrcVivecAbility
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:73ce75  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:0  Unknown_2:091b76  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  30  Idle_3:                  20  Idle_4:                   0
 	Idle_5:                  30  Idle_6:                   0  Idle_7:                   0
@@ -3621,7 +3664,7 @@ Record: NPC_ "tr_m4_tt_ravur_othravel" Flags:0x0000 ()
  *NPCS: Spell:absorb personality
  *NPCS: Spell:absorb speed
  *NPCS: Spell:absorb willpower
-  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:73ce75  Services:[0x0000 ()]
+  AIDT: Hello:30  Unknown_1:0  Fight:30  Flee:30  Alarm:90  Unknown_2:091b76  Services:[0x0000 ()]
  *AI_W: Distance:                 0  Duration:                 5  Time_Of_Day:              0
 	Idle_2:                  40  Idle_3:                   0  Idle_4:                  10
 	Idle_5:                   0  Idle_6:                   5  Idle_7:                   5
@@ -3731,7 +3774,7 @@ Record: CREA "tr_m4_tt_olmsguardgreat" Flags:0x0000 ()
  *NPCS: Spell:resist poison_75
  *NPCS: Spell:dread curse: endurance
  *NPCS: Spell:dread curse: strength
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:73ce75  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:091b76  Services:[0xa00000 ()]
  *AI_W: Distance:        200  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           30  Idle_3:           50  Idle_4:           30  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3761,7 +3804,7 @@ Record: CREA "tr_m4_tt_olmsguard" Flags:0x0000 ()
  *NPCS: Spell:resist poison_75
  *NPCS: Spell:grave curse: strength
  *NPCS: Spell:grave curse: endurance
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:73ce75  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:091b76  Services:[0xa00000 ()]
  *AI_W: Distance:       1000  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           50  Idle_3:           50  Idle_4:            0  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -3790,7 +3833,7 @@ Record: CREA "tr_m4_tt_olmsguardghost" Flags:0x0000 ()
  *NPCS: Spell:immune to disease
  *NPCS: Spell:immune to frost
  *NPCS: Spell:immune to poison
-  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:73ce75  Services:[0xa00000 ()]
+  AIDT: Hello:0  Unknown_1:0  Fight:90  Flee:0  Alarm:0  Unknown_2:091b76  Services:[0xa00000 ()]
  *AI_W: Distance:       1000  Duration:          5  Time_Of_Day:       0  Unknown_1:         0
 	Idle_2:           50  Idle_3:           50  Idle_4:            0  Idle_5:            0
 	Idle_6:            0  Idle_7:            0  Idle_8:            0  Idle_9:            0
@@ -4837,7 +4880,6 @@ Record: INFO "2335619509386821288" (Journal:tr_m4_tt_lastwillandtestament_c) Fla
   DATA: JournalIndex:100
   NAME: Response:
 Nalvs decided to return Ulmon Vathri's inheritance to Felani, and asked that he and I never speak of the matter again.
-  QSTF: Quest_Finished:1
 
 Record: DIAL "tr_m4_tt_lastwillandtestament_b" Flags:0x0000 ()
   NAME: ID:TR_m4_TT_LastWillAndTestament_b
@@ -4984,7 +5026,6 @@ Record: INFO "314472895313613964" (Journal:tr_m4_tt_lastwillandtestament_b) Flag
   DATA: JournalIndex:100
   NAME: Response:
 With Nalvs Andolin's death and disgrace, Ravur Othravel will assume the position of Master of the Andothren Temple, for the time being. She thanked me for my work, and gave me her dagger as reward for my services.
-  QSTF: Quest_Finished:1
 
 Record: DIAL "tr_m4_tt_lastwillandtestament_d" Flags:0x0000 ()
   NAME: ID:TR_m4_TT_LastWillAndTestament_d
@@ -5326,6 +5367,7 @@ Record: INFO "3023414102496115068" (Journal:tr_m4_tt_lastwillandtestament) Flags
   NNAM: Next_ID:
   DATA: JournalIndex:200
   NAME: Response: Both Ravur Othravel and Nalvs Andolin are dead.
+  QSTF: Quest_Finished:1
 
 Record: DIAL "tr_m4_tt_kitchensupplies_b" Flags:0x0000 ()
   NAME: ID:TR_m4_TT_KitchenSupplies_b
